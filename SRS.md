@@ -83,11 +83,12 @@ A.2 UML Class Diagram
 
 **1.1 Purpose**
 
-The purpose of this document is to provide a clear understanding of the
-software requirements for our mobile application known as Boosts. It is
-split into sections to explain in detail how the app will function as a
-resource for students. This document will also serve as a guide to help
-development teams build upon this project.
+This document was written to provide an understanding of the
+software requirements for the mobile application known as Boost. The information 
+is split into sections and will elaborate on how the app will operate, 
+the advantages of its functions, and the apps non-functional requirements. Ultimately, 
+this document is a resource to help users understand the benefits of the app 
+and guide developing teams build upon this project.
 
 **1.2 Document Conventions**
 
