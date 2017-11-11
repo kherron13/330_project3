@@ -259,10 +259,14 @@ The dependencies in the product: First, it will be built as a native iOS applica
 The app’s main navigation will be a tab bar based. The items on the tab
 bar will be the calendar, timer, notes, and to-do lists.
 
+*Calendar*
+
 The calendar tab will display a calendar, defaulting to the current
 month, and allow the user to add an event or due date reminder. When
 editing or adding an item to the calendar, the user will be able to set
 notifications if desired.
+
+*Timer*
 
 The timer tab will display three sliders for the user: duration,
 productive interval, and break interval. A start button will be
@@ -271,12 +275,16 @@ productive time will play. Once the productive interval is up, a sound
 alerting the start of a break will play and the process will repeat
 until the selected duration is completed.
 
+*Notes*
+
 The notes will allow a user to view the list of notes already saved and
 include a button for editing and adding additional notes. There will be
 two different types of notes: regular and quiz. The regular notes will
 allow a user to record information. The quiz notes will support
 displaying some information, such as a definition, and hiding other
 information, such as a vocabulary word.
+
+*To-Do*
 
 The to-do lists will allow a user to check off tasks. The user can add a
 list of related tasks and set automatic reminders for the next task a
