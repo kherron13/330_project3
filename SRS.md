@@ -191,8 +191,8 @@ The system will be compatible with iOS 11.1.1 for now, in the future we hope to 
 
 ### 2.5 Design and Implementation Constraints
 
-The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (We hope to find a way that allow users to use all the features in the app while they are limited with internet access) However, the user will be able to write notes, study for exams and quizzes with the flashcards feature, and study productively with the smart productivity timer.
-The Boost system will be coded in the Swift programming language which will only be available for iOS devices.
+The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (We hope to find a way that allow users to use all the features in the app while they are limited with internet access) However, the user will be able to write notes, study for exams and quizzes with the flashcards feature, and study productively with the smart productivity timer when they are not connected with the internet.
+The Boost system will be coded in the Swift programming language which is another constraint because it will only be available for iOS devices.
 
 
 ### 2.6 User Documentation
