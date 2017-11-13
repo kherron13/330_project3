@@ -90,46 +90,22 @@ and guide developing teams build upon this project.
 
 ### 1.2 Document Conventions
 
-This document is writen using Markdown syntax. All headers are atx-style using one hash marks(#) to indicate the title of the proposal. Two hash marks indicate the header of a section, three hash marks are the subsections of the main header, and four hash marks represent titles of topic.    
+This document is written using Markdown syntax. All headers are in atx-style, using one hash mark (#) to declare the title of the proposal, two hash marks to indicate the main header of a section, three hash marks represent the subsection of the main header, and four hashes simply represent bolded words. Each main header illustrates a main idea and the paragraphs in the subsections will help elaborate on that idea.    
 
 ### 1.3 Intended Audience and Reading Suggestions
 
-This document is written to target two groups, a development team and a
-client based group.
+This document is written to for two groups, a development team and the users. 
+Development teams will be able to read this document and understand the implementation of the app. 
+They will understand the features and how each feature is implemented. 
 
--   *Development team*: This document is written to help development
-    > teams or individuals, who want to build upon this project,
-    > understand how the app works. It is a guide that will help
-    > explain, step by step, the apps functionality and implementations.
-
--   *Clients*: This document will explain how the user can use the app
-    > and why it will have a positive impact on those who use it. This
-    > document splits some of the functionality details to show how each
-    > function will specifically benefit those who use the app as
-    > a resource.
+This document is written to help users understand how the app will run.
 
 ### 1.4 Product Scope
 
-Boost is a IOS application. The app is designed to primarily help
-students throughout their academic year plan and organize their work.
-Its primary function is to allow users to access a calendar in which
-they can mark down important events that are coming up on their
-schedule. The main purpose of this function is to provide the user with
-some organization resource that will help remind them of due dates,
-tests dates, and other events. The second function will work as a
-notification reminder which will alert user to take a break from their
-activity and move around. This function will help user increase
-productivity as taking breaks can help reduce stress (Dimeo, F., et al.
-114). Third function will work as a note taking resource which will
-allow user to stay organized with their class notes. Fourth function is
-a flash card study tool which will allow user to save money, time and
-trees as they won't have to go out and buy flashcards to study for their
-next exam. Last function is a to do list which will work as another
-organization resource that will help student keep on track of what is
-due. Scope and features for software determined by: (1) development
-team, (2) application design, feature assessment, and suggestions by
-potential users through development-team-created online survey, (3) use
-cases developed with potential user input.
+Boost is an IOS application designed to primarily help
+students throughout their academic year plan and organize their work. It is essentially a set of tools such as a calendar, a note pad, flashcards, timer, and to-do list all place in one app. The idea is to help studetns keep orginaized without the hassile of having to use different apps for different orginaiztion tools. 
+
+This app focuses on one user so this app will not allow the user to share infomation with others.  
 
 1.  Potential User \#1: Brad A. MacDonald
     [*-bmacdonald@luc.edu*](mailto:-bmacdonald@luc.edu)
@@ -297,14 +273,13 @@ Once users download the application, they will be prompted with a login
 screen that allows the user to either choose to login with an existing
 account or sign-up with any registered email account. After they have
 signed in, the user will be taken to the home screen where the user will
-be able to navigate throughout the app. The authentication will be saved in 
-an SQL database, as well as the new user information.
+be able to navigate throughout the app.
 
 In this home screen, the user will be able to immediately start creating
 notes for their classes. Their class notes will be scrollable lists,
-where they can view each individual note. These notes will be saved within the app for easy accessibility.
-There will also be a standard navigation bar at the bottom of the screen that will have four icons,
-that will serve the purpose of navigating to their respective screen: the calendar screen,
+where they can view each individual note. There will also be a standard
+navigation bar at the bottom of the screen that will have four icons,
+that will navigate to their each respective screen: the calendar screen,
 to-do screen, notes screen and timer screen. There will also be a button
 on the top right for application settings, where the user will be able
 to adjust productivity timers and account settings.
@@ -316,8 +291,8 @@ their assignments, tests dates, and other events. They will also be able
 to integrate their own events into this calendar. The calendar
 functionality will be within its own home screen, which is navigated to
 from the standard bottom bar. The calendar view will, by default, be
-displayed in table view. Once the events in the calendar approach their date,
-the user will be sent a push notification as a reminder.
+displayed in monthly view, but can easily be set to display weekly and
+daily views as well.
 
 ### 4.2  Productivity Reminder/ Break Timer
 
@@ -335,9 +310,7 @@ The note taking functionality will allow users to create, edit, and
 organize notes. The user will be able to search for certain notes by
 keyword, topics, and mentions. The notes will be organized by class, for
 easy accessibility. The notes will be displayed on its own screen, which
-will be able to be accessed by the an icon on the bottom bar.The user will 
-have an option to desginate whether or not they want certain notes to become 
-flashcards.
+will be able to be accessed by the an icon on the bottom bar.
 
 ### 4.4 Flashcard Creator
 
@@ -345,8 +318,7 @@ Similar to Quizlet, the application will allow the user to build
 flashcards from the notes they created. The user will also be able to
 use their created flashcard sets to study material efficiently. The
 flashcard functionality will be combined with the notes screen,
-essentially, flashcards will be two-sided notes. The front side will be 
-the title of the note and the backside will be the note description.
+essentially, flashcards will be two-sided notes.
 
 ### 4.5 To-Do list
 
@@ -355,7 +327,7 @@ have the option to create a list of to-do’s, which in theory is just a
 check list. This list will be on it’s own respective page as well and
 send notifications to the user that the due date is approaching. Once
 the set due date has passed, the specific to-do will be labeled “late”
-and highlighted in red. 
+and highlighted in red.
 
 ## Other Nonfunctional Requirements
 
