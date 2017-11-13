@@ -189,18 +189,18 @@ Student User: The app is tailored to help students with time management and boos
 The system will be compatible with iOS 11.1.1 for now, in the future we hope to extend it to Android 8.0 
 
 
-### 2.5 Design and Implementation Constraints**
+### 2.5 Design and Implementation Constraints
 
 The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (The goal is to find a way to use all the features of the app in case the user is limited with internet access) 
-The Boost system will be coded in the Swift programming language.
+The Boost system will be coded in the Swift programming language which will only be avaliable for iOS devices.
 
-### 2.6 User Documentation**
+### 2.6 User Documentation
 
 The Boost system shall provide an integrated help system that describes the rules of the system, and illustrates all system functions. The Boost system shall provide this information in the time of downloading the app. This documentation will include in-app tutorials and help documents referenceable through user interface.
 
 ### 2.7 Assumptions and Dependencies
 
-One dependency is that the product will be exclusively used in an iOS device since the product will be built as a native iOS application. One assumption, is the internet connectivity it will be difficult to use all the features in the product. For example, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
+One dependency is that the product will be exclusively used in an iOS device since the product will be built as a native iOS application. One assumption, is the internet connectivity, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
 
 
 ## 3. External Interface Requirements
