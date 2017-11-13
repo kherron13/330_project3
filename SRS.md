@@ -398,8 +398,8 @@ to be checked off before their respective due date. The user should be
 able to group related tasks, and to adjust the notifications between
 each task. Since we decided on creating an iOS native app, we will then
 follow Apple’s guidelines and policies for allowing applications to be
-submitted and uploaded on their store. Link:
-[*https://developer.apple.com/app-store/review/*](https://developer.apple.com/app-store/review/)
+submitted and uploaded on their store. 
+[apple regulations link](https://developer.apple.com/app-store/review/)
 
 **5.2 Security & Safety Requirements:**
 
