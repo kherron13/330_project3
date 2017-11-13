@@ -84,26 +84,26 @@ A.2 UML Class Diagram
 This document was written to provide an understanding of the
 software requirements for the mobile application known as Boost. The information 
 is split into sections and will elaborate on how the app will operate, 
-the advantages of its functions, and the apps non-functional requirements. Ultimately, 
-this document is a resource to help users understand the benefits of the app 
-and guide developing teams build upon this project.
+the advantages of its functions, and the apps non-functional requirements.
 
 ### 1.2 Document Conventions
 
-This document is written using Markdown syntax. All headers are in atx-style, using one hash mark (#) to declare the title of the proposal, two hash marks to indicate the main header of a section, three hash marks represent the subsection of the main header, and four hashes simply represent bolded words. Each main header illustrates a main idea and the paragraphs in the subsections will help elaborate on that idea.    
+This document is written using Markdown syntax. All headers are in atx-style, using one hash mark (#) to declare the title of the proposal, two hash marks to indicate the main header of a section, three hash marks represent the subsection of the main header, and four hashes represents bolded words. Each main header illustrates a main idea and the paragraphs in the subsections will help elaborate on that idea.    
 
 ### 1.3 Intended Audience and Reading Suggestions
 
-This document is written to for two groups, a development team and the users. 
+This document is written for two groups, a development team and the users. 
 Development teams will be able to read this document and understand the implementation of the app. 
-They will understand the features and how each feature is implemented. 
+Ultimately, it is a guide, which will help them understand the apps main purpose and allow
+them to build upon it.
 
-This document is written to help users understand how the app will run.
+This document is written to help users understand what Boost is and how it will run. It is a guide intended to help
+them comprehend how each function works and how it will benefit them. This document also serives as a resource which will help users naviagte through the app. 
 
 ### 1.4 Product Scope
 
-Boost is an IOS application designed to primarily help
-students throughout their academic year plan and organize their work. It is essentially a set of tools such as a calendar, a note pad, flashcards, timer, and to-do list all place in one app. The idea is to help studetns keep orginaized without the hassile of having to use different apps for different orginaiztion tools. 
+Boost is an IOS application designed primarily to help
+students throughout their academic year plan and organize their work. It is essentially a set of tools, such as a calendar, a note pad, flashcards, timer, and to-do list all placed under one app. The idea is to help studetns keep orginaized without the hassile of having to use different apps. 
 
 This app focuses on one user so this app will not allow the user to share infomation with others.  
 
@@ -182,7 +182,7 @@ o  Create notecards
 
 There will be one category of users in our product:
                                                                                         
-Student User: The app is tailored to help students with time management and boost productivity when working on                               assignments or studying for exams. 
+o Student User: The app is tailored to help students with time management and boost productivity when working on                               assignments or studying for exams. 
 
 ### 2.4 Operating Environment
 
@@ -191,8 +191,9 @@ The system will be compatible with iOS 11.1.1 for now, in the future we hope to 
 
 ### 2.5 Design and Implementation Constraints
 
-The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (The goal is to find a way to use all the features of the app in case the user is limited with internet access) 
-The Boost system will be coded in the Swift programming language which will only be avaliable for iOS devices.
+The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (We hope to find a way that allow users to use all the features in the app while they are limited with internet access) However, the user will be able to write notes, study for exams and quizzes with the flashcards feature, and study productively with the smart productivity timer when they are not connected with the internet.
+The Boost system will be coded in the Swift programming language which is another constraint because it will only be available for iOS devices.
+
 
 ### 2.6 User Documentation
 
@@ -200,7 +201,9 @@ The Boost system shall provide an integrated help system that describes the rule
 
 ### 2.7 Assumptions and Dependencies
 
-One dependency is that the product will be exclusively used in an iOS device since the product will be built as a native iOS application. One assumption, is the internet connectivity, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
+o One dependency, is that the product will be exclusively used in an iOS device since the product will be built as a native iOS application. 
+
+o One assumption, is the internet connectivity, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
 
 
 ## 3. External Interface Requirements
