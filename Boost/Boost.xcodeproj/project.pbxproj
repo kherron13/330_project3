@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778621FB1880E002FA07B /* AppDelegate.swift */; };
-		C12778651FB1880E002FA07B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778641FB1880E002FA07B /* FirstViewController.swift */; };
-		C12778671FB1880E002FA07B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778661FB1880E002FA07B /* SecondViewController.swift */; };
 		C127786A1FB1880E002FA07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12778681FB1880E002FA07B /* Main.storyboard */; };
 		C127786C1FB1880E002FA07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C127786B1FB1880E002FA07B /* Assets.xcassets */; };
 		C127786F1FB1880E002FA07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C127786D1FB1880E002FA07B /* LaunchScreen.storyboard */; };
 		C127787A1FB1880E002FA07B /* BoostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778791FB1880E002FA07B /* BoostTests.swift */; };
-		C16DEC551FB94EC900D0F99E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16DEC541FB94EC900D0F99E /* ThirdViewController.swift */; };
-		C16DEC571FB94F0B00D0F99E /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16DEC561FB94F0B00D0F99E /* FourthViewController.swift */; };
-		C16DEC591FB94F4E00D0F99E /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16DEC581FB94F4E00D0F99E /* FifthViewController.swift */; };
+		C1EBB38B1FBA39C200C4A012 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */; };
+		C1EBB38D1FBA3BE300C4A012 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */; };
+		C1EBB38F1FBA3D0300C4A012 /* Flashcard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */; };
+		C1EBB3911FBA3DA500C4A012 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */; };
+		C1EBB3931FBA404900C4A012 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB3921FBA404900C4A012 /* Note.storyboard */; };
+		C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB3941FBA405900C4A012 /* NoteViewController.swift */; };
+		C1EBB3971FBA415300C4A012 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB3961FBA415300C4A012 /* Timer.storyboard */; };
+		C1EBB3991FBA416600C4A012 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB3981FBA416600C4A012 /* TimerViewController.swift */; };
+		C1EBB39B1FBA421400C4A012 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */; };
+		C1EBB39D1FBA424A00C4A012 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +37,6 @@
 /* Begin PBXFileReference section */
 		C127785F1FB1880E002FA07B /* Boost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12778621FB1880E002FA07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C12778641FB1880E002FA07B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C12778661FB1880E002FA07B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C12778691FB1880E002FA07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C127786B1FB1880E002FA07B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C127786E1FB1880E002FA07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,9 +44,16 @@
 		C12778751FB1880E002FA07B /* BoostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12778791FB1880E002FA07B /* BoostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostTests.swift; sourceTree = "<group>"; };
 		C127787B1FB1880E002FA07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C16DEC541FB94EC900D0F99E /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		C16DEC561FB94F0B00D0F99E /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		C16DEC581FB94F4E00D0F99E /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Flashcard.storyboard; sourceTree = "<group>"; };
+		C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		C1EBB3921FBA404900C4A012 /* Note.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
+		C1EBB3941FBA405900C4A012 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		C1EBB3961FBA415300C4A012 /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
+		C1EBB3981FBA416600C4A012 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +96,17 @@
 			isa = PBXGroup;
 			children = (
 				C12778621FB1880E002FA07B /* AppDelegate.swift */,
-				C12778641FB1880E002FA07B /* FirstViewController.swift */,
-				C12778661FB1880E002FA07B /* SecondViewController.swift */,
-				C16DEC541FB94EC900D0F99E /* ThirdViewController.swift */,
-				C16DEC561FB94F0B00D0F99E /* FourthViewController.swift */,
-				C16DEC581FB94F4E00D0F99E /* FifthViewController.swift */,
 				C12778681FB1880E002FA07B /* Main.storyboard */,
+				C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */,
+				C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */,
+				C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */,
+				C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */,
+				C1EBB3921FBA404900C4A012 /* Note.storyboard */,
+				C1EBB3941FBA405900C4A012 /* NoteViewController.swift */,
+				C1EBB3961FBA415300C4A012 /* Timer.storyboard */,
+				C1EBB3981FBA416600C4A012 /* TimerViewController.swift */,
+				C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */,
+				C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */,
 				C127786B1FB1880E002FA07B /* Assets.xcassets */,
 				C127786D1FB1880E002FA07B /* LaunchScreen.storyboard */,
 				C12778701FB1880E002FA07B /* Info.plist */,
@@ -191,8 +206,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EBB38B1FBA39C200C4A012 /* Calendar.storyboard in Resources */,
+				C1EBB38F1FBA3D0300C4A012 /* Flashcard.storyboard in Resources */,
+				C1EBB3931FBA404900C4A012 /* Note.storyboard in Resources */,
 				C127786F1FB1880E002FA07B /* LaunchScreen.storyboard in Resources */,
+				C1EBB39D1FBA424A00C4A012 /* ToDo.storyboard in Resources */,
 				C127786C1FB1880E002FA07B /* Assets.xcassets in Resources */,
+				C1EBB3971FBA415300C4A012 /* Timer.storyboard in Resources */,
 				C127786A1FB1880E002FA07B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,12 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C16DEC591FB94F4E00D0F99E /* FifthViewController.swift in Sources */,
-				C12778671FB1880E002FA07B /* SecondViewController.swift in Sources */,
+				C1EBB3991FBA416600C4A012 /* TimerViewController.swift in Sources */,
+				C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */,
 				C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */,
-				C16DEC551FB94EC900D0F99E /* ThirdViewController.swift in Sources */,
-				C12778651FB1880E002FA07B /* FirstViewController.swift in Sources */,
-				C16DEC571FB94F0B00D0F99E /* FourthViewController.swift in Sources */,
+				C1EBB38D1FBA3BE300C4A012 /* CalendarViewController.swift in Sources */,
+				C1EBB39B1FBA421400C4A012 /* ToDoViewController.swift in Sources */,
+				C1EBB3911FBA3DA500C4A012 /* FlashcardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
