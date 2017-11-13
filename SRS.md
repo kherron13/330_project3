@@ -297,13 +297,14 @@ Once users download the application, they will be prompted with a login
 screen that allows the user to either choose to login with an existing
 account or sign-up with any registered email account. After they have
 signed in, the user will be taken to the home screen where the user will
-be able to navigate throughout the app.
+be able to navigate throughout the app. The authentication will be saved in 
+an SQL database, as well as the new user information.
 
 In this home screen, the user will be able to immediately start creating
 notes for their classes. Their class notes will be scrollable lists,
-where they can view each individual note. There will also be a standard
-navigation bar at the bottom of the screen that will have four icons,
-that will navigate to their each respective screen: the calendar screen,
+where they can view each individual note. These notes will be saved within the app for easy accessibility.
+There will also be a standard navigation bar at the bottom of the screen that will have four icons,
+that will serve the purpose of navigating to their respective screen: the calendar screen,
 to-do screen, notes screen and timer screen. There will also be a button
 on the top right for application settings, where the user will be able
 to adjust productivity timers and account settings.
@@ -315,8 +316,8 @@ their assignments, tests dates, and other events. They will also be able
 to integrate their own events into this calendar. The calendar
 functionality will be within its own home screen, which is navigated to
 from the standard bottom bar. The calendar view will, by default, be
-displayed in monthly view, but can easily be set to display weekly and
-daily views as well.
+displayed in table view. Once the events in the calendar approach their date,
+the user will be sent a push notification as a reminder.
 
 ### 4.2  Productivity Reminder/ Break Timer
 
@@ -334,7 +335,9 @@ The note taking functionality will allow users to create, edit, and
 organize notes. The user will be able to search for certain notes by
 keyword, topics, and mentions. The notes will be organized by class, for
 easy accessibility. The notes will be displayed on its own screen, which
-will be able to be accessed by the an icon on the bottom bar.
+will be able to be accessed by the an icon on the bottom bar.The user will 
+have an option to desginate whether or not they want certain notes to become 
+flashcards.
 
 ### 4.4 Flashcard Creator
 
@@ -342,7 +345,8 @@ Similar to Quizlet, the application will allow the user to build
 flashcards from the notes they created. The user will also be able to
 use their created flashcard sets to study material efficiently. The
 flashcard functionality will be combined with the notes screen,
-essentially, flashcards will be two-sided notes.
+essentially, flashcards will be two-sided notes. The front side will be 
+the title of the note and the backside will be the note description.
 
 ### 4.5 To-Do list
 
@@ -351,7 +355,7 @@ have the option to create a list of to-do’s, which in theory is just a
 check list. This list will be on it’s own respective page as well and
 send notifications to the user that the due date is approaching. Once
 the set due date has passed, the specific to-do will be labeled “late”
-and highlighted in red.
+and highlighted in red. 
 
 ## Other Nonfunctional Requirements
 
