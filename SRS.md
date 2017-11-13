@@ -370,12 +370,17 @@ and highlighted in red.
 **5.1 Performance Requirements:**
 
 Trusting the instincts, we decided to implement a very friendly
-interface that will allow to user to reach the feature he wants with *5
-or less clicks* (verify with teammates). Focusing on simple yet
+interface that will allow to user to reach the feature he wants with 5
+or less clicks. Focusing on simple yet
 effective, our application should have very minimal time delays for
 displaying and outputting data. After verifying user authentication, our
 application should automatically be synched with the calendar in order
 to display the relevant event, tasks and notifications from the account.
+
+Since we are adhering to the native SDK, our power consumption and memory
+should be regulated by the phone's OS and should not give any abnormal errors.
+Memory should not be a problem for the user, as our app is focused so as not to
+use any other resources it does not actually need in its features.
 
 The interface of the app is fairly easy to navigate, so the user should
 not have any problem when viewing, deleting or creating notes. The user
@@ -401,7 +406,7 @@ submitted and uploaded on their store. Link:
 The user information that is shared to us will be saved, stored and
 protected on the server. It is very important for us to protect the
 information that is shared, but it is utterly important the user’s
-personal information, such as financial information, is safely stored.
+personal information is safely stored.
 The user can select their verification or account retrieval options. As
 a default, all the information is considered private unless the user
 specifies to generate a sharable link (or something similar).
@@ -410,22 +415,27 @@ specifies to generate a sharable link (or something similar).
 
 **Availability:** The application should be ready to operate at all
 times. Even if the internet connection is faulty, the user should still
-be able to access and view his data.
+be able to access and view his data. The user is able to view his notes
+even when working online and the notifications should run fine.
 
 **Adaptability:** the majority of the features are intuitive, and it is
 highly likely our users are familiar with other applications that share
 the same features so for the most part our users familiar with the
-features.
+features. The only thing the user would need to regulate personally would
+be the time between break/study sessions.
 
 **Flexibility:** allows the user to adjust his study/ break intervals.
 Should work online and offline.
 
 **Testability:** we will use our fellow classmates as a small, but
-testable group of subjects.
+testable group of subjects. Testing for the most basic errors such as:
+saving an empty note, saving when offline, etc.
 
 **Usability:** our app should be intuitive and as such would take little
 for the user to get accustomed to. The user should experience no problem
-displaying and saving information.
+displaying and saving information. A person without previous knowledge should
+be able to use/navigate the app and be able to familiarize themselves with the
+features fairly quickly.
 
 **Appendix: Analysis Models**
 
