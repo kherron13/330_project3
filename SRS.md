@@ -164,7 +164,7 @@ The product developed will provide a general/multipurpose productivity app for s
 
 ### 2.2 Product Functions
 
-The main tasks the system will perform are to:
+The main tasks the system will perform are:
 
 o   Due dates reminder
 
@@ -176,50 +176,32 @@ o   Note Taking Functionality
 
 o   To-do lists
 
-1.   The productivity timer will be used to increase overall
-    productivity with interval breaks. Our To-dos can allow you to set
-    notifications for the next To-do for some time after finishing the
-    previous To-do
-
-<!-- -->
-
-1.  User sets timer which allows for
-    breaks between different subjects.
-
-o   Create notecards from the notes.
-
-1.  Like Quizlet, the application will allow the user to build
-    flashcards from the notes they created. The user will also be able
-    to use their created flashcard sets to study material efficiently.
+o  Create notecards 
 
 ### 2.3 User Classes and Characteristics
 
-There will be two categories of users in our product:
-
-| **User**         | **Characteristics**                                                                                                        |
-|------------------|----------------------------------------------------------------------------------------------------------------------------|
-| Student User:   | The app is tailored to help students with time management and boost productivity when working on assignments or studying for exams. |
+There will be one category of users in our product:
+                                                                                        
+Student User: The app is tailored to help students with time management and boost productivity when working on                               assignments or studying for exams. 
 
 ### 2.4 Operating Environment
 
-OE-1 The system shall be compatible with:
-| **Environment**           | **Standards** |
-|---------------------------|---------------|
-| Mobile Operating System:  | iOS           |
+The system will be compatible with iOS 11.1.1 for now, in the future we hope to extend it to Android 8.0 
 
-### 2.5 Design and Implementation Constraints
 
-Boost system shall be coded in the Swift programming language.
+### 2.5 Design and Implementation Constraints**
 
-The Boost system shall be completed by Monday Dec 4th as of the deadline set by Professor Thiruvathukal.
+The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (The goal is to find a way to use all the features of the app in case the user is limited with internet access) 
+The Boost system will be coded in the Swift programming language.
 
-### 2.6 User Documentation
+### 2.6 User Documentation**
 
 The Boost system shall provide an integrated help system that describes the rules of the system, and illustrates all system functions. The Boost system shall provide this information in the time of downloading the app. This documentation will include in-app tutorials and help documents referenceable through user interface.
 
 ### 2.7 Assumptions and Dependencies
 
-The dependencies in the product: First, it will be built as a native iOS application and will require an iOS device. Second, if there is no internet connection it will be difficult to use all the features in the product. For example, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
+One dependency is that the product will be exclusively used in an iOS device since the product will be built as a native iOS application. One assumption, is the internet connectivity it will be difficult to use all the features in the product. For example, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
+
 
 ## 3. External Interface Requirements
 
