@@ -161,17 +161,15 @@ The product developed will provide a general/multipurpose productivity app for s
 
 The main tasks the system will perform are:
 
-o   Due dates reminder
+o Calendar for due dates and events
 
-o   Productivity timer
+o Productivity timer
 
-o   Event Calendar
+o Note taking functionality
 
-o   Note Taking Functionality
+o To-do lists
 
-o   To-do lists
-
-o  Create notecards 
+o Create flashcards 
 
 ### 2.3 User Classes and Characteristics
 
