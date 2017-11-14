@@ -97,16 +97,11 @@
 			children = (
 				C12778621FB1880E002FA07B /* AppDelegate.swift */,
 				C12778681FB1880E002FA07B /* Main.storyboard */,
-				C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */,
-				C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */,
-				C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */,
-				C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */,
-				C1EBB3921FBA404900C4A012 /* Note.storyboard */,
-				C1EBB3941FBA405900C4A012 /* NoteViewController.swift */,
-				C1EBB3961FBA415300C4A012 /* Timer.storyboard */,
-				C1EBB3981FBA416600C4A012 /* TimerViewController.swift */,
-				C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */,
-				C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */,
+				C18F2D521FBA9FFC00B8F978 /* Calendar */,
+				C18F2D531FBAA00800B8F978 /* Flashcard */,
+				C18F2D541FBAA01900B8F978 /* Note */,
+				C18F2D551FBAA02900B8F978 /* Timer */,
+				C18F2D561FBAA03500B8F978 /* ToDo */,
 				C127786B1FB1880E002FA07B /* Assets.xcassets */,
 				C127786D1FB1880E002FA07B /* LaunchScreen.storyboard */,
 				C12778701FB1880E002FA07B /* Info.plist */,
@@ -121,6 +116,51 @@
 				C127787B1FB1880E002FA07B /* Info.plist */,
 			);
 			path = BoostTests;
+			sourceTree = "<group>";
+		};
+		C18F2D521FBA9FFC00B8F978 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */,
+				C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		C18F2D531FBAA00800B8F978 /* Flashcard */ = {
+			isa = PBXGroup;
+			children = (
+				C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */,
+				C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */,
+			);
+			path = Flashcard;
+			sourceTree = "<group>";
+		};
+		C18F2D541FBAA01900B8F978 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				C1EBB3921FBA404900C4A012 /* Note.storyboard */,
+				C1EBB3941FBA405900C4A012 /* NoteViewController.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		C18F2D551FBAA02900B8F978 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				C1EBB3961FBA415300C4A012 /* Timer.storyboard */,
+				C1EBB3981FBA416600C4A012 /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C18F2D561FBAA03500B8F978 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */,
+				C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */,
+			);
+			path = ToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
