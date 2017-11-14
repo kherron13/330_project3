@@ -98,14 +98,15 @@ Ultimately, it is a guide, which will help them understand the apps main purpose
 them to build upon it.
 
 This document is written to help users understand what Boost is and how it will run. It is a guide intended to help
-them comprehend how each function works and how it will benefit them. This document also serves as a resource which will help users naviagte through the app. 
+them comprehend how each function works and how it will benefit them. This document also serves as a resource which will help users naviagte through the app. The idea of having all these tools in one app was created when residents at Simpson Hall were asked what would help them 
 
 ### 1.4 Product Scope
 
-Boost is an iOS application designed primarily to help
-students throughout their academic year plan and organize their work. It is essentially a set of tools, such as a calendar, a note pad, flashcards, timer, and to-do list all placed under one app. The idea is to help studetns keep orginaized without the hassle of having to use different apps. 
+Through primary research, we found that a large portion of students already use apps such as calendars, notes, and to-do list, but they also expressed that it was an inconvenience for them to have to use so many apps. Boost is an iOS application designed to primarily tackle this problem and help students stay organized throughout their academic year all while using one app. The app is essentially a set of tools, such as a calendar, a note pad, flashcards, productivity timer, and a to-do list. With Boost, students can obtain organization without the hassle or worry of having to use multiple apps. 
 
-This app focuses on one user so this app will not allow the user to share infomation with others.  
+Through Secondary research, our developing team also found that students who are organized are much more likely to obtain better grades. Boost is designed to be a convenient app for users to easily access and organize all their tasks. Boost is intended to be easily navigated in order to encourage organization and make it fun.
+
+Boost is an app that will help users stay on track of their work.  It will not allow users to share their information. If users would like to send their friends or colleagues a file of their notes or flashcards, they will not be able to do so.  
 
 1.  Potential User \#1: Brad A. MacDonald
     [*-bmacdonald@luc.edu*](mailto:-bmacdonald@luc.edu)
@@ -147,9 +148,7 @@ This app focuses on one user so this app will not allow the user to share infoma
 
 ### 1.5 References
 
-Dimeo, F., et al. "Benefits from aerobic exercise in patients with major
-depression: a pilot study." *British journal of sports medicine*35.2
-(2001): 114-117.
+Cheng, Victoria. “Better Organization, Better Grades.” Boston.com, The Boston Globe, 6 Jan. 2008, archive.boston.com/news/local/articles/2008/01/06/better_organization_better_grades/.
 
 ## 2. Overall Description
 
