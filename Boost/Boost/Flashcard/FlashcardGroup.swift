@@ -1,7 +1,7 @@
 //
 //  FlashcardGroup.swift
 //  Boost
-//
+//  A FlashcardGroup will act as a deck of flashcards
 //  Created by Kelly Herron on 11/13/17.
 //  Copyright © 2017 Kelly Herron. All rights reserved.
 //
