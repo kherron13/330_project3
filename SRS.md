@@ -98,30 +98,25 @@ Ultimately, it is a guide, which will help them understand the apps main purpose
 them to build upon it.
 
 This document is written to help users understand what Boost is and how it will run. It is a guide intended to help
-them comprehend how each function works and how it will benefit them. This document also serives as a resource which will help users naviagte through the app. 
+them comprehend how each function works and how it will benefit them. This document also serves as a resource which will help users naviagte through the app. 
 
 ### 1.4 Product Scope
 
-Boost is an IOS application designed primarily to help
-students throughout their academic year plan and organize their work. It is essentially a set of tools, such as a calendar, a note pad, flashcards, timer, and to-do list all placed under one app. The idea is to help studetns keep orginaized without the hassile of having to use different apps. 
+Boost is an iOS application designed primarily to help
+students throughout their academic year plan and organize their work. It is essentially a set of tools, such as a calendar, a note pad, flashcards, timer, and to-do list all placed under one app. The idea is to help studetns keep orginaized without the hassle of having to use different apps. 
 
 This app focuses on one user so this app will not allow the user to share infomation with others.  
 
 1.  Potential User \#1: Brad A. MacDonald
     [*-bmacdonald@luc.edu*](mailto:-bmacdonald@luc.edu)
 
-    1.  Student at Loyola University majoring in History and
-        > Secondary Education.
+    1.  Student at Loyola University majoring in History and Secondary Education.
 
-    2.  Would like to see an app that syncs my to do list with
-        > my calendar.
+    2.  Would like to see an app that syncs my to do list with my calendar.
 
-    3.  Knows peers that have difficulty with study habits, remembering
-        > dates, and time management.
+    3.  Knows peers that have difficulty with study habits, remembering dates, and time management.
 
-    4.  They would like to see an app that combines all of these assets
-        > (calendar, to-do, flashcards, and productivity reminder)
-        >  into one.
+    4.  They would like to see an app that combines all of these assets (calendar, to-do, flashcards, and productivity reminder) into one.
 
 <!-- -->
 
@@ -166,17 +161,15 @@ The product developed will provide a general/multipurpose productivity app for s
 
 The main tasks the system will perform are:
 
-o   Due dates reminder
+o Calendar for due dates and events
 
-o   Productivity timer
+o Productivity timer
 
-o   Event Calendar
+o Note taking functionality
 
-o   Note Taking Functionality
+o To-do lists
 
-o   To-do lists
-
-o  Create notecards 
+o Create flashcards 
 
 ### 2.3 User Classes and Characteristics
 
@@ -191,7 +184,7 @@ The system will be compatible with iOS 11.1.1 for now, in the future we hope to 
 
 ### 2.5 Design and Implementation Constraints
 
-The fact that the application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the interne. (We hope to find a way that allow users to use all the features in the app while they are limited with internet access) However, the user will be able to write notes, study for exams and quizzes with the flashcards feature, and study productively with the smart productivity timer when they are not connected with the internet.
+The application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the internet. (We hope to find a way that will allow users to use all the features in the app while they are limited with internet access) However, the user will be able to write notes, study for exams and quizzes with the flashcards feature, and study productively with the smart productivity timer when they are not connected with the internet.
 The Boost system will be coded in the Swift programming language which is another constraint because it will only be available for iOS devices.
 
 
@@ -201,9 +194,9 @@ The Boost system shall provide an integrated help system that describes the rule
 
 ### 2.7 Assumptions and Dependencies
 
-o One dependency, is that the product will be exclusively used in an iOS device since the product will be built as a native iOS application. 
+o One dependency is that the product will be exclusively used on an iOS device since the product will be built as a native iOS application. 
 
-o One assumption, is the internet connectivity, the user will not be able to synch all the notes and the calendar events because there is no internet connection.
+o One assumption is the internet connectivity. The user will not be able to sync all the notes and the calendar events because there is no internet connection.
 
 
 ## 3. External Interface Requirements
@@ -309,7 +302,7 @@ essentially, flashcards will be two-sided notes.
 
 This functionality will be similar to that of Basecamp. The user will
 have the option to create a list of to-do’s, which in theory is just a
-check list. This list will be on it’s own respective page as well and
+check list. This list will be on its own respective page as well and
 send notifications to the user that the due date is approaching. Once
 the set due date has passed, the specific to-do will be labeled “late”
 and highlighted in red.
@@ -320,7 +313,7 @@ and highlighted in red.
 
 Trusting the instincts, we decided to implement a very friendly
 interface that will allow to user to reach the feature he wants with 5
-or less clicks. Focusing on simple yet
+or less taps. Focusing on simple yet
 effective, our application should have very minimal time delays for
 displaying and outputting data. After verifying user authentication, our
 application should automatically be synched with the calendar in order
