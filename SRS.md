@@ -92,13 +92,8 @@ This document is written using Markdown syntax. All headers are in atx-style, us
 
 ### 1.3 Intended Audience and Reading Suggestions
 
-This document is written for two groups, a development team and the users. 
-Development teams will be able to read this document and understand the implementation of the app. 
-Ultimately, it is a guide, which will help them understand the apps main purpose and allow
-them to build upon it.
-
-This document is written to help users understand what Boost is and how it will run. It is a guide intended to help
-them comprehend how each function works and how it will benefit them. This document also serves as a resource which will help users naviagte through the app. The idea of having all these tools in one app was created when residents at Simpson Hall were asked what would help them 
+This document is written for two groups, a development team and the users. Development teams will be able to read this document and understand the implementation of the app. Ultimately, it is a guide, which will help them understand the apps main purpose and allow them to build upon it.
+This document is written to help users understand what Boost is and how it will run. It is a guide intended to help them comprehend how each function will work and how it will benefit them. This document also serves as a resource which will help users navigate through the app. 
 
 ### 1.4 Product Scope
 
@@ -106,7 +101,7 @@ Through primary research, we found that a large portion of students already use 
 
 Through Secondary research, our developing team also found that students who are organized are much more likely to obtain better grades. Boost is designed to be a convenient app for users to easily access and organize all their tasks. Boost is intended to be easily navigated in order to encourage organization and make it fun.
 
-Boost is an app that will help users stay on track of their work.  It will not allow users to share their information. If users would like to send their friends or colleagues a file of their notes or flashcards, they will not be able to do so.  
+Boost is an app that will help users stay on track of their work. It will not allow users to share their information. If a user would like to send their friends or colleagues a file of their notes or flashcards, they will not be able to do so. Unable to share notes or task may be a small inconvenience as some users may find it helpful to read others class notes. Boost unfortunately will not let users share info because it is only concerned with helping the user of the app stay on track of their tasks. 
 
 1.  Potential User \#1: Brad A. MacDonald
     [*-bmacdonald@luc.edu*](mailto:-bmacdonald@luc.edu)
