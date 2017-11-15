@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C120B1F41FBBF46800D86288 /* FlashcardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120B1F31FBBF46800D86288 /* FlashcardTableViewController.swift */; };
+		C120B1F61FBBF48C00D86288 /* FlashcardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120B1F51FBBF48C00D86288 /* FlashcardTableViewCell.swift */; };
 		C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778621FB1880E002FA07B /* AppDelegate.swift */; };
 		C127786A1FB1880E002FA07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12778681FB1880E002FA07B /* Main.storyboard */; };
 		C127786C1FB1880E002FA07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C127786B1FB1880E002FA07B /* Assets.xcassets */; };
@@ -20,7 +22,6 @@
 		C1EBB38B1FBA39C200C4A012 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */; };
 		C1EBB38D1FBA3BE300C4A012 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */; };
 		C1EBB38F1FBA3D0300C4A012 /* Flashcard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */; };
-		C1EBB3911FBA3DA500C4A012 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */; };
 		C1EBB3931FBA404900C4A012 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB3921FBA404900C4A012 /* Note.storyboard */; };
 		C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB3941FBA405900C4A012 /* NoteViewController.swift */; };
 		C1EBB3971FBA415300C4A012 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB3961FBA415300C4A012 /* Timer.storyboard */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C120B1F31FBBF46800D86288 /* FlashcardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewController.swift; sourceTree = "<group>"; };
+		C120B1F51FBBF48C00D86288 /* FlashcardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewCell.swift; sourceTree = "<group>"; };
 		C127785F1FB1880E002FA07B /* Boost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12778621FB1880E002FA07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C12778691FB1880E002FA07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		C1EBB38C1FBA3BE300C4A012 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Flashcard.storyboard; sourceTree = "<group>"; };
-		C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		C1EBB3921FBA404900C4A012 /* Note.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
 		C1EBB3941FBA405900C4A012 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		C1EBB3961FBA415300C4A012 /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
@@ -144,9 +146,10 @@
 				C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */,
 				C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */,
 				C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */,
+				C120B1F31FBBF46800D86288 /* FlashcardTableViewController.swift */,
+				C120B1F51FBBF48C00D86288 /* FlashcardTableViewCell.swift */,
 				C18F2D571FBAA99200B8F978 /* Flashcard.swift */,
 				C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */,
-				C1EBB3901FBA3DA500C4A012 /* FlashcardViewController.swift */,
 			);
 			path = Flashcard;
 			sourceTree = "<group>";
@@ -292,10 +295,11 @@
 				C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */,
 				C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */,
 				C1EBB38D1FBA3BE300C4A012 /* CalendarViewController.swift in Sources */,
+				C120B1F41FBBF46800D86288 /* FlashcardTableViewController.swift in Sources */,
 				C18F2D5A1FBAAB6100B8F978 /* FlashcardGroup.swift in Sources */,
 				C1EBB39B1FBA421400C4A012 /* ToDoViewController.swift in Sources */,
-				C1EBB3911FBA3DA500C4A012 /* FlashcardViewController.swift in Sources */,
 				C18F2D581FBAA99200B8F978 /* Flashcard.swift in Sources */,
+				C120B1F61FBBF48C00D86288 /* FlashcardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
