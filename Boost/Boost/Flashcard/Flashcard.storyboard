@@ -53,7 +53,13 @@
                             <outlet property="delegate" destination="WKS-ze-KR8" id="ZWS-ao-Bz4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Decks" id="DiE-2t-qXO"/>
+                    <navigationItem key="navigationItem" title="Decks" id="DiE-2t-qXO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Szb-ve-7j6">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="WKS-ze-KR8" id="eVf-xi-Cf3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLW-02-brW" userLabel="First Responder" sceneMemberID="firstResponder"/>

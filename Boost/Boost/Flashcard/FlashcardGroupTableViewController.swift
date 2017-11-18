@@ -12,9 +12,13 @@ class FlashcardGroupTableViewController: UITableViewController {
     
     //MARK: Properties
     var flashcardGroups = [FlashcardGroup]()
+    var manuallySelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //suppoort editing flashcard groups in table
+        navigationItem.leftBarButtonItem = editButtonItem
         
         //Load sample data
         loadSampleFlashcardGroups()
@@ -51,25 +55,25 @@ class FlashcardGroupTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            flashcardGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -101,14 +105,45 @@ class FlashcardGroupTableViewController: UITableViewController {
             fatalError("Unexpected sender: \(String(describing: sender))")
         }
         
-        guard let indexPath = tableView.indexPath(for: selectedFlashcardGroupCell) else {
+        let indexPath: IndexPath! = manuallySelected ? IndexPath(row: 0, section: 0) : tableView.indexPath(for: selectedFlashcardGroupCell)
+        
+        guard indexPath != nil else {
             fatalError("The selected cell is not being displayed by the table")
         }
+        manuallySelected = false
         
         let selectedFlashcardGroup = flashcardGroups[indexPath.row]
         fgDetailViewController.flashcardGroup = selectedFlashcardGroup
     }
  
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        //adapted from: https://www.simplifiedios.net/ios-dialog-box-with-input/
+        let alert = UIAlertController(title: "Add Deck", message: "Enter the name of the new deck", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) {
+            (_) in
+            let name = alert.textFields?[0].text
+            self.flashcardGroups.insert(FlashcardGroup(title: name!, flashcards: [Flashcard]()), at: 0)
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
+            //TODO: segue into new deck without crashing
+            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
+            //self.tableView(self.tableView, didSelectRowAt: indexPath)
+            //find out info about where new cell is in tableview
+            self.manuallySelected = true
+            self.performSegue(withIdentifier: "ShowFlashcards", sender: self.tableView(self.tableView, cellForRowAt: indexPath))
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alert.addTextField{ (textField) in
+            textField.placeholder = "Enter Name"
+        }
+        
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
     //MARK: Private Methods
     private func loadSampleFlashcardGroups() {
