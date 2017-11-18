@@ -94,5 +94,15 @@ class FlashcardTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: Actions
+    @IBAction func unwindToFlashcardList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? FlashcardViewController, let flashcard = sourceViewController.flashcard {
+            //add new flashcard
+            let newIndexPath = IndexPath(row: 0, section: 0)
+            flashcardGroup.group.insert(flashcard, at: 0)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 
 }

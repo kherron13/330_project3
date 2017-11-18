@@ -16,6 +16,7 @@
 		C127787A1FB1880E002FA07B /* BoostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778791FB1880E002FA07B /* BoostTests.swift */; };
 		C127BAF61FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */; };
 		C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */; };
+		C14E65101FBFC2D9008391BE /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */; };
 		C18F2D581FBAA99200B8F978 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D571FBAA99200B8F978 /* Flashcard.swift */; };
 		C18F2D5A1FBAAB6100B8F978 /* FlashcardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */; };
 		C18F2D5C1FBAB17F00B8F978 /* FlashcardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */; };
@@ -54,6 +55,7 @@
 		C127787B1FB1880E002FA07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewCell.swift; sourceTree = "<group>"; };
 		C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewController.swift; sourceTree = "<group>"; };
+		C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		C18F2D571FBAA99200B8F978 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroup.swift; sourceTree = "<group>"; };
 		C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTests.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */,
+				C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */,
 				C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */,
 				C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */,
 				C120B1F31FBBF46800D86288 /* FlashcardTableViewController.swift */,
@@ -300,6 +303,7 @@
 				C1EBB39B1FBA421400C4A012 /* ToDoViewController.swift in Sources */,
 				C18F2D581FBAA99200B8F978 /* Flashcard.swift in Sources */,
 				C120B1F61FBBF48C00D86288 /* FlashcardTableViewCell.swift in Sources */,
+				C14E65101FBFC2D9008391BE /* FlashcardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -118,6 +118,7 @@ class FlashcardGroupTableViewController: UITableViewController {
  
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         //adapted from: https://www.simplifiedios.net/ios-dialog-box-with-input/
+        //TODO: disable enter button if empty string
         let alert = UIAlertController(title: "Add Deck", message: "Enter the name of the new deck", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Enter", style: .default) {
             (_) in
@@ -125,10 +126,7 @@ class FlashcardGroupTableViewController: UITableViewController {
             self.flashcardGroups.insert(FlashcardGroup(title: name!, flashcards: [Flashcard]()), at: 0)
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .automatic)
-            //TODO: segue into new deck without crashing
             self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
-            //self.tableView(self.tableView, didSelectRowAt: indexPath)
-            //find out info about where new cell is in tableview
             self.manuallySelected = true
             self.performSegue(withIdentifier: "ShowFlashcards", sender: self.tableView(self.tableView, cellForRowAt: indexPath))
         }
