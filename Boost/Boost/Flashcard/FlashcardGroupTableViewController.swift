@@ -13,6 +13,7 @@ class FlashcardGroupTableViewController: UITableViewController {
     //MARK: Properties
     var flashcardGroups = [FlashcardGroup]()
     var manuallySelected = false
+    var lastSelectedIndex: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,13 @@ class FlashcardGroupTableViewController: UITableViewController {
         
         //Load sample data
         loadSampleFlashcardGroups()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = lastSelectedIndex {
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
 
     // MARK: - Table view data source
@@ -106,6 +114,8 @@ class FlashcardGroupTableViewController: UITableViewController {
             fatalError("The selected cell is not being displayed by the table")
         }
         manuallySelected = false
+        
+        lastSelectedIndex = indexPath
         
         let selectedFlashcardGroup = flashcardGroups[indexPath.row]
         fgDetailViewController.flashcardGroup = selectedFlashcardGroup

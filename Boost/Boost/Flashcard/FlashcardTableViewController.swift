@@ -122,14 +122,44 @@ class FlashcardTableViewController: UITableViewController {
     
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
         if editButton.style == .plain {
-            self.tableView.setEditing(true, animated: true)
-            editButton.title = "Done"
-            editButton.style = .done
+            beginEditing()
         } else if editButton.style == .done {
-            self.tableView.setEditing(false, animated: true)
-            editButton.title = "Edit"
-            editButton.style = .plain
+            endEditing()
         }
     }
+    @IBAction func renameDeck(_ sender: UIBarButtonItem) {
+        //adapted from: https://www.simplifiedios.net/ios-dialog-box-with-input/
+        //TODO: disable enter button if same name or empty string
+        let alert = UIAlertController(title: "Rename Deck", message: "Enter the new name of the deck", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Enter", style: .default) {
+            (_) in
+            let name = alert.textFields?[0].text
+            self.flashcardGroup.title = name!
+            self.navigationItem.title = name
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        
+        alert.addTextField{ (textField) in
+            textField.placeholder = "Enter Name"
+        }
+        
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
+    //MARK: Private methods
+    private func endEditing() {
+        self.tableView.setEditing(false, animated: true)
+        editButton.title = "Edit"
+        editButton.style = .plain
+    }
+    
+    private func beginEditing() {
+        self.tableView.setEditing(true, animated: true)
+        editButton.title = "Done"
+        editButton.style = .done
+    }
 }

@@ -85,6 +85,12 @@
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="W2C-qJ-X8d"/>
+                                <barButtonItem title="Rename Deck" id="rhp-4i-w0o">
+                                    <connections>
+                                        <action selector="renameDeck:" destination="Tbm-Kb-Aiy" id="KEv-uQ-T6c"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="u8U-gU-cq3"/>
                                 <barButtonItem title="Add" id="lyH-V1-vdt">
                                     <connections>
                                         <segue destination="TtV-8b-ewG" kind="presentation" identifier="AddItem" id="alL-0l-BVQ"/>
