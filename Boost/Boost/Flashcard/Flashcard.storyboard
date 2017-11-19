@@ -79,7 +79,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem systemItem="edit" id="7r9-xR-AWU"/>
+                                <barButtonItem title="Edit" id="7r9-xR-AWU">
+                                    <connections>
+                                        <action selector="editButtonPressed:" destination="Tbm-Kb-Aiy" id="pV6-qs-cLt"/>
+                                    </connections>
+                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="W2C-qJ-X8d"/>
                                 <barButtonItem title="Add" id="lyH-V1-vdt">
                                     <connections>
@@ -119,6 +123,9 @@
                     <navigationItem key="navigationItem" title="Title" id="nWC-Gk-9ZU">
                         <barButtonItem key="rightBarButtonItem" title="Quiz" id="m6i-xC-gIU"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="7r9-xR-AWU" id="GyC-HD-dpb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJ9-UA-pr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
