@@ -35,6 +35,14 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
         frontTextField.delegate = self
         backTextView.delegate = self
         
+        if let flashcard = flashcard {
+            navigationItem.title = flashcard.front
+            frontTextField.text = flashcard.front
+            validFront = true
+            backTextView.text = flashcard.back
+            validBack = true
+        }
+        
         updateSaveButtonEnabled()
     }
     
@@ -94,7 +102,14 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        //view controller needs to be dismissed differently depending on style of presentation
+        if presentingViewController is UITabBarController {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
+        } else {
+            fatalError("The FlashcardViewController is not inside a navigation controller.")
+        }
     }
 
     @objc func toolBarDoneButtonPressed(button: UIButton) {

@@ -84,24 +84,47 @@ class FlashcardTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+        case "AddItem":
+            print("Add Item")
+        case "ShowDetail":
+            guard let flashcardDetailViewController = segue.destination as? FlashcardViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let selectedFlashcardCell = sender as? FlashcardTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedFlashcardCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedFlashcard = flashcardGroup.group[indexPath.row]
+            flashcardDetailViewController.flashcard = selectedFlashcard
+        default:
+            fatalError("Unexpected Segue Identifier: \(String(describing: segue.identifier))")
+        }
     }
-    */
     
     //MARK: Actions
     @IBAction func unwindToFlashcardList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? FlashcardViewController, let flashcard = sourceViewController.flashcard {
-            //add new flashcard
-            let newIndexPath = IndexPath(row: 0, section: 0)
-            flashcardGroup.group.insert(flashcard, at: 0)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                //update existing flashcard
+                flashcardGroup.group[selectedIndexPath.row] = flashcard
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                //add new flashcard
+                let newIndexPath = IndexPath(row: 0, section: 0)
+                flashcardGroup.group.insert(flashcard, at: 0)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
 

@@ -83,7 +83,7 @@
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="W2C-qJ-X8d"/>
                                 <barButtonItem title="Add" id="lyH-V1-vdt">
                                     <connections>
-                                        <segue destination="TtV-8b-ewG" kind="presentation" id="alL-0l-BVQ"/>
+                                        <segue destination="TtV-8b-ewG" kind="presentation" identifier="AddItem" id="alL-0l-BVQ"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -107,6 +107,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="frontLabel" destination="kqq-m1-pch" id="Nsf-JE-Rl6"/>
+                                    <segue destination="UWR-nj-yQx" kind="show" identifier="ShowDetail" id="sZC-A6-nQM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -132,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="usO-UU-ho3">
-                                <rect key="frame" x="10" y="114" width="355" height="543"/>
+                                <rect key="frame" x="10" y="114" width="355" height="494"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -217,7 +218,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XM2-PQ-TVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938" y="-99"/>
+            <point key="canvasLocation" x="2898" y="-36"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sZC-A6-nQM"/>
+    </inferredMetricsTieBreakers>
 </document>
