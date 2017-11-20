@@ -56,27 +56,13 @@ class FlashcardTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             flashcardGroup.group.remove(at: indexPath.row)
+            //TODO: save
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -117,6 +103,7 @@ class FlashcardTableViewController: UITableViewController {
                 flashcardGroup.group.insert(flashcard, at: 0)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            //TODO: save
         }
     }
     
@@ -135,6 +122,7 @@ class FlashcardTableViewController: UITableViewController {
             (_) in
             let name = alert.textFields?[0].text
             self.flashcardGroup.title = name!
+            //TODO: save
             self.navigationItem.title = name
         }
         

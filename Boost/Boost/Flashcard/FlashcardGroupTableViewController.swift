@@ -21,8 +21,12 @@ class FlashcardGroupTableViewController: UITableViewController {
         //suppoort editing flashcard groups in table
         navigationItem.leftBarButtonItem = editButtonItem
         
-        //Load sample data
-        loadSampleFlashcardGroups()
+        if let savedFlashcardGroups = loadFlashcardGroups() {
+            flashcardGroups += savedFlashcardGroups
+        } else {
+            //Load sample data
+            loadSampleFlashcardGroups()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +34,21 @@ class FlashcardGroupTableViewController: UITableViewController {
         if let indexPath = lastSelectedIndex {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
+    }
+    
+    //MARK: Persist data
+    
+    public func saveFlashcardGroups() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(flashcardGroups, toFile: FlashcardGroup.ArchiveURL.path)
+        if !isSuccessfulSave {
+            let alert = UIAlertController(title: "Error", message: "Flaschards failed to save.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Enter", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func loadFlashcardGroups() -> [FlashcardGroup]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: FlashcardGroup.ArchiveURL.path) as? [FlashcardGroup]
     }
 
     // MARK: - Table view data source
@@ -71,29 +90,12 @@ class FlashcardGroupTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             flashcardGroups.remove(at: indexPath.row)
+            saveFlashcardGroups()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -129,6 +131,7 @@ class FlashcardGroupTableViewController: UITableViewController {
             (_) in
             let name = alert.textFields?[0].text
             self.flashcardGroups.insert(FlashcardGroup(title: name!, flashcards: [Flashcard]()), at: 0)
+            self.saveFlashcardGroups()
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .automatic)
             self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)

@@ -8,11 +8,17 @@
 
 import UIKit
 
-class Flashcard: NSObject, Comparable {
+class Flashcard: NSObject, Comparable, NSCoding {
     
     //MARK: Properties
     var front: String
     var back: String
+    
+    //MARK: Types
+    struct PropertyKey {
+        static let front = "front"
+        static let back = "back"
+    }
     
     //MARK: Initialization
     init(front: String, back: String) {
@@ -38,5 +44,21 @@ class Flashcard: NSObject, Comparable {
             }
         }
         return false
+    }
+    
+    //MARK: NSCoding
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(front, forKey: PropertyKey.front)
+        aCoder.encode(back, forKey: PropertyKey.back)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        guard let front = aDecoder.decodeObject(forKey: PropertyKey.front) as? String else {
+            return nil
+        }
+        guard let back = aDecoder.decodeObject(forKey: PropertyKey.back) as? String else {
+            return nil
+        }
+        self.init(front: front, back: back)
     }
 }

@@ -8,11 +8,21 @@
 
 import UIKit
 
-class FlashcardGroup: NSObject, Comparable {
+class FlashcardGroup: NSObject, Comparable, NSCoding {
     
     //MARK: Properties
     var title: String
     var group: [Flashcard]
+    
+    //MARK: Archiving Paths
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("flashcardgroups")
+    
+    //MARK: Types
+    struct PropertyKey {
+        static let title = "title"
+        static let group = "group"
+    }
     
     //MARK: Initialization
     init(title: String, flashcards: [Flashcard]) {
@@ -31,5 +41,21 @@ class FlashcardGroup: NSObject, Comparable {
     static func < (lhs: FlashcardGroup, rhs: FlashcardGroup) -> Bool {
         if lhs.title >= rhs.title { return false }
         return true
+    }
+    
+    //MARK: NSCoding
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(title, forKey: PropertyKey.title)
+        aCoder.encode(group, forKey: PropertyKey.group)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        guard let title = aDecoder.decodeObject(forKey: PropertyKey.title) as? String else {
+            return nil
+        }
+        guard let group = aDecoder.decodeObject(forKey: PropertyKey.group) as? [Flashcard] else {
+            return nil
+        }
+        self.init(title: title, flashcards: group)
     }
 }
