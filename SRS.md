@@ -71,11 +71,7 @@ November 3, 2017
 
 5.3 Software Quality Attributes  
 
-### Appendix: Analysis Models
-
-A.1 Use Case Diagram 
-
-A.2 UML Class Diagram
+### Appendix: Progress as of November 20, 2017
 
 ## 1.Introduction
 
@@ -378,10 +374,7 @@ displaying and saving information. A person without previous knowledge should
 be able to use/navigate the app and be able to familiarize themselves with the
 features fairly quickly.
 
-## Appendix: Analysis Models
+## Appendix: Progress as of November 20, 2017
 
-Use Case image saved within the Images folder
-
-## A.1 Use Case Diagram
-
-UML Diagram image saved within the Images folder
+### Flashcards
+Most of the basic functionality for creating and editing flashcard objects is complete. Persisting data currently only works from the list of flashcard decks. What is remaining is to persist data at every place where the data can be edited, such as when adding, editing, or deleting flashcards from a deck, in order to minimize unexpected data loss between app launches. The ability to quiz a user by displaying one side of a flashcard at a time has yet to be implemented. The flashcards feature is about 80% complete.
