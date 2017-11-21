@@ -380,7 +380,10 @@ features fairly quickly.
 Most of the basic functionality for creating and editing flashcard objects is complete. Persisting data currently only works from the list of flashcard decks. What is remaining is to persist data at every place where the data can be edited, such as when adding, editing, or deleting flashcards from a deck, in order to minimize unexpected data loss between app launches. The ability to quiz a user by displaying one side of a flashcard at a time has yet to be implemented. The flashcards feature is about 80% complete.
 
 ### Calendar
-The completed portion of the calendar functionality currently allows users to see the current date and click on random dates throughout the month. At this point users are not able to save an event when they click on a specific day. The function does not allow user to change the month either. Next step is to allow user to save a date on the calendar. I will also work on allowing the user to change the month on the app. The last thing I would like my function to do is notify the user when an upcoming event is coming up.
+The complete portion of the calendar functionallity allows users to see the current date and click on random dates throughout the month. At this point users are not able to save an event when they click on a specific day. App does not allow user to change the month either. Next step is to allow user to save a date on the calendar. I will also work on allowing the user to change the month on the app. The last thing I would like my function to do is notify the user when an upcoming event is coming up. 
 
 ### Notes
 Got the UI layout to display notes, a basic preview & description. The user is able to create and edit notes. Unfortunately, the user is still not able to save the notes. Next step is to allow the user to save and delete notes. The next step is to finish editing functionality and modify the aesthetics. 
+
+### To-Do List
+Created a basic UI for the To-Do List and all the main functionalities. The user is able to create, delete, and mark each to-do as complete. The To-Do List items are also saved within the applciation. The next step for me is to build a more aethetic UI, add the bottom toolbar, and lend assitence to other portions of the app.
