@@ -387,3 +387,7 @@ Got the UI layout to display notes, a basic preview & description. The user is a
 
 ### To-Do List
 Created a basic UI for the To-Do List and all the main functionalities. The user is able to create, delete, and mark each to-do as complete. The To-Do List items are also saved within the application. The next step for me is to build a more aesthetic UI, add the bottom toolbar, and lend assistance to other portions of the app.
+
+### Productivity Timer 
+So far I have created basic UI for the productivity timer function. Buttons to start and stop studying time, also, a slider for choosing the duration of the study time. The user is not able to choose the duration of the study/break yet. Also, the user is not able to be notified when the time for studying/break is up. 
+The next step is to allow users to choose a time to study/take a break. Another step has yet to be implemented is to make the timer notify the user when the time of break/study is over which is going to be a bit challenging.  
