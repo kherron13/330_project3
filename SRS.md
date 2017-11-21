@@ -378,3 +378,6 @@ features fairly quickly.
 
 ### Flashcards
 Most of the basic functionality for creating and editing flashcard objects is complete. Persisting data currently only works from the list of flashcard decks. What is remaining is to persist data at every place where the data can be edited, such as when adding, editing, or deleting flashcards from a deck, in order to minimize unexpected data loss between app launches. The ability to quiz a user by displaying one side of a flashcard at a time has yet to be implemented. The flashcards feature is about 80% complete.
+
+### Calendar
+Got calendar layout to run and user is able to see the current date. User is also allowed to click on random dates throughout the month. Unfortunately, users are not able to save an event when they click on a specific date. App does not allow user to change the month either. Next step is to allow user to save a date on the calendar. After that I will work on allowing the user to change the month on the app. The last thing I would like my function to do is notify the user when an upcoming event is coming up. 
