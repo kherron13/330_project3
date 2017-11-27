@@ -127,7 +127,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="nWC-Gk-9ZU">
-                        <barButtonItem key="rightBarButtonItem" title="Quiz" id="m6i-xC-gIU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Quiz" id="m6i-xC-gIU">
+                            <connections>
+                                <segue destination="vmT-qP-c8T" kind="show" identifier="Quiz" id="lTR-yk-gux"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="editButton" destination="7r9-xR-AWU" id="GyC-HD-dpb"/>
@@ -136,6 +140,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJ9-UA-pr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2007" y="285"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="A2U-Cu-aRn">
+            <objects>
+                <viewController id="vmT-qP-c8T" customClass="QuizViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zi5-0z-ywE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" text="Placeholder Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cnA-yh-4gk">
+                                <rect key="frame" x="10" y="74" width="355" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cnA-yh-4gk" firstAttribute="leading" secondItem="4lZ-qb-WNu" secondAttribute="leading" constant="10" id="54M-IJ-GRJ"/>
+                            <constraint firstItem="4lZ-qb-WNu" firstAttribute="bottom" secondItem="cnA-yh-4gk" secondAttribute="bottom" constant="10" id="T50-ha-DzA"/>
+                            <constraint firstItem="4lZ-qb-WNu" firstAttribute="trailing" secondItem="cnA-yh-4gk" secondAttribute="trailing" constant="10" id="TIf-9r-fkL"/>
+                            <constraint firstItem="cnA-yh-4gk" firstAttribute="top" secondItem="4lZ-qb-WNu" secondAttribute="top" constant="10" id="UNM-MK-4Jq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4lZ-qb-WNu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz" id="NzN-i2-SuA">
+                        <barButtonItem key="rightBarButtonItem" title="Flip" id="7QS-bo-kuh">
+                            <connections>
+                                <action selector="flipPressed:" destination="vmT-qP-c8T" id="Waf-xG-Gst"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="cnA-yh-4gk" id="NPM-XK-hXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOI-hR-vFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2924" y="-661"/>
         </scene>
         <!--New Flashcard-->
         <scene sceneID="C94-jA-KhT">
@@ -231,7 +274,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XM2-PQ-TVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2898" y="-36"/>
+            <point key="canvasLocation" x="2924" y="649"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

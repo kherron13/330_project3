@@ -85,6 +85,9 @@ class FlashcardTableViewController: UITableViewController {
             
             let selectedFlashcard = flashcardGroup.group[indexPath.row]
             flashcardDetailViewController.flashcard = selectedFlashcard
+            
+        case "Quiz":
+            print("Quiz")
         default:
             fatalError("Unexpected Segue Identifier: \(String(describing: segue.identifier))")
         }

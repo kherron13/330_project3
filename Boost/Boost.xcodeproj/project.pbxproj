@@ -18,6 +18,7 @@
 		C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */; };
 		C14E65101FBFC2D9008391BE /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */; };
 		C18B94241FCBB0AE000C980F /* flashcardContainerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18B94231FCBB0AE000C980F /* flashcardContainerSingleton.swift */; };
+		C18B94261FCBBEA3000C980F /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18B94251FCBBEA3000C980F /* QuizViewController.swift */; };
 		C18F2D581FBAA99200B8F978 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D571FBAA99200B8F978 /* Flashcard.swift */; };
 		C18F2D5A1FBAAB6100B8F978 /* FlashcardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */; };
 		C18F2D5C1FBAB17F00B8F978 /* FlashcardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */; };
@@ -59,6 +60,7 @@
 		C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewController.swift; sourceTree = "<group>"; };
 		C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		C18B94231FCBB0AE000C980F /* flashcardContainerSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flashcardContainerSingleton.swift; sourceTree = "<group>"; };
+		C18B94251FCBBEA3000C980F /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C18F2D571FBAA99200B8F978 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroup.swift; sourceTree = "<group>"; };
 		C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTests.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */,
+				C18B94251FCBBEA3000C980F /* QuizViewController.swift */,
 				C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */,
 				C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */,
 				C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */,
@@ -304,6 +307,7 @@
 				E48238D91FC25E6B00AF5443 /* MyToDo.swift in Sources */,
 				C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */,
 				C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */,
+				C18B94261FCBBEA3000C980F /* QuizViewController.swift in Sources */,
 				C1EBB38D1FBA3BE300C4A012 /* CalendarViewController.swift in Sources */,
 				C120B1F41FBBF46800D86288 /* FlashcardTableViewController.swift in Sources */,
 				C18B94241FCBB0AE000C980F /* flashcardContainerSingleton.swift in Sources */,
