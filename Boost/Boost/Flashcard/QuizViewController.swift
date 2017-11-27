@@ -16,7 +16,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //shuffle flashcards and present first one
     }
     
 
@@ -33,7 +33,16 @@ class QuizViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func flipPressed(_ sender: UIBarButtonItem) {
+        //display back if front is displayed, front if back is displayed
         textView.text = "Flipped!"
     }
     
+    @IBAction func removePressed(_ sender: UIBarButtonItem) {
+        //remove card from deck during this quiz session and move on to next card
+        print("remove card")
+    }
+    
+    @IBAction func nextPressed(_ sender: UIBarButtonItem) {
+        print("next card")
+    }
 }
