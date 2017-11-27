@@ -13,11 +13,13 @@ class FlashcardTableViewController: UITableViewController {
     //MARK: Properties
     var flashcardGroup: FlashcardGroup!
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var quizButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = flashcardGroup.title
+        updateQuizButton()
     }
 
     // MARK: - Table view data source
@@ -60,7 +62,8 @@ class FlashcardTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        updateQuizButton()
     }
 
     // MARK: - Navigation
@@ -87,7 +90,10 @@ class FlashcardTableViewController: UITableViewController {
             flashcardDetailViewController.flashcard = selectedFlashcard
             
         case "Quiz":
-            print("Quiz")
+            guard let quizViewController = segue.destination as? QuizViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            quizViewController.flashcards = flashcardGroup.group
         default:
             fatalError("Unexpected Segue Identifier: \(String(describing: segue.identifier))")
         }
@@ -107,6 +113,7 @@ class FlashcardTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             FlashcardContainerSingleton.sharedDataContainer.saveFlashcardGroups(viewController: self)
+            updateQuizButton()
         }
     }
     
@@ -152,5 +159,9 @@ class FlashcardTableViewController: UITableViewController {
         self.tableView.setEditing(true, animated: true)
         editButton.title = "Done"
         editButton.style = .done
+    }
+    
+    private func updateQuizButton() {
+        quizButton.isEnabled = !flashcardGroup.group.isEmpty
     }
 }

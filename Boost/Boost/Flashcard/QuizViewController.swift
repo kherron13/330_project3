@@ -7,42 +7,60 @@
 //
 
 import UIKit
+import GameplayKit.GKRandomSource
 
 class QuizViewController: UIViewController {
     
     //MARK: Properties
+    var flashcards: [Flashcard]!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var removeButton: UIBarButtonItem!
+    var frontDisplayed = false
+    var currentDisplayedFlashcard: Flashcard!
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //shuffle flashcards and present first one
+        
+        if flashcards.isEmpty {
+            fatalError("Unexpected empty flashcard deck found in Quiz")
+        }
+        
+        //shuffle flashcards
+        flashcards = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: flashcards) as! [Flashcard]
+        
+        //display the first flashcard in shuffled list
+        displayFlashcard()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Private methods
+    
+    private func displayFlashcard() {
+        currentDisplayedFlashcard = flashcards[currentIndex]
+        textView.text = currentDisplayedFlashcard.front
+        frontDisplayed = true
     }
-    */
     
     //MARK: Actions
     
     @IBAction func flipPressed(_ sender: UIBarButtonItem) {
-        //display back if front is displayed, front if back is displayed
-        textView.text = "Flipped!"
+        if frontDisplayed {
+            textView.text = currentDisplayedFlashcard.back
+            frontDisplayed = false
+        } else {
+            textView.text = currentDisplayedFlashcard.front
+            frontDisplayed = true
+        }
     }
     
     @IBAction func removePressed(_ sender: UIBarButtonItem) {
-        //remove card from deck during this quiz session and move on to next card
-        print("remove card")
+        flashcards.remove(at: currentIndex)
+        if flashcards.count == 1 { removeButton.isEnabled = false }
+        displayFlashcard()
     }
     
     @IBAction func nextPressed(_ sender: UIBarButtonItem) {
-        print("next card")
+        currentIndex = (currentIndex + 1) % flashcards.count
+        displayFlashcard()
     }
 }

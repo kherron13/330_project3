@@ -135,6 +135,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="editButton" destination="7r9-xR-AWU" id="GyC-HD-dpb"/>
+                        <outlet property="quizButton" destination="m6i-xC-gIU" id="oAb-su-IQl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJ9-UA-pr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,7 +162,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Acg-Tq-MBY"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Remove" id="Ff6-Hr-bkt">
+                                    <barButtonItem title="Remove From Quiz" id="Ff6-Hr-bkt">
                                         <connections>
                                             <action selector="removePressed:" destination="vmT-qP-c8T" id="K3C-CT-dia"/>
                                         </connections>
@@ -195,6 +196,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="removeButton" destination="Ff6-Hr-bkt" id="ZyK-RY-7ve"/>
                         <outlet property="textView" destination="cnA-yh-4gk" id="NPM-XK-hXq"/>
                     </connections>
                 </viewController>
