@@ -17,6 +17,7 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
     var flashcard: Flashcard?
     var validFront = false
     var validBack = false
+    var placeholderLabel: UILabel! //add placeholder to textView for consistency
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,15 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
         frontTextField.delegate = self
         backTextView.delegate = self
         
+        //add padding to text within textfield so it is aligned with text in textview
+        frontTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0)
+        
+        //create consistent borders for the TextView and TextField
+        frontTextField.layer.borderColor = UIColor.lightGray.cgColor
+        frontTextField.layer.borderWidth = 0.5
+        backTextView.layer.borderColor = UIColor.lightGray.cgColor
+        backTextView.layer.borderWidth = 0.5
+        
         if let flashcard = flashcard {
             navigationItem.title = flashcard.front
             frontTextField.text = flashcard.front
@@ -42,6 +52,16 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
             backTextView.text = flashcard.back
             validBack = true
         }
+        
+        //modified from: https://stackoverflow.com/questions/27652227/text-view-placeholder-swift/28271069#28271069
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Back Side"
+        placeholderLabel.font = UIFont.systemFont(ofSize: (backTextView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        backTextView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (backTextView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = UIColor(white: 0.8, alpha: 1.0)
+        placeholderLabel.isHidden = !backTextView.text.isEmpty
         
         updateSaveButtonEnabled()
     }
@@ -63,6 +83,7 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
     //MARK: UITextViewDelegate and UITextFieldDelegate
     func textViewDidChange(_ textView: UITextView) {
         validBack = !backTextView.text.isEmpty
+        placeholderLabel.isHidden = !backTextView.text.isEmpty
         updateSaveButtonEnabled()
     }
     
