@@ -56,7 +56,7 @@ class FlashcardTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             flashcardGroup.group.remove(at: indexPath.row)
-            //TODO: save
+            FlashcardContainerSingleton.sharedDataContainer.saveFlashcardGroups(viewController: self)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -103,7 +103,7 @@ class FlashcardTableViewController: UITableViewController {
                 flashcardGroup.group.insert(flashcard, at: 0)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            //TODO: save
+            FlashcardContainerSingleton.sharedDataContainer.saveFlashcardGroups(viewController: self)
         }
     }
     
@@ -122,7 +122,7 @@ class FlashcardTableViewController: UITableViewController {
             (_) in
             let name = alert.textFields?[0].text
             self.flashcardGroup.title = name!
-            //TODO: save
+            FlashcardContainerSingleton.sharedDataContainer.saveFlashcardGroups(viewController: self)
             self.navigationItem.title = name
         }
         

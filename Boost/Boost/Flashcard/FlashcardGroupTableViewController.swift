@@ -11,7 +11,6 @@ import UIKit
 class FlashcardGroupTableViewController: UITableViewController {
     
     //MARK: Properties
-    var flashcardGroups = [FlashcardGroup]()
     var manuallySelected = false
     var lastSelectedIndex: IndexPath?
 
@@ -22,9 +21,8 @@ class FlashcardGroupTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
         
         if let savedFlashcardGroups = loadFlashcardGroups() {
-            flashcardGroups += savedFlashcardGroups
+            FlashcardContainerSingleton.sharedDataContainer.flashcardGroups += savedFlashcardGroups
         } else {
-            //Load sample data
             loadSampleFlashcardGroups()
         }
     }
@@ -35,21 +33,6 @@ class FlashcardGroupTableViewController: UITableViewController {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
-    
-    //MARK: Persist data
-    
-    public func saveFlashcardGroups() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(flashcardGroups, toFile: FlashcardGroup.ArchiveURL.path)
-        if !isSuccessfulSave {
-            let alert = UIAlertController(title: "Error", message: "Flaschards failed to save.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Enter", style: .default))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func loadFlashcardGroups() -> [FlashcardGroup]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: FlashcardGroup.ArchiveURL.path) as? [FlashcardGroup]
-    }
 
     // MARK: - Table view data source
 
@@ -58,7 +41,7 @@ class FlashcardGroupTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flashcardGroups.count
+        return FlashcardContainerSingleton.sharedDataContainer.flashcardGroups.count
     }
 
     
@@ -68,7 +51,7 @@ class FlashcardGroupTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FlashcardGroupTableViewCell else { fatalError("The dequeued cell is not an instance of FlashcardGroupTableViewCell.")
         }
         
-        let flashcardGroup = flashcardGroups[indexPath.row]
+        let flashcardGroup = FlashcardContainerSingleton.sharedDataContainer.flashcardGroups[indexPath.row]
         
         cell.titleLabel.text = flashcardGroup.title
         cell.countLabel.text = "\(flashcardGroup.group.count) cards"
@@ -89,8 +72,8 @@ class FlashcardGroupTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            flashcardGroups.remove(at: indexPath.row)
-            saveFlashcardGroups()
+            FlashcardContainerSingleton.sharedDataContainer.flashcardGroups.remove(at: indexPath.row)
+            FlashcardContainerSingleton.sharedDataContainer.saveFlashcardGroups(viewController: self)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -119,7 +102,7 @@ class FlashcardGroupTableViewController: UITableViewController {
         
         lastSelectedIndex = indexPath
         
-        let selectedFlashcardGroup = flashcardGroups[indexPath.row]
+        let selectedFlashcardGroup = FlashcardContainerSingleton.sharedDataContainer.flashcardGroups[indexPath.row]
         fgDetailViewController.flashcardGroup = selectedFlashcardGroup
     }
  
@@ -130,8 +113,8 @@ class FlashcardGroupTableViewController: UITableViewController {
         let confirmAction = UIAlertAction(title: "Enter", style: .default) {
             (_) in
             let name = alert.textFields?[0].text
-            self.flashcardGroups.insert(FlashcardGroup(title: name!, flashcards: [Flashcard]()), at: 0)
-            self.saveFlashcardGroups()
+            FlashcardContainerSingleton.sharedDataContainer.flashcardGroups.insert(FlashcardGroup(title: name!, flashcards: [Flashcard]()), at: 0)
+            FlashcardContainerSingleton.sharedDataContainer.saveFlashcardGroups(viewController: self)
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .automatic)
             self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
@@ -153,12 +136,15 @@ class FlashcardGroupTableViewController: UITableViewController {
     
     //MARK: Private Methods
     private func loadSampleFlashcardGroups() {
-        flashcardGroups = [
+        FlashcardContainerSingleton.sharedDataContainer.flashcardGroups = [
             FlashcardGroup(title: "Empty", flashcards: []),
             FlashcardGroup(title: "Sample", flashcards: [
                 Flashcard(front: "Sample", back: "definition of sample could go here"),
                 Flashcard(front: "Sample 2", back: "information about sample 2")])
         ]
     }
-
+    
+    private func loadFlashcardGroups() -> [FlashcardGroup]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: FlashcardGroup.ArchiveURL.path) as? [FlashcardGroup]
+    }
 }
