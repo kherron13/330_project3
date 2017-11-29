@@ -28,12 +28,13 @@ class FlashcardTests: XCTestCase {
         super.tearDown()
     }
     
-    func testEquals() {
+    func testFlashcardEquals() {
         XCTAssertEqual(flashcards[0], flashcards[4])
+        XCTAssertEqual(flashcards[0], flashcards[0])
         XCTAssertNotEqual(flashcards[0], flashcards[1])
     }
     
-    func testComparisons() {
+    func testFlashcardComparisons() {
         XCTAssertGreaterThan(flashcards[1], flashcards[0])
         XCTAssertLessThan(flashcards[0], flashcards[3])
         XCTAssertGreaterThanOrEqual(flashcards[1], flashcards[0])
@@ -41,5 +42,4 @@ class FlashcardTests: XCTestCase {
         XCTAssertLessThanOrEqual(flashcards[0], flashcards[1])
         XCTAssertLessThanOrEqual(flashcards[0], flashcards[4])
     }
-    
 }
