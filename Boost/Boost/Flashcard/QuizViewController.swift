@@ -66,6 +66,7 @@ class QuizViewController: UIViewController {
     
     @IBAction func removePressed(_ sender: UIBarButtonItem) {
         flashcards.remove(at: currentIndex)
+        currentIndex %= flashcards.count
         if flashcards.count == 1 { removeButton.isEnabled = false }
         displayFlashcard()
     }
