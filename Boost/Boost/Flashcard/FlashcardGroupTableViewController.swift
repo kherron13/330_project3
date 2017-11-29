@@ -138,9 +138,12 @@ class FlashcardGroupTableViewController: UITableViewController {
     private func loadSampleFlashcardGroups() {
         FlashcardContainerSingleton.sharedDataContainer.flashcardGroups = [
             FlashcardGroup(title: "Empty", flashcards: []),
-            FlashcardGroup(title: "Sample", flashcards: [
-                Flashcard(front: "Sample", back: "definition of sample could go here"),
-                Flashcard(front: "Sample 2", back: "information about sample 2")])
+            FlashcardGroup(title: "Sample Deck", flashcards: [
+                Flashcard(front: "sample", back: "a small part of anything or one of a number, intended to show the quality, style, or nature of the whole"),
+                Flashcard(front: "example", back: "an instance serving for illustration"),
+                Flashcard(front: "Boost", back: "a productivity app for students developed by Team Bits of String"),
+                Flashcard(front: "flaschard", back: "a card having words, numerals, or pictures on it, designed for gaining a rapid response from pupils when held up briefly by a teacher, used especially in reading, arithmetic, or vocabulary drills."),
+                Flashcard(front: "productivity", back: "the quality, state, or fact of being able to generate, create, enhance, or bring forth goods and services")])
         ]
     }
     

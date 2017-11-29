@@ -18,6 +18,7 @@ class QuizViewController: UIViewController {
     var frontDisplayed = false
     var currentDisplayedFlashcard: Flashcard!
     var currentIndex = 0
+    @IBOutlet weak var cardArea: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +27,12 @@ class QuizViewController: UIViewController {
             fatalError("Unexpected empty flashcard deck found in Quiz")
         }
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped(_:)))
+        cardArea.addGestureRecognizer(tapGesture)
+        
         //shuffle flashcards
         flashcards = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: flashcards) as! [Flashcard]
         
-        //display the first flashcard in shuffled list
         displayFlashcard()
     }
     
@@ -41,9 +44,7 @@ class QuizViewController: UIViewController {
         frontDisplayed = true
     }
     
-    //MARK: Actions
-    
-    @IBAction func flipPressed(_ sender: UIBarButtonItem) {
+    private func flipCard() {
         if frontDisplayed {
             textView.text = currentDisplayedFlashcard.back
             frontDisplayed = false
@@ -51,6 +52,16 @@ class QuizViewController: UIViewController {
             textView.text = currentDisplayedFlashcard.front
             frontDisplayed = true
         }
+    }
+    
+    //MARK: Actions
+    
+    @objc func cardTapped(_ sender: UITapGestureRecognizer) {
+        flipCard()
+    }
+    
+    @IBAction func flipPressed(_ sender: UIBarButtonItem) {
+        flipCard()
     }
     
     @IBAction func removePressed(_ sender: UIBarButtonItem) {

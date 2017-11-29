@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" text="Placeholder Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cnA-yh-4gk">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" text="Placeholder Text" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnA-yh-4gk">
                                 <rect key="frame" x="10" y="74" width="355" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -196,6 +196,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cardArea" destination="cnA-yh-4gk" id="8Jj-fP-ErQ"/>
                         <outlet property="removeButton" destination="Ff6-Hr-bkt" id="ZyK-RY-7ve"/>
                         <outlet property="textView" destination="cnA-yh-4gk" id="NPM-XK-hXq"/>
                     </connections>
