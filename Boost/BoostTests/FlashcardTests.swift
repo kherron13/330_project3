@@ -42,4 +42,20 @@ class FlashcardTests: XCTestCase {
         XCTAssertLessThanOrEqual(flashcards[0], flashcards[1])
         XCTAssertLessThanOrEqual(flashcards[0], flashcards[4])
     }
+    
+    func testViewControllers() {
+        let storyboard = UIStoryboard(name: "Flashcard", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "Flashcard") as? UINavigationController
+        XCTAssertNotNil(navigationController)
+        let flashcardGroupViewController = navigationController!.topViewController as? FlashcardGroupTableViewController
+        XCTAssertNotNil(flashcardGroupViewController)
+        
+        //load sample data and view, verifying that the tableview contains the expected number of rows
+        flashcardGroupViewController!.loadSampleFlashcardGroups()
+        _ = flashcardGroupViewController!.view
+        XCTAssertEqual(2, flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, numberOfRowsInSection: 0))
+        
+        //select the second cell
+        let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+    }
 }

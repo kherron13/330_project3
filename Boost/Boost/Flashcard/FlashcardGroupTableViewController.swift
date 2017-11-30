@@ -134,8 +134,8 @@ class FlashcardGroupTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: Private Methods
-    private func loadSampleFlashcardGroups() {
+    //MARK: Private and Internal Methods
+    internal func loadSampleFlashcardGroups() { //needs to be internal so it can be accessed for tests
         FlashcardContainerSingleton.sharedDataContainer.flashcardGroups = [
             FlashcardGroup(title: "Empty", flashcards: []),
             FlashcardGroup(title: "Sample Deck", flashcards: [
