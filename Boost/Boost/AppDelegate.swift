@@ -7,11 +7,33 @@
 //
 
 import UIKit
+import UserNotifications
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var player: AVAudioPlayer?
+    
+        func playSound() {
+        guard let url = Bundle.main.url(forResource: "alarm", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+             guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -40,7 +62,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func configureCustomNotification(){
+        let go_for_break = UNNotificationAction(identifier:"GOFORBREAK",title:"Go For Break",options:[])
+        let extend_break = UNNotificationAction(identifier:"EXTENDBREAK",title:"Extend Break",options:[])
+        let end_study = UNNotificationAction(identifier:"ENDSTUDY",title:"End Session",options:[UNNotificationActionOptions.foreground])
+        let extend_study = UNNotificationAction(identifier:"EXTENDSTUDY",title:"Extend Study",options:[])
+        let go_to_study = UNNotificationAction(identifier:"GOTOSTUDY",title:"Go To Study",options:[])
+        
+        let breaktime_category = UNNotificationCategory(identifier:"BREAKTIME_CATEGORY",actions:[go_for_break,extend_study,end_study],intentIdentifiers :[] , options:[])
+        
+        let studytime_category = UNNotificationCategory(identifier:"STUDYTIME_CATEGORY",actions:[go_to_study,extend_break,end_study],intentIdentifiers :[] , options:[])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([breaktime_category,studytime_category])
+    }
 
-
+}
+    extension AppDelegate:UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        playSound()
+        completionHandler(.alert)
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        switch response.actionIdentifier {
+            case "ENDSTUDY":
+                NotificationCenter.default.post(name: Notification.Name("ENDSTUDYSELECT"), object: nil)
+            break
+            case "GOTOSTUDY":
+                NotificationCenter.default.post(name: Notification.Name( "GOTOSTUDYSELECT"), object: nil)
+            break
+            case "GOFORBREAK":
+                NotificationCenter.default.post(name: Notification.Name("GOFORBREAKSELECT") , object: nil)
+            break
+            case "EXTENDBREAK":
+                NotificationCenter.default.post(name: Notification.Name("EXTENDBREAKSELECT") , object: nil)
+            break
+            case "EXTENDSTUDY":
+                NotificationCenter.default.post(name: Notification.Name("EXTENDSTUDYSELECT"),object: nil)
+            break
+            default:
+                print("Invalid Identifier")
+            break
+        }
+        completionHandler()
+    }
 }
 
