@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1042.4000000000001" y="284.70764617691157"/>
         </scene>
-        <!--Title-->
+        <!--DeckOfFlashcards-->
         <scene sceneID="ZcA-8f-MZz">
             <objects>
-                <tableViewController id="Tbm-Kb-Aiy" customClass="FlashcardTableViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SelectedDeck" title="DeckOfFlashcards" id="Tbm-Kb-Aiy" customClass="FlashcardTableViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2EI-Kl-EUc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

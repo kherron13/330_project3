@@ -53,7 +53,6 @@ class FlashcardTests: XCTestCase {
         XCTAssertNotNil(flashcardGroupViewController)
         
         //view and load sample data, verifying that the tableview contains the expected number of rows
-        _ = flashcardGroupViewController!.view
         flashcardGroupViewController?.beginAppearanceTransition(true, animated: false)
         flashcardGroupViewController!.loadSampleFlashcardGroups()
         XCTAssertEqual(2, flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, numberOfRowsInSection: 0))
@@ -69,6 +68,15 @@ class FlashcardTests: XCTestCase {
         flashcardGroupTableView?.selectRow(at: selectIndex, animated: false, scrollPosition: .top)
         //verify that row we want to select is visible
         XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
+        
+        //navigate to next scene - still trying to figure out...
+        let flashcardTableViewController = storyboard.instantiateViewController(withIdentifier: "SelectedDeck") as? FlashcardTableViewController
+        XCTAssertNotNil(flashcardTableViewController)
         flashcardGroupViewController!.performSegue(withIdentifier: "ShowFlashcards", sender: flashcardGroupCell)
+        navigationController!.pushViewController(flashcardTableViewController!, animated: false)
+        XCTAssert(navigationController!.topViewController is FlashcardTableViewController)
+        //flashcardTableViewController?.beginAppearanceTransition(true, animated: false)
+        
+        //XCTAssertEqual(flashcardTableViewController!.flashcardGroup.title, "Sample Deck") 
     }
 }
