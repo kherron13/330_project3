@@ -50,9 +50,9 @@ class FlashcardTests: XCTestCase {
         let flashcardGroupViewController = navigationController!.topViewController as? FlashcardGroupTableViewController
         XCTAssertNotNil(flashcardGroupViewController)
         
-        //load sample data and view, verifying that the tableview contains the expected number of rows
-        flashcardGroupViewController!.loadSampleFlashcardGroups()
+        //view and load sample data, verifying that the tableview contains the expected number of rows
         _ = flashcardGroupViewController!.view
+        flashcardGroupViewController!.loadSampleFlashcardGroups()
         XCTAssertEqual(2, flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, numberOfRowsInSection: 0))
         
         //select the second cell

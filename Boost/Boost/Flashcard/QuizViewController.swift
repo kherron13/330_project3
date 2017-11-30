@@ -26,6 +26,9 @@ class QuizViewController: UIViewController {
         if flashcards.isEmpty {
             fatalError("Unexpected empty flashcard deck found in Quiz")
         }
+        if flashcards.count == 1 {
+            removeButton.isEnabled = false
+        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.cardTapped(_:)))
         cardArea.addGestureRecognizer(tapGesture)
