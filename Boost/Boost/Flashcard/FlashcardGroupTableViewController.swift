@@ -11,7 +11,6 @@ import UIKit
 class FlashcardGroupTableViewController: UITableViewController {
     
     //MARK: Properties
-    var manuallySelected = false
     var lastSelectedIndex: IndexPath?
 
     override func viewDidLoad() {
@@ -93,12 +92,11 @@ class FlashcardGroupTableViewController: UITableViewController {
             fatalError("Unexpected sender: \(String(describing: sender))")
         }
         
-        let indexPath: IndexPath! = manuallySelected ? IndexPath(row: 0, section: 0) : tableView.indexPath(for: selectedFlashcardGroupCell)
+        let indexPath: IndexPath! = tableView.indexPathForRow(at: selectedFlashcardGroupCell.center)
         
         guard indexPath != nil else {
             fatalError("The selected cell is not being displayed by the table")
         }
-        manuallySelected = false
         
         lastSelectedIndex = indexPath
         
@@ -118,7 +116,6 @@ class FlashcardGroupTableViewController: UITableViewController {
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .automatic)
             self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
-            self.manuallySelected = true
             self.performSegue(withIdentifier: "ShowFlashcards", sender: self.tableView(self.tableView, cellForRowAt: indexPath))
         }
         

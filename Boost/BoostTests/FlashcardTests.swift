@@ -63,16 +63,12 @@ class FlashcardTests: XCTestCase {
         let visibleFlashcardGroups = flashcardGroupTableView!.indexPathsForVisibleRows
         XCTAssertNotNil(visibleFlashcardGroups)
         
-        //select the second cell, which is the nonempty deck
+        //"select" the second cell, which is the nonempty deck, and perform segue
         let selectIndex = IndexPath(row: 1, section: 0)
         let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupTableView!, cellForRowAt: selectIndex)
         flashcardGroupTableView?.selectRow(at: selectIndex, animated: false, scrollPosition: .top)
         //verify that row we want to select is visible
         XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
-        
-        //flashcardGroupTableView!.delegate!.tableView!(flashcardGroupTableView!, didSelectRowAt: selectIndex)
-        
-        
-        //flashcardGroupViewController!.performSegue(withIdentifier: "ShowFlashcards", sender: flashcardGroupCell)
+        flashcardGroupViewController!.performSegue(withIdentifier: "ShowFlashcards", sender: flashcardGroupCell)
     }
 }
