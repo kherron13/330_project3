@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlashcardGroup: NSObject, Comparable, NSCoding {
+class FlashcardGroup: NSObject, NSCoding {
     
     //MARK: Properties
     var title: String
@@ -28,19 +28,6 @@ class FlashcardGroup: NSObject, Comparable, NSCoding {
     init(title: String, flashcards: [Flashcard]) {
         self.title = title
         self.group = flashcards.sorted()
-    }
-    
-    //MARK: Equality and Comparison
-    override func isEqual(_ object: Any?) -> Bool {
-        if let other = object as? FlashcardGroup {
-            return self.title == other.title
-        }
-        return false
-    }
-    
-    static func < (lhs: FlashcardGroup, rhs: FlashcardGroup) -> Bool {
-        if lhs.title >= rhs.title { return false }
-        return true
     }
     
     //MARK: NSCoding
