@@ -55,7 +55,9 @@ class FlashcardTests: XCTestCase {
         flashcardGroupViewController!.loadSampleFlashcardGroups()
         XCTAssertEqual(2, flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, numberOfRowsInSection: 0))
         
-        //select the second cell
+        //select the second cell, which is the nonempty deck
         let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        
+        //flashcardGroupViewController!.performSegue(withIdentifier: "ShowFlashcards", sender: flashcardGroupCell)
     }
 }
