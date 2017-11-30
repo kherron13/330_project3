@@ -43,7 +43,9 @@ class FlashcardTests: XCTestCase {
         XCTAssertLessThanOrEqual(flashcards[0], flashcards[4])
     }
     
-    func testViewControllers() {
+    func testViewControllers() { //go through testable navigation to verify that it's working
+        
+        //get (and verify) initial view controller, FlashcardGroupTableViewController, which is embedded in a navigation controller
         let storyboard = UIStoryboard(name: "Flashcard", bundle: nil)
         let navigationController = storyboard.instantiateViewController(withIdentifier: "Flashcard") as? UINavigationController
         XCTAssertNotNil(navigationController)
@@ -52,11 +54,24 @@ class FlashcardTests: XCTestCase {
         
         //view and load sample data, verifying that the tableview contains the expected number of rows
         _ = flashcardGroupViewController!.view
+        flashcardGroupViewController?.beginAppearanceTransition(true, animated: false)
         flashcardGroupViewController!.loadSampleFlashcardGroups()
         XCTAssertEqual(2, flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, numberOfRowsInSection: 0))
         
+        //verfiy that there are visible rows in the table
+        let flashcardGroupTableView = flashcardGroupViewController!.tableView
+        let visibleFlashcardGroups = flashcardGroupTableView!.indexPathsForVisibleRows
+        XCTAssertNotNil(visibleFlashcardGroups)
+        
         //select the second cell, which is the nonempty deck
-        let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, cellForRowAt: IndexPath(row: 1, section: 0))
+        let selectIndex = IndexPath(row: 1, section: 0)
+        let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupTableView!, cellForRowAt: selectIndex)
+        flashcardGroupTableView?.selectRow(at: selectIndex, animated: false, scrollPosition: .top)
+        //verify that row we want to select is visible
+        XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
+        
+        //flashcardGroupTableView!.delegate!.tableView!(flashcardGroupTableView!, didSelectRowAt: selectIndex)
+        
         
         //flashcardGroupViewController!.performSegue(withIdentifier: "ShowFlashcards", sender: flashcardGroupCell)
     }
