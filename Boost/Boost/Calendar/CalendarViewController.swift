@@ -9,57 +9,118 @@
 import UIKit
 import EventKit
 
-class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    let eventStore = EKEventStore()
+class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CalendarAddedDelegate {
     
+    @IBOutlet weak var needPermissionView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    let dataArray = ["Calendar 1", "Calendar 2", "Calendar 3"]
     
-   
+    var calendars: [EKCalendar]?
+    
+    //let dataArray = ["Calendar 1", "Calendar 2", "Calendar 3"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkCalendarAuthorizationStatus()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        createAlert(title: "Alert", message: "Allow Boost to access your calendar")
-//    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        checkCalendarAuthorizationStatus()
     }
     
-//    func createAlert (title:String, message:String)
-//    {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-//
-//        //CREATING ON BUTTON
-//        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
-//            alert.dismiss(animated: true, completion: nil)
-//            print ("YES")
-//        }))
-//
-//        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: { (action) in
-//            alert.dismiss(animated: true, completion: nil)
-//            print("NO")
-//        }))
-//
-//        self.present(alert, animated: true, completion: nil)
-//    }
+    func checkCalendarAuthorizationStatus() {
+        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        
+        switch (status) {
+        case EKAuthorizationStatus.notDetermined:
+            // This happens on first-run
+            requestAccessToCalendar()
+        case EKAuthorizationStatus.authorized:
+            // Things are in line with being able to show the calendars in the table view
+            loadCalendars()
+            refreshTableView()
+        case EKAuthorizationStatus.restricted, EKAuthorizationStatus.denied:
+            // We need to help them give us permission
+            needPermissionView.fadeIn()
+        }
+    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell") as! UITableViewCell
-        cell.textLabel?.text = dataArray[indexPath.row]
-        return cell
+    func requestAccessToCalendar() {
+        EKEventStore().requestAccess(to: .event, completion: {
+            (accessGranted: Bool, error: Error?) in
+            
+            if accessGranted == true {
+                DispatchQueue.main.async(execute: {
+                    self.loadCalendars()
+                    self.refreshTableView()
+                })
+            } else {
+                DispatchQueue.main.async(execute: {
+                    self.needPermissionView.fadeIn()
+                })
+            }
+        })
+    }
+    
+    func loadCalendars() {
+        self.calendars = EKEventStore().calendars(for: EKEntityType.event).sorted() { (cal1, cal2) -> Bool in
+            return cal1.title < cal2.title
+        }
+    }
+    
+    func refreshTableView() {
+        tableView.isHidden = false
+        tableView.reloadData()
+    }
+    
+    @IBAction func goToSettingsButtonTapped(_ sender: UIButton) {
+        let openSettingsUrl = URL(string: UIApplicationOpenSettingsURLString)
+        UIApplication.shared.openURL(openSettingsUrl!)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray.count
+        if let calendars = self.calendars {
+            return calendars.count
+        }
+        
+        return 0
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")!
+        
+        if let calendars = self.calendars {
+            let calendarName = calendars[(indexPath as NSIndexPath).row].title
+            cell.textLabel?.text = calendarName
+        } else {
+            cell.textLabel?.text = "Unknown Calendar Name"
+        }
+        
+        return cell
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let identifier = segue.identifier {
+//            switch identifier {
+//            case SegueIdentifiers.showAddCalendarSegue:
+//                let destinationVC = segue.destination as! UINavigationController
+//                let addCalendarVC = destinationVC.viewControllers[0] as! AddCalendarViewController
+//                addCalendarVC.delegate = self
+//            case SegueIdentifiers.showEventsSegue:
+//                //                let destinationVC = segue.destinationViewController as! UINavigationController
+//                let eventsVC = segue.destination as! EventsViewController
+//                let selectedIndexPath = calendarsTableView.indexPathForSelectedRow!
+//
+//                eventsVC.calendar = calendars?[(selectedIndexPath as NSIndexPath).row]
+//            default: break
+//            }
+//        }
 //    }
+    
+    // MARK: Calendar Added Delegate
+    func calendarDidAdd() {
+        self.loadCalendars()
+        self.refreshTableView()
+    }
 }
