@@ -77,5 +77,9 @@ class FlashcardTests: XCTestCase {
         let flashcardTableView: UITableView! = flashcardTableViewController.tableView
         XCTAssertEqual(5, flashcardTableViewController.tableView(flashcardTableView, numberOfRowsInSection: 0))
         XCTAssert(flashcardTableViewController.quizButton.isEnabled)
+        
+        //scene: AddFlashcard, segue: AddItem
+        //scene: EditFlashcard, segue: ShowDetail
+        //scene: Quiz, segue: Quiz
     }
 }
