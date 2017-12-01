@@ -98,7 +98,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Add Calendar" id="jqD-N4-0Jz">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="eTH-vE-nv5"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="eTH-vE-nv5">
+                                            <connections>
+                                                <action selector="btnDoneAction:" destination="iMh-IZ-svY" id="xWt-bA-drP"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
