@@ -45,35 +45,37 @@ class FlashcardTests: XCTestCase {
     
     func testViewControllers() { //go through testable navigation to verify that it's working
         
-        //get (and verify) initial view controller, FlashcardGroupTableViewController, which is embedded in a navigation controller
+        //get initial view controller, FlashcardGroupTableViewController, which is embedded in a navigation controller
         let storyboard = UIStoryboard(name: "Flashcard", bundle: nil)
-        let navigationController = storyboard.instantiateViewController(withIdentifier: "Flashcard") as? UINavigationController
-        XCTAssertNotNil(navigationController)
-        let flashcardGroupViewController = navigationController!.topViewController as? FlashcardGroupTableViewController
-        XCTAssertNotNil(flashcardGroupViewController)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "Flashcard") as! UINavigationController
+        let flashcardGroupViewController = navigationController.topViewController as! FlashcardGroupTableViewController
         
-        //view and load sample data, verifying that the tableview contains the expected number of rows
-        flashcardGroupViewController?.beginAppearanceTransition(true, animated: false)
-        flashcardGroupViewController!.loadSampleFlashcardGroups()
-        XCTAssertEqual(2, flashcardGroupViewController!.tableView(flashcardGroupViewController!.tableView, numberOfRowsInSection: 0))
+        //"view" and load sample data, verifying that the tableview contains the expected number of rows
+        flashcardGroupViewController.beginAppearanceTransition(true, animated: false)
+        flashcardGroupViewController.loadSampleFlashcardGroups()
+        let flashcardGroupTableView: UITableView! = flashcardGroupViewController.tableView
+        XCTAssertEqual(2, flashcardGroupViewController.tableView(flashcardGroupTableView, numberOfRowsInSection: 0))
         
         //verfiy that there are visible rows in the table
-        let flashcardGroupTableView = flashcardGroupViewController!.tableView
-        let visibleFlashcardGroups = flashcardGroupTableView!.indexPathsForVisibleRows
+        let visibleFlashcardGroups = flashcardGroupTableView.indexPathsForVisibleRows
         XCTAssertNotNil(visibleFlashcardGroups)
         
         //"select" the second cell, which is the nonempty deck
         let selectIndex = IndexPath(row: 1, section: 0)
-        let flashcardGroupCell = flashcardGroupTableView!.cellForRow(at: selectIndex)
+        let flashcardGroupCell = flashcardGroupTableView.cellForRow(at: selectIndex)
         //verify that row we want to select is visible
         XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
         
-        //navigate to next scene
-        let flashcardTableViewController = storyboard.instantiateViewController(withIdentifier: "SelectedDeck") as? FlashcardTableViewController
-        XCTAssertNotNil(flashcardTableViewController)
-        flashcardGroupViewController!.prepare(for: UIStoryboardSegue(identifier: "ShowFlashcards", source: flashcardGroupViewController!, destination: flashcardTableViewController!), sender: flashcardGroupCell)
-        navigationController!.pushViewController(flashcardTableViewController!, animated: false)
-        XCTAssert(navigationController!.topViewController is FlashcardTableViewController)
-        XCTAssertEqual(flashcardTableViewController!.flashcardGroup.title, "Sample Deck")
+        //navigate to next scene using the selected cell
+        let flashcardTableViewController = storyboard.instantiateViewController(withIdentifier: "SelectedDeck") as! FlashcardTableViewController
+        flashcardGroupViewController.prepare(for: UIStoryboardSegue(identifier: "ShowFlashcards", source: flashcardGroupViewController, destination: flashcardTableViewController), sender: flashcardGroupCell)
+        navigationController.pushViewController(flashcardTableViewController, animated: false)
+       
+        //verify properties of flashcardTableViewController
+        XCTAssert(navigationController.topViewController is FlashcardTableViewController)
+        XCTAssertEqual(flashcardTableViewController.flashcardGroup.title, "Sample Deck")
+        let flashcardTableView: UITableView! = flashcardTableViewController.tableView
+        XCTAssertEqual(5, flashcardTableViewController.tableView(flashcardTableView, numberOfRowsInSection: 0))
+        XCTAssert(flashcardTableViewController.quizButton.isEnabled)
     }
 }
