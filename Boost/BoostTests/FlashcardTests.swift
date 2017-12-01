@@ -64,8 +64,7 @@ class FlashcardTests: XCTestCase {
         
         //"select" the second cell, which is the nonempty deck
         let selectIndex = IndexPath(row: 1, section: 0)
-        let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupTableView!, cellForRowAt: selectIndex)
-        flashcardGroupTableView?.selectRow(at: selectIndex, animated: false, scrollPosition: .top)
+        let flashcardGroupCell = flashcardGroupTableView!.cellForRow(at: selectIndex)
         //verify that row we want to select is visible
         XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
         
@@ -75,8 +74,6 @@ class FlashcardTests: XCTestCase {
         flashcardGroupViewController!.prepare(for: UIStoryboardSegue(identifier: "ShowFlashcards", source: flashcardGroupViewController!, destination: flashcardTableViewController!), sender: flashcardGroupCell)
         navigationController!.pushViewController(flashcardTableViewController!, animated: false)
         XCTAssert(navigationController!.topViewController is FlashcardTableViewController)
-
-        //assertion fails becuase table isn't drawn, both existing cells are calculated to be in the same location
-        //XCTAssertEqual(flashcardTableViewController!.flashcardGroup.title, "Sample Deck")
+        XCTAssertEqual(flashcardTableViewController!.flashcardGroup.title, "Sample Deck")
     }
 }
