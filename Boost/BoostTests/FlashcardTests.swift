@@ -62,21 +62,21 @@ class FlashcardTests: XCTestCase {
         let visibleFlashcardGroups = flashcardGroupTableView!.indexPathsForVisibleRows
         XCTAssertNotNil(visibleFlashcardGroups)
         
-        //"select" the second cell, which is the nonempty deck, and perform segue
+        //"select" the second cell, which is the nonempty deck
         let selectIndex = IndexPath(row: 1, section: 0)
         let flashcardGroupCell = flashcardGroupViewController!.tableView(flashcardGroupTableView!, cellForRowAt: selectIndex)
         flashcardGroupTableView?.selectRow(at: selectIndex, animated: false, scrollPosition: .top)
         //verify that row we want to select is visible
         XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
         
-        //navigate to next scene - still trying to figure out...
+        //navigate to next scene
         let flashcardTableViewController = storyboard.instantiateViewController(withIdentifier: "SelectedDeck") as? FlashcardTableViewController
         XCTAssertNotNil(flashcardTableViewController)
-        flashcardGroupViewController!.performSegue(withIdentifier: "ShowFlashcards", sender: flashcardGroupCell)
+        flashcardGroupViewController!.prepare(for: UIStoryboardSegue(identifier: "ShowFlashcards", source: flashcardGroupViewController!, destination: flashcardTableViewController!), sender: flashcardGroupCell)
         navigationController!.pushViewController(flashcardTableViewController!, animated: false)
         XCTAssert(navigationController!.topViewController is FlashcardTableViewController)
-        //flashcardTableViewController?.beginAppearanceTransition(true, animated: false)
-        
-        //XCTAssertEqual(flashcardTableViewController!.flashcardGroup.title, "Sample Deck") 
+
+        //assertion fails becuase table isn't drawn, both existing cells are calculated to be in the same location
+        //XCTAssertEqual(flashcardTableViewController!.flashcardGroup.title, "Sample Deck")
     }
 }
