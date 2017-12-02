@@ -15,8 +15,10 @@ class ViewController: UITableViewController
     
     override func viewDidLoad()
     {
+        
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = editButtonItem
         
         self.title = "To-Do List"
         
@@ -154,11 +156,28 @@ class ViewController: UITableViewController
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        if indexPath.row < todoItems.count
-        {
+        if editingStyle == .delete {
+            // Delete the row from the data source
             todoItems.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .top)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.todoItems[sourceIndexPath.row]
+        todoItems.remove(at: sourceIndexPath.row)
+        todoItems.insert(movedObject, at: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(todoItems)")
+        // To check for correctness enable: self.tableView.reloadData()
+    }
+    
 }
 
