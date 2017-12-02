@@ -145,7 +145,7 @@
         <!--Quiz-->
         <scene sceneID="A2U-Cu-aRn">
             <objects>
-                <viewController id="vmT-qP-c8T" customClass="QuizViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Quiz" id="vmT-qP-c8T" customClass="QuizViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zi5-0z-ywE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,7 +208,7 @@
         <!--New Flashcard-->
         <scene sceneID="C94-jA-KhT">
             <objects>
-                <viewController id="UWR-nj-yQx" customClass="FlashcardViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditFlashcard" id="UWR-nj-yQx" customClass="FlashcardViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRZ-Do-AHA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,7 +291,7 @@
         <!--Navigation Controller-->
         <scene sceneID="qQL-4t-jgw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TtV-8b-ewG" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddFlashcard" automaticallyAdjustsScrollViewInsets="NO" id="TtV-8b-ewG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fdR-lF-9nO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
