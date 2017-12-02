@@ -45,11 +45,12 @@ class FlashcardTests: XCTestCase {
     
     func testViewControllers() { //go through testable navigation to verify that it's working
         
+        //track current and next view controllers for navigation as well as current table view for neater code related to table view access
         var currentViewController: UIViewController!
         var nextViewController: UIViewController!
         var currentTableView: UITableView!
         
-        //get initial view controller, FlashcardGroupTableViewController, which is embedded in a navigation controller
+        //start with the initial view controller, FlashcardGroupTableViewController, which is embedded in a navigation controller
         let storyboard = UIStoryboard(name: "Flashcard", bundle: nil)
         let navigationController = storyboard.instantiateViewController(withIdentifier: "Flashcard") as! UINavigationController
         currentViewController = navigationController.topViewController
@@ -64,13 +65,13 @@ class FlashcardTests: XCTestCase {
         let visibleFlashcardGroups = currentTableView.indexPathsForVisibleRows
         XCTAssertNotNil(visibleFlashcardGroups)
         
-        //"select" the second cell, which is the nonempty deck
+        //"select" the second cell, which is the nonempty sample deck
         let selectIndex = IndexPath(row: 1, section: 0)
         let flashcardGroupCell = currentTableView.cellForRow(at: selectIndex)
         //verify that row we want to select is visible
         XCTAssert(visibleFlashcardGroups!.contains(selectIndex))
         
-        //navigate to next scene using the selected cell
+        //navigate to next scene using the selected cell - this is the equivalent of tapping the cell
         nextViewController = storyboard.instantiateViewController(withIdentifier: "SelectedDeck")
         currentViewController.prepare(for: UIStoryboardSegue(identifier: "ShowFlashcards", source: currentViewController, destination: nextViewController), sender: flashcardGroupCell)
         navigationController.pushViewController(nextViewController, animated: false)
@@ -84,7 +85,7 @@ class FlashcardTests: XCTestCase {
         XCTAssertEqual(5, (currentViewController as! FlashcardTableViewController).tableView(currentTableView, numberOfRowsInSection: 0))
         XCTAssert((currentViewController as! FlashcardTableViewController).quizButton.isEnabled)
         
-        //add new flashcard
+        //equivalent to tapping the system-provided add button
         nextViewController = storyboard.instantiateViewController(withIdentifier: "AddFlashcard")
         currentViewController.prepare(for: UIStoryboardSegue(identifier: "AddItem", source: currentViewController, destination: nextViewController), sender: nil)
         currentViewController = (nextViewController as! UINavigationController).topViewController
