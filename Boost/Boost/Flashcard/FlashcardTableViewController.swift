@@ -14,6 +14,7 @@ class FlashcardTableViewController: UITableViewController {
     var flashcardGroup: FlashcardGroup!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var quizButton: UIBarButtonItem!
+    weak var actionToEnable: UIAlertAction?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +127,6 @@ class FlashcardTableViewController: UITableViewController {
     }
     @IBAction func renameDeck(_ sender: UIBarButtonItem) {
         //adapted from: https://www.simplifiedios.net/ios-dialog-box-with-input/
-        //TODO: disable enter button if same name or empty string
         let alert = UIAlertController(title: "Rename Deck", message: "Enter the new name of the deck", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Enter", style: .default) {
             (_) in
@@ -140,15 +140,22 @@ class FlashcardTableViewController: UITableViewController {
         
         alert.addTextField{ (textField) in
             textField.placeholder = "Enter Name"
+            textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
         }
         
         alert.addAction(confirmAction)
+        self.actionToEnable = confirmAction
+        confirmAction.isEnabled = false
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: Private methods
+    @objc private func textChanged(_ sender: UITextField) {
+        actionToEnable?.isEnabled = sender.text! != ""
+    }
+    
     private func endEditing() {
         self.tableView.setEditing(false, animated: true)
         editButton.title = "Edit"

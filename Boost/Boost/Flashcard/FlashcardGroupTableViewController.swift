@@ -12,6 +12,7 @@ class FlashcardGroupTableViewController: UITableViewController {
     
     //MARK: Properties
     var lastSelectedIndex: IndexPath?
+    weak var actionToEnable: UIAlertAction?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,8 +106,8 @@ class FlashcardGroupTableViewController: UITableViewController {
     }
  
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        //adapted from: https://www.simplifiedios.net/ios-dialog-box-with-input/
-        //TODO: disable enter button if empty string
+        //adapted from https://www.simplifiedios.net/ios-dialog-box-with-input/
+        //and https://stackoverflow.com/questions/24474762/check-on-uialertcontroller-textfield-for-enabling-the-button
         let alert = UIAlertController(title: "Add Deck", message: "Enter the name of the new deck", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Enter", style: .default) {
             (_) in
@@ -123,15 +124,22 @@ class FlashcardGroupTableViewController: UITableViewController {
         
         alert.addTextField{ (textField) in
             textField.placeholder = "Enter Name"
+            textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
         }
         
         alert.addAction(confirmAction)
+        self.actionToEnable = confirmAction
+        confirmAction.isEnabled = false
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: Private and Internal Methods
+    @objc private func textChanged(_ sender: UITextField) {
+        actionToEnable?.isEnabled = sender.text! != ""
+    }
+    
     internal func loadSampleFlashcardGroups() { //needs to be internal so it can be accessed for tests
         FlashcardContainerSingleton.sharedDataContainer.flashcardGroups = [
             FlashcardGroup(title: "Empty", flashcards: []),
