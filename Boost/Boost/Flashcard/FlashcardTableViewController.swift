@@ -66,6 +66,16 @@ class FlashcardTableViewController: UITableViewController {
         }
         updateQuizButton()
     }
+    
+    override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        super.tableView(tableView, willBeginEditingRowAt: indexPath)
+        beginEditing()
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        super.tableView(tableView, didEndEditingRowAt: indexPath)
+        endEditing()
+    }
 
     // MARK: - Navigation
 
@@ -119,10 +129,11 @@ class FlashcardTableViewController: UITableViewController {
     }
     
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
-        if editButton.style == .plain {
-            beginEditing()
-        } else if editButton.style == .done {
+        
+        if tableView.isEditing {
             endEditing()
+        } else {
+            beginEditing()
         }
     }
     @IBAction func renameDeck(_ sender: UIBarButtonItem) {
@@ -141,6 +152,8 @@ class FlashcardTableViewController: UITableViewController {
         alert.addTextField{ (textField) in
             textField.placeholder = "Enter Name"
             textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
+            textField.autocapitalizationType = .words
+            textField.autocorrectionType = .yes
         }
         
         alert.addAction(confirmAction)

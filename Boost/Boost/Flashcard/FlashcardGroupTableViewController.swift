@@ -125,6 +125,8 @@ class FlashcardGroupTableViewController: UITableViewController {
         alert.addTextField{ (textField) in
             textField.placeholder = "Enter Name"
             textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
+            textField.autocapitalizationType = .words
+            textField.autocorrectionType = .yes
         }
         
         alert.addAction(confirmAction)
