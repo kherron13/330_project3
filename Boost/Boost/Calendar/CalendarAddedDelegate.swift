@@ -1,3 +1,0 @@
-protocol CalendarAddedDelegate {
-    func calendarDidAdd()
-}
