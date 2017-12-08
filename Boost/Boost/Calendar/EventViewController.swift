@@ -8,48 +8,65 @@
 
 import UIKit
 import EventKit
-
-class EventViewController: UIViewController {
-
-    static let indentifier = "eventVC"
+class EventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
+    @IBOutlet weak var newTableViewF: UITableView!
+    
+    static let identifier = "eventVC"
     let eventStore = EKEventStore()
     var calendar: EKCalendar!
-    var events: [EKEvent] = [EKEvent]()
     
+    var events: [EKEvent] = [EKEvent] ()
+    
+    func loadEvents(){
+        
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd/MM/yyyy"
+        
+        let startDate = dateFormat.date(from: "01/01/2017")
+        let endDate = dateFormat.date(from: "31/12/2017")
+        
+        let eventPredicate = eventStore.predicateForEvents(withStart: startDate!, end: endDate!, calendars: [calendar])
+        
+        events = eventStore.events(matching: eventPredicate).sorted {(event1, event2) -> Bool in
+            return event1.startDate.compare(event2.startDate) == ComparisonResult.orderedAscending
+            
+            
+        }
+        print(events)
+    }
     
     override func viewDidLoad() {
+        newTableViewF.reloadData()
         super.viewDidLoad()
-
+        //newTableViewF.reloadData()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = newTableViewF.dequeueReusableCell(withIdentifier: "uniCell", for: indexPath)
+        let event = events[indexPath.row]
+        cell.textLabel?.text = event.title
+        return cell
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //newTableViewF.reloadData()
         loadEvents()
     }
     
-    func loadEvents(){
-        
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd/MM/yyyy"
-        
-        let startDate = dateFormat.date(from: "10/10/2017")
-        let endDate = dateFormat.date(from: "31/12/2017")
-        
-        let eventPredicate = eventStore.predicateForEvents(withStart: startDate!, end: endDate!, calendars: [calendar])
-        events = eventStore.events(matching: eventPredicate).sorted {(event1, event2) -> Bool in
-            return event1.startDate.compare(event2.startDate) == ComparisonResult.orderedAscending
-        }
-        print(events)
-    
 
-    }
-    
 
     /*
     // MARK: - Navigation
