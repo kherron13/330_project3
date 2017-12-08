@@ -27,6 +27,7 @@
 		C18F2D581FBAA99200B8F978 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D571FBAA99200B8F978 /* Flashcard.swift */; };
 		C18F2D5A1FBAAB6100B8F978 /* FlashcardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */; };
 		C18F2D5C1FBAB17F00B8F978 /* FlashcardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */; };
+		C194B52E1FDB061E002A09EE /* MyToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194B52D1FDB061E002A09EE /* MyToDo.swift */; };
 		C1EBB38B1FBA39C200C4A012 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */; };
 		C1EBB38F1FBA3D0300C4A012 /* Flashcard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */; };
 		C1EBB3931FBA404900C4A012 /* Note.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB3921FBA404900C4A012 /* Note.storyboard */; };
@@ -72,6 +73,7 @@
 		C18F2D571FBAA99200B8F978 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		C18F2D591FBAAB6100B8F978 /* FlashcardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroup.swift; sourceTree = "<group>"; };
 		C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTests.swift; sourceTree = "<group>"; };
+		C194B52D1FDB061E002A09EE /* MyToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyToDo.swift; path = "/Users/kellyherron/Desktop/classes/Fall 2017/COMP 330/330_project3/Boost/Boost/ToDo/MyToDo.swift"; sourceTree = "<absolute>"; };
 		C1EBB38A1FBA39C200C4A012 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		C1EBB38E1FBA3D0300C4A012 /* Flashcard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Flashcard.storyboard; sourceTree = "<group>"; };
 		C1EBB3921FBA404900C4A012 /* Note.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Note.storyboard; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */,
+				C194B52D1FDB061E002A09EE /* MyToDo.swift */,
 				C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */,
 			);
 			path = ToDo;
@@ -319,6 +322,7 @@
 				590A1B661FDA56040090D8C6 /* CalPROTOViewController.swift in Sources */,
 				C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */,
 				C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */,
+				C194B52E1FDB061E002A09EE /* MyToDo.swift in Sources */,
 				C18B94261FCBBEA3000C980F /* QuizViewController.swift in Sources */,
 				590A1B6A1FDA59920090D8C6 /* EventsPROTO.swift in Sources */,
 				C120B1F41FBBF46800D86288 /* FlashcardTableViewController.swift in Sources */,
@@ -482,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Boost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Boost;
@@ -496,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Boost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Boost;
