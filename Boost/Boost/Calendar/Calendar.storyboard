@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="4064.8000000000002" y="940.47976011994012"/>
         </scene>
-        <!--Events Cal View Controller-->
+        <!--Title-->
         <scene sceneID="Yo5-QR-vYM">
             <objects>
                 <viewController id="rVG-lv-obv" customClass="EventsCalViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,6 +115,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wqK-d4-Het"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="f0y-Uf-fPS">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="7vF-on-ppb"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="CalTableView" destination="ipU-ke-kkQ" id="dXZ-iO-Vou"/>
                         <outlet property="EventTableView" destination="ipU-ke-kkQ" id="G6y-hr-M14"/>
