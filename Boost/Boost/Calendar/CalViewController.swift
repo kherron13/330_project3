@@ -89,6 +89,7 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
         // Dispose of any resources that can be recreated.
     }
     
+    //Preparing data to segue to next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        super.prepare(for: segue, sender: sender)
         switch (segue.identifier ?? ""){
