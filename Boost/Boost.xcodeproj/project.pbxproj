@@ -35,7 +35,6 @@
 		C1EBB3991FBA416600C4A012 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB3981FBA416600C4A012 /* TimerViewController.swift */; };
 		C1EBB39B1FBA421400C4A012 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */; };
 		C1EBB39D1FBA424A00C4A012 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */; };
-		E48238D91FC25E6B00AF5443 /* MyToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48238D81FC25E6B00AF5443 /* MyToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +80,6 @@
 		C1EBB3981FBA416600C4A012 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		C1EBB39A1FBA421400C4A012 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		C1EBB39C1FBA424A00C4A012 /* ToDo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDo.storyboard; sourceTree = "<group>"; };
-		E48238D81FC25E6B00AF5443 /* MyToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 				C127786B1FB1880E002FA07B /* Assets.xcassets */,
 				C127786D1FB1880E002FA07B /* LaunchScreen.storyboard */,
 				C12778701FB1880E002FA07B /* Info.plist */,
-				E48238D81FC25E6B00AF5443 /* MyToDo.swift */,
 			);
 			path = Boost;
 			sourceTree = "<group>";
@@ -318,7 +315,6 @@
 				590A1B681FDA597E0090D8C6 /* EventsCalViewController.swift in Sources */,
 				C1EBB3991FBA416600C4A012 /* TimerViewController.swift in Sources */,
 				C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */,
-				E48238D91FC25E6B00AF5443 /* MyToDo.swift in Sources */,
 				590A1B621FDA4CE10090D8C6 /* AddCalViewController.swift in Sources */,
 				590A1B661FDA56040090D8C6 /* CalPROTOViewController.swift in Sources */,
 				C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */,

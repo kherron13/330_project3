@@ -31,6 +31,12 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
         // Dispose of any resources that can be recreated.
     }
     
+    func eventsDidAdd() {
+        self.loadEvents()
+        self.EventTableView.reloadData()
+    }
+    
+    //https://www.andrewcbancroft.com/2016/04/28/listing-calendar-events-with-event-kit-and-swift/
     func loadEvents() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
@@ -38,17 +44,16 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
         let startDate = dateFormatter.date(from: "01/01/2017")
         let endDate = dateFormatter.date(from: "31/12/2017")
         
-        if let startDate = startDate, let endDate = endDate {
-            let eventStore = EKEventStore()
+       // if let startDate = startDate, let endDate = endDate {
             
-            let eventsPredicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: [calendar])
+        let eventsPredicate = eventStore.predicateForEvents(withStart: startDate!, end: endDate!, calendars: [calendar])
             
-            events = eventStore.events(matching: eventsPredicate).sorted {
+        events = eventStore.events(matching: eventsPredicate).sorted {
                 (event1: EKEvent, event2: EKEvent) in
                 
                 return event1.startDate.compare(event2.startDate) == ComparisonResult.orderedAscending
             }
-        }
+        //}
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,31 +68,14 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
         return cell
     }
     
+    //https://www.andrewcbancroft.com/2016/04/28/listing-calendar-events-with-event-kit-and-swift/
     func formatDate(_ date: Date?) -> String {
         if let date = date {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yyyy"
+            dateFormatter.dateFormat = "dd/MM/yyyy"
             return dateFormatter.string(from: date)
         }
         
         return ""
     }
-  
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    func eventsDidAdd() {
-        self.loadEvents()
-        self.EventTableView.reloadData()
-    }
-
 }

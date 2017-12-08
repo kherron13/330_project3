@@ -10,15 +10,19 @@ import UIKit
 import EventKit
 class CalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CalPROTOViewController {
   
+    
     @IBOutlet weak var TableView: UITableView!
     
+    //Creating an instance of EKEventStore to represent calendar database
     var eventStore = EKEventStore()
+    
     var calendars: [EKCalendar] = [EKCalendar]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return calendars.count
     }
     
+    //Labeling each cell in tableview with calendar name
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let calendar = calendars[indexPath.row]
@@ -33,8 +37,11 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
-    
+    func calenderLoad() {
+        self.loadData()
+        self.refreshTableView()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -42,7 +49,7 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     
-    
+    //Checks to see if user has permission to calendar
     func checkForPermission(){
         switch EKEventStore.authorizationStatus(for: .event){
         case .authorized:
@@ -67,6 +74,7 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func loadData(){
+        //Returns an array of calendars that support a given entity type, in this case a event.
         calendars = eventStore.calendars(for: .event)
         TableView.reloadData()
     }
@@ -75,22 +83,7 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
         TableView.isHidden = false
         TableView.reloadData()
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//         //let calendar = calendars[indexPath.row]
-//        performSegue(withIdentifier: "cell", sender: self)
-//    }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let calendar = calendars[indexPath.row]
-//
-//        guard let eventVC = self.storyboard?.instantiateViewController(withIdentifier: EventViewController.identifier) as? EventViewController else { return }
-//
-//        eventVC.calendar = calendar
-//
-//        self.navigationController?.pushViewController(eventVC, animated: true)
-//    }
-    
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,10 +93,12 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
        super.prepare(for: segue, sender: sender)
         switch (segue.identifier ?? ""){
         case "addSegue":
+            //segues to addcalviewcontroller
             let guest = segue.destination as! UINavigationController
             let guestVC = guest.viewControllers[0] as! AddCalViewController
             guestVC.delagate? = self
         case "eventVC":
+            //segues to eventscalviewcontroller
             let eventsVC = segue.destination as! EventsCalViewController
             let selectedIndexPath = TableView.indexPathForSelectedRow!
             
@@ -112,10 +107,4 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
             //print("GOing NoWhere")
         }
     }
-    
-    func calenderLoad() {
-        self.loadData()
-        self.refreshTableView()
-    }
-    
 }
