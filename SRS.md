@@ -211,7 +211,11 @@ alerting the start of a break will play and the process will repeat
 until the selected duration is completed.
 
 #### Flashcards
-The flashcards tab initially displays a table view with saved decks of flashcards. This interface includes a navigation bar at the top with an Edit and an Add button. The Edit button enables deleting of flashcard decks. The Add button prompts the user to give the new deck a title. Once a title is entered it automatically segues into the next view, which is a table view of the cards in the deck, which is initially empty. This same interface can be accessed by tapping on an existing deck in the first view of this tab. The navigation bar of this second view includes a Quiz button, which is enabled when there are one or more flashcards present in the deck. When this button is pressed, a new view is pushed onto the navigation stack. This view initially displays the front of a random card in the deck. The navigation bar at the top has a Flip button that enables the user to toggle between the front and back of the displayed flashcard. Alternatively, this functionality can be achieved by tapping on the area of the view between the toolbar at the bottom and the navigation bar at the top. The toolbar on the bottom provides CODE EMERGENCY! COMMITTING NOW BUT WILL EDIT!!
+The flashcards tab initially displays a table view with saved decks of flashcards. This interface includes a navigation bar at the top with an Edit and an Add button. The Edit button enables deleting of flashcard decks. The Add button prompts the user to give the new deck a title. Once a title is entered it automatically segues into the next view, which is a table view of the cards in the deck, which is initially empty. This same interface can be accessed by tapping on an existing deck in the first view of this tab.
+
+The navigation bar of this second view includes a Quiz button, which is enabled when there are one or more flashcards present in the deck. When this button is pressed, a new view is pushed onto the navigation stack. This view initially displays the front of a random card in the deck. The navigation bar at the top has a Flip button that enables the user to toggle between the front and back of the displayed flashcard. Alternatively, this functionality can be achieved by tapping on the area of the view between the toolbar at the bottom and the navigation bar at the top. The toolbar on the bottom provides a Remove From Quiz button and a Next button. Remove From Quiz takes the currently displaying card out of the quiz so that it will not be repeated. The Next button advances to a new flashcard.
+
+In the second view, there is a toolbar below the navigation bar with three buttons: Edit, Rename Deck, and Add. The Edit button enables editing mode on the tableview, allowing for deletions of rows. Rename Deck provides an alert with a text field that lets the user enter a new name for the deck. The Add button displays a new view with a text field and a text view for the front and back of the new card. This view can also be accessed by tapping on any of the existing entries in the table view, except the text input areas are populated with existing text. This scene had a Cancel and Save button on the navigation bar.
 
 #### Notes
 The notes will allow a user to view the list of notes already saved and
@@ -222,9 +226,6 @@ allow a user to record information.
 The to-do lists will allow a user to check off tasks. The user can add a
 list of related tasks and set automatic reminders for the next task a
 set amount of time after each item is completed.
-
-(These are still preliminary ideas and may change throughout the
-development process)
 
 ### 3.2 Hardware Interfaces
 The app will be built as a native iOS application and will require an
@@ -282,11 +283,7 @@ will be able to be accessed by the an icon on the bottom bar.
 
 ### 4.4 Flashcard Creator
 
-Similar to Quizlet, the application will allow the user to build
-flashcards from the notes they created. The user will also be able to
-use their created flashcard sets to study material efficiently. The
-flashcard functionality will be combined with the notes screen,
-essentially, flashcards will be two-sided notes.
+Similar to physical flashcards, a user can create separate decks of flashcards for various subjects. These decks can be renamed or deleted as desired. Flashcards can be created, modified, and deleted from within a deck by the user. Much of this functionality is handled by implementing custom UITableViewControllers, which provide methods for achieving these functions. The adding and editing of flashcards are handled in a view controller containing a text field and text view that allow the user to enter the desired information. By recieving input-related events, the data can be validated so that a card can't be saved if any of the input areas are empty. The quiz functionality is handled by shuffling the cards through a method available from GameKit and displaying the front of the first card and allowing the user to flip or navigate to the next card.
 
 ### 4.5 To-Do list
 
@@ -317,10 +314,8 @@ use any other resources it does not actually need in its features.
 The interface of the app is fairly easy to navigate, so the user should
 not have any problem when viewing, deleting or creating notes. The user
 is then able to adjust the duration, productivity interval, and break
-interval in order to facilitate working on school tasks. Our notes are
-then classified in 2 categories: Regular or Quiz Notes. Quiz Notes
-should be able to display a significant part of the notes, while
-simultaneously hiding the rest of the information so as persuade the
+interval in order to facilitate working on school tasks. Flashcards
+are able to display some information while simultaneously hiding the rest of the information so as persuade the
 user to fill the rest of the information from his knowledge in order to
 prepare for test time. We decided on using something similar to the
 Flashcard Generator on Quizlet.
