@@ -8,8 +8,8 @@
 
 import UIKit
 import EventKit
-class CalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class CalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CalPROTOViewController {
+  
     @IBOutlet weak var TableView: UITableView!
     
     var eventStore = EKEventStore()
@@ -67,8 +67,12 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func loadData(){
-        
         calendars = eventStore.calendars(for: .event)
+        TableView.reloadData()
+    }
+    
+    func refreshTableView() {
+        TableView.isHidden = false
         TableView.reloadData()
     }
     
@@ -77,19 +81,41 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
 //        performSegue(withIdentifier: "cell", sender: self)
 //    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let calendar = calendars[indexPath.row]
-
-        guard let eventVC = self.storyboard?.instantiateViewController(withIdentifier: EventViewController.identifier) as? EventViewController else { return }
-
-        eventVC.calendar = calendar
-
-        self.navigationController?.pushViewController(eventVC, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let calendar = calendars[indexPath.row]
+//
+//        guard let eventVC = self.storyboard?.instantiateViewController(withIdentifier: EventViewController.identifier) as? EventViewController else { return }
+//
+//        eventVC.calendar = calendar
+//
+//        self.navigationController?.pushViewController(eventVC, animated: true)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       super.prepare(for: segue, sender: sender)
+        switch (segue.identifier ?? ""){
+        case "addSegue":
+            let guest = segue.destination as! UINavigationController
+            let guestVC = guest.viewControllers[0] as! AddCalViewController
+            guestVC.delagate? = self
+        case "eventVC":
+            let eventsVC = segue.destination as! EventsCalViewController
+            let selectedIndexPath = TableView.indexPathForSelectedRow!
+            
+            eventsVC.calendar = calendars[(selectedIndexPath as NSIndexPath).row]
+        default: break
+            //print("GOing NoWhere")
+        }
+    }
+    
+    func calenderLoad() {
+        self.loadData()
+        self.refreshTableView()
+    }
+    
 }
