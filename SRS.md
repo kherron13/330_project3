@@ -80,7 +80,7 @@ November 3, 2017
 This document was written to provide an understanding of the
 software requirements for the mobile application known as Boost. The information 
 is split into sections and will elaborate on how the app will operate, 
-the advantages of its functions, and the apps non-functional requirements.
+the advantages of its functions, and the app's non-functional requirements.
 
 ### 1.2 Document Conventions
 
@@ -88,16 +88,16 @@ This document is written using Markdown syntax. All headers are in atx-style, us
 
 ### 1.3 Intended Audience and Reading Suggestions
 
-This document is written for two groups, a development team and the users. Development teams will be able to read this document and understand the implementation of the app. Ultimately, it is a guide, which will help them understand the apps main purpose and allow them to build upon it.
+This document is written for two groups, a development team and the users. Development teams will be able to read this document and understand the implementation of the app. Ultimately, it is a guide, which will help them understand the app's main purpose and allow them to build upon it.
 This document is written to help users understand what Boost is and how it will run. It is a guide intended to help them comprehend how each function will work and how it will benefit them. This document also serves as a resource which will help users navigate through the app. 
 
 ### 1.4 Product Scope
 
-Through primary research, we found that a large portion of students already use apps such as calendars, notes, and to-do list, but they also expressed that it was an inconvenience for them to have to use so many apps. Boost is an iOS application designed to primarily tackle this problem and help students stay organized throughout their academic year all while using one app. The app is essentially a set of tools, such as a calendar, a note pad, flashcards, productivity timer, and a to-do list. With Boost, students can obtain organization without the hassle or worry of having to use multiple apps. 
+Through primary research, we found that a large portion of students already use apps such as calendars, notes, and to-do lists, but they also expressed that it was an inconvenience for them to have to use so many apps. Boost is an iOS application designed primarily to tackle this problem and to help students stay organized throughout their academic year all while using one app. The app is essentially a set of tools, such as a calendar, a note pad, flashcards, productivity timer, and a to-do list. With Boost, students can obtain organization without the hassle or worry of having to use multiple apps. 
 
 Through Secondary research, our developing team also found that students who are organized are much more likely to obtain better grades. Boost is designed to be a convenient app for users to easily access and organize all their tasks. Boost is intended to be easily navigated in order to encourage organization and make it fun.
 
-Boost is an app that will help users stay on track of their work. It will not allow users to share their information. If a user would like to send their friends or colleagues a file of their notes or flashcards, they will not be able to do so. Unable to share notes or task may be a small inconvenience as some users may find it helpful to read others class notes. Boost unfortunately will not let users share info because it is only concerned with helping the user of the app stay on track of their tasks. 
+Boost is an app that will help users stay on track of their work. It will not allow users to share their information. If a user would like to send their friends or colleagues a file of their notes or flashcards, they will not be able to do so. Inability to share notes or task may be a small inconvenience as some users may find it helpful to read others' class notes. Boost unfortunately will not let users share info because it is only concerned with helping the user of the app stay on track of their tasks. 
 
 1.  Potential User \#1: Brad A. MacDonald
     [*-bmacdonald@luc.edu*](mailto:-bmacdonald@luc.edu)
@@ -145,7 +145,7 @@ Cheng, Victoria. “Better Organization, Better Grades.” Boston.com, The Bosto
 
 ### 2.1 Product Perspective
 
-The product developed will provide a general/multipurpose productivity app for students that allow the user to simply take notes in different subjects, create study cards for tests, and study efficiently with the app’s productivity watch. This system is not a replacement of any existing systems, it is rather a system that provides students with the tools they need to succeed in one app. The goal is to provide a system where students can get stuff done more efficiently. Rather than having to go through all the trouble of downloading 4 to 6 separate apps, users will save time by downloading only one app. This will also help with organization as users will have all their information and content under one app rather than scattered in different apps.
+The product developed will provide a general/multipurpose productivity app for students that allow the user to simply take notes in different subjects, create study cards for tests, and study efficiently with the app’s productivity watch. This system is not a replacement for any existing systems, it is rather a system that provides students with the tools they need to succeed in one app. The goal is to provide a system where students can get stuff done more efficiently. Rather than having to go through all the trouble of downloading 4 to 6 separate apps, users will save time by downloading only one app. This will also help with organization as users will have all their information and content under one app rather than scattered in different apps.
 
 ### 2.2 Product Functions
 
@@ -159,7 +159,7 @@ o Note taking functionality
 
 o To-do lists
 
-o Create flashcards 
+o Study with flashcards
 
 ### 2.3 User Classes and Characteristics
 
@@ -169,7 +169,7 @@ o Student User: The app is tailored to help students with time management and bo
 
 ### 2.4 Operating Environment
 
-The system will be compatible with iOS 11.1.1 for now, in the future we hope to extend it to Android 8.0 
+The system will be compatible with iOS 11.x for now, in the future we hope to extend it to Android 8.0 
 
 
 ### 2.5 Design and Implementation Constraints
@@ -180,7 +180,7 @@ The Boost system will be coded in the Swift programming language which is anothe
 
 ### 2.6 User Documentation
 
-The Boost system shall provide an integrated help system that describes the rules of the system, and illustrates all system functions. The Boost system shall provide this information in the time of downloading the app. This documentation will include in-app tutorials and help documents referenceable through user interface.
+The Boost system shall provide an integrated help system that describes the rules of the system and illustrates all system functions. The Boost system shall provide this information in the time of downloading the app. This documentation will include in-app tutorials and help documents referenceable through user interface.
 
 ### 2.7 Assumptions and Dependencies
 
@@ -194,7 +194,7 @@ o One assumption is the internet connectivity. The user will not be able to sync
 ### 3.1 User Interfaces
 
 The app’s main navigation will be a tab bar based. The items on the tab
-bar will be the calendar, timer, notes, and to-do lists.
+bar will be the calendar, timer, flashcards, notes, and to-do lists.
 
 #### Calendar
 The calendar tab will display a calendar, defaulting to the current
@@ -210,13 +210,13 @@ productive time will play. Once the productive interval is up, a sound
 alerting the start of a break will play and the process will repeat
 until the selected duration is completed.
 
+#### Flashcards
+The flashcards tab initially displays a table view with saved decks of flashcards. This interface includes a navigation bar at the top with an Edit and an Add button. The Edit button enables deleting of flashcard decks. The Add button prompts the user to give the new deck a title. Once a title is entered it automatically segues into the next view, which is a table view of the cards in the deck, which is initially empty. This same interface can be accessed by tapping on an existing deck in the first view of this tab. The navigation bar of this second view includes a Quiz button, which is enabled when there are one or more flashcards present in the deck. When this button is pressed, a new view is pushed onto the navigation stack. This view initially displays the front of a random card in the deck. The navigation bar at the top has a Flip button that enables the user to toggle between the front and back of the displayed flashcard. Alternatively, this functionality can be achieved by tapping on the area of the view between the toolbar at the bottom and the navigation bar at the top. The toolbar on the bottom provides CODE EMERGENCY! COMMITTING NOW BUT WILL EDIT!!
+
 #### Notes
 The notes will allow a user to view the list of notes already saved and
-include a button for editing and adding additional notes. There will be
-two different types of notes: regular and quiz. The regular notes will
-allow a user to record information. The quiz notes will support
-displaying some information, such as a definition, and hiding other
-information, such as a vocabulary word.
+include a button for editing and adding additional notes. The notes will
+allow a user to record information.
 
 #### To-Do
 The to-do lists will allow a user to check off tasks. The user can add a
