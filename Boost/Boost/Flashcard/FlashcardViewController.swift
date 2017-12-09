@@ -73,9 +73,9 @@ class FlashcardViewController: UIViewController, UITextFieldDelegate, UITextView
     
     private func createToolbar() -> UIToolbar {
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44))
-        toolBar.barStyle = UIBarStyle.blackTranslucent
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toolBarDoneButtonPressed(button:)))
+        doneButton.tintColor = UIColor(red: 146/255, green: 34/255, blue: 71/255, alpha: 1)
         toolBar.items = [flexibleSpace, doneButton]
         return toolBar
     }
