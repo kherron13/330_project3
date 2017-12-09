@@ -93,7 +93,7 @@ class ViewController: UITableViewController
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:
             { (_) in
                 // Get the title the user inserted, but only if it is not an empty string
-                if let title = alert.textFields?[0].text, title.characters.count > 0
+                if let title = alert.textFields?[0].text, title.count > 0
                 {
                     self.addNewToDoItem(title: title)
                 }

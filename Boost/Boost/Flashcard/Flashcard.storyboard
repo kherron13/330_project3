@@ -268,8 +268,9 @@
         <scene sceneID="UES-Jw-kAW">
             <objects>
                 <navigationController storyboardIdentifier="Flashcard" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jC5-MS-Tfp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Flashcards" id="Le5-90-urU"/>
+                    <tabBarItem key="tabBarItem" title="Flashcards" image="flashcards" id="FuW-nW-OEQ"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ye-je-TCZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -307,6 +308,9 @@
             <point key="canvasLocation" x="2924" y="649"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flashcards" width="100" height="100"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sZC-A6-nQM"/>
     </inferredMetricsTieBreakers>
