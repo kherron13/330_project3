@@ -314,4 +314,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="sZC-A6-nQM"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.57090502977371216" green="0.1319577693939209" blue="0.27983561158180237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
