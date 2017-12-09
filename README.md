@@ -1,7 +1,12 @@
-# 330_project3
+# Boost
+Boost is a general, multipurpose app for iOS devices intended to boost productivity. Its main features include convenient access to the device's calendar, flashcards, notes, a study timer, and a to-do list.
 
+## Install and Run
+Clone or download the project and install Xcode 9.1 or later on a compatible Mac. Navigate into the top level Boost folder and open the Boost.xcodeproj file, which automatically loads the entire project into Xcode. To run on a simulator, choose any iOS device from the list of simulators at the top of the screen and press the run button.
 
-## Flashcards
+## Features
+
+### Flashcards
 
 The Flashcards tab shows the titles of decks of flashcards and their number of cards in a table view. This is analogous to decks of physical flashcards dedicated to different subjects. The initial screen provides an Edit button that allows the user to delete a deck and an add button (represented with a + symbol, which is familiar for iOS users as this symbol is used throughout the OS) that allows the user to add a new deck.
 
@@ -12,7 +17,7 @@ When a user adds a new card to a deck or taps on an existing card in the table v
 The Quiz feature begins by shuffling the flashcards in the deck and displaying the front of the first card. The shuffle method used is imported from Apple's GameKit, a resource available in the iOS SDK without additional overhead. The deck retains the same ordering of cards throughout the quiz and repeats from the beginning once every card has been displayed. The navigation bar has a Flip button that changes the side of the card that is displayed, just as if a physical flashcard was flipped. Alternatively, the user can tap the area where the text is displayed to get the same behavior. At the bottom is a toolbar with a Remove From Quiz and Next button. The Next button displays the front of the next flashcard in the shuffled deck. The Remove From Quiz button removes the current displayed card from the deck for the duration of the quiz so that it will not be repeated. This is equivalent to setting aside a physical flashcard once the information on it is already known.
 
 
-## To-Do List
+### To-Do List
 
 The To-Do List tab displays an empty table view list with the "To-Do List" title at the top, an edit button placed at the top left corner, and the "+" button at the top right corner. 
 
