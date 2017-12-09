@@ -29,22 +29,6 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.textLabel?.text = calendar.title
         return cell
     }
-     //Remove calendar from TableView
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let rmCalendar = calendars.remove(at: indexPath.row)
-        //print(rmCalendar)
-        do{
-            try eventStore.removeCalendar(rmCalendar, commit: true)
-            TableView.deleteRows(at: [indexPath], with: .fade)
-        }catch{
-            let alert = UIAlertController(title: "Calendar could not be removed", message: (error as NSError).localizedDescription, preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(OKAction)
-            
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
