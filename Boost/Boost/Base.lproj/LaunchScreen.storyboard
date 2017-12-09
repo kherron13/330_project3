@@ -24,13 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="vLj-wR-puj"/>
                                 </constraints>
-                                <items>
-                                    <tabBarItem title="Calendar" image="calendar" id="SWh-m6-Qmm"/>
-                                    <tabBarItem title="Flashcards" image="flashcards" id="7hy-LM-a9J"/>
-                                    <tabBarItem title="Notes" image="notes" id="JFp-4l-EVR"/>
-                                    <tabBarItem title="Timer" image="timer" id="tv4-eh-u6M"/>
-                                    <tabBarItem title="To Do" image="todo" id="FTI-uv-ZyK"/>
-                                </items>
+                                <items/>
                             </tabBar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5u-05-UUz">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -75,11 +69,4 @@
             <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="calendar" width="100" height="100"/>
-        <image name="flashcards" width="100" height="100"/>
-        <image name="notes" width="100" height="100"/>
-        <image name="timer" width="100" height="100"/>
-        <image name="todo" width="100" height="100"/>
-    </resources>
 </document>
