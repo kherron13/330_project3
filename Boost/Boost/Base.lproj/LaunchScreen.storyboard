@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +15,71 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stx-1H-kgJ">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="vLj-wR-puj"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Calendar" image="calendar" id="SWh-m6-Qmm"/>
+                                    <tabBarItem title="Flashcards" image="flashcards" id="7hy-LM-a9J"/>
+                                    <tabBarItem title="Notes" image="notes" id="JFp-4l-EVR"/>
+                                    <tabBarItem title="Timer" image="timer" id="tv4-eh-u6M"/>
+                                    <tabBarItem title="To Do" image="todo" id="FTI-uv-ZyK"/>
+                                </items>
+                            </tabBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5u-05-UUz">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Bz8-MJ-7yM"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="UiV-vY-X1w"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-Ok-cdf" userLabel="extend nav bar to top">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hht-Qt-klf" userLabel="extend tab bar to bottom">
+                                <rect key="frame" x="0.0" y="778" width="375" height="34"/>
+                                <color key="backgroundColor" red="0.97636479139328003" green="0.97653168439865112" blue="0.97635418176651001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j5u-05-UUz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1K1-Nz-pfY"/>
+                            <constraint firstAttribute="trailing" secondItem="7hF-Ok-cdf" secondAttribute="trailing" id="3BQ-xq-Ta8"/>
+                            <constraint firstItem="j5u-05-UUz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4ER-ON-A1e"/>
+                            <constraint firstItem="hht-Qt-klf" firstAttribute="top" secondItem="stx-1H-kgJ" secondAttribute="bottom" id="923-tO-pT5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="stx-1H-kgJ" secondAttribute="bottom" id="ELq-CU-ITB"/>
+                            <constraint firstAttribute="trailing" secondItem="hht-Qt-klf" secondAttribute="trailing" id="Tjm-7M-DGb"/>
+                            <constraint firstItem="7hF-Ok-cdf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cVC-ag-y93"/>
+                            <constraint firstItem="j5u-05-UUz" firstAttribute="top" secondItem="7hF-Ok-cdf" secondAttribute="bottom" id="deE-zz-ouR"/>
+                            <constraint firstItem="hht-Qt-klf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="eMG-0m-uAn"/>
+                            <constraint firstItem="j5u-05-UUz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jVS-dh-k73"/>
+                            <constraint firstItem="stx-1H-kgJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="on5-nh-Igm"/>
+                            <constraint firstItem="stx-1H-kgJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qnd-dG-BdT"/>
+                            <constraint firstItem="7hF-Ok-cdf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="rYY-kH-0IW"/>
+                            <constraint firstAttribute="bottom" secondItem="hht-Qt-klf" secondAttribute="bottom" id="z7I-zP-cGl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="100" height="100"/>
+        <image name="flashcards" width="100" height="100"/>
+        <image name="notes" width="100" height="100"/>
+        <image name="timer" width="100" height="100"/>
+        <image name="todo" width="100" height="100"/>
+    </resources>
 </document>
