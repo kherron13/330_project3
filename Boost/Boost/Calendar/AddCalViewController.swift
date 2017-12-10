@@ -49,24 +49,36 @@ class AddCalViewController: UIViewController {
         
         // Filter the available sources and select the "Local" source to assign to the new calendar's
         // source property
-        newCalendar.source = sourcesInEventStore.filter{
+        /*newCalendar.source = sourcesInEventStore.filter{
             (source: EKSource) -> Bool in
-            source.title == "Subscribed Calendars" ||//previously was local, but local only exists when no accounts for calendar are enabled, which would cause a crash.
-            source.sourceType.rawValue == EKSourceType.local.rawValue //maintain support for local calendar if necessary
-            }.first!
+            //these sources support adding calendars
+            source.sourceType.rawValue == EKSourceType.local.rawValue ||
+            source.sourceType.rawValue == EKSourceType.calDAV.rawValue ||
+            source.sourceType.rawValue == EKSourceType.exchange.rawValue ||
+            source.sourceType.rawValue == EKSourceType.mobileMe.rawValue
+            }.first!*/
         
         // Save the calendar using the Event Store instance
-        do {
-            try eventStore.saveCalendar(newCalendar, commit: true)
-            UserDefaults.standard.set(newCalendar.calendarIdentifier, forKey: "EventTrackerPrimaryCalendar")
-            delagate?.calenderLoad()
-            self.dismiss(animated: true, completion: nil)
-        } catch {
-            let alert = UIAlertController(title: "Calendar could not save", message: (error as NSError).localizedDescription, preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(OKAction)
-            
-            self.present(alert, animated: true, completion: nil)
+        for (i, source) in sourcesInEventStore.enumerated() {
+            if source.title != "Other" && source.sourceType != EKSourceType.subscribed {
+                print(source.title)
+                newCalendar.source = source //can't write to Other and can't persist Subscribed, so don't use it as a source
+            }
+            do {
+                try eventStore.saveCalendar(newCalendar, commit: true)
+                UserDefaults.standard.set(newCalendar.calendarIdentifier, forKey: "EventTrackerPrimaryCalendar")
+                delagate?.calenderLoad()
+                self.dismiss(animated: true, completion: nil)
+                break
+            } catch {
+                if i == sourcesInEventStore.count - 1 { //only notify of failure if out of options
+                    let alert = UIAlertController(title: "Calendar could not save", message: (error as NSError).localizedDescription, preferredStyle: .alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(OKAction)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
 }
