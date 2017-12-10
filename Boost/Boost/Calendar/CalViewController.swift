@@ -31,10 +31,12 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
      //Remove calendar from TableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let rmCalendar = calendars.remove(at: indexPath.row)
+        //don't actually remove this unless it can successfully be removed
+        let rmCalendar = calendars[indexPath.row]
         //print(rmCalendar)
         do{
             try eventStore.removeCalendar(rmCalendar, commit: true)
+            calendars.remove(at: indexPath.row)
             TableView.deleteRows(at: [indexPath], with: .fade)
         }catch{
             let alert = UIAlertController(title: "Calendar could not be removed", message: (error as NSError).localizedDescription, preferredStyle: .alert)

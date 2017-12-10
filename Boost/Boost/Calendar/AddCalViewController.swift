@@ -51,7 +51,7 @@ class AddCalViewController: UIViewController {
         // source property
         newCalendar.source = sourcesInEventStore.filter{
             (source: EKSource) -> Bool in
-            source.sourceType.rawValue == EKSourceType.local.rawValue
+            source.title == "Subscribed Calendars" //previously was local, but local only exists when no accounts for calendar are enabled, which would cause a crash. "Subscribed Calendars" is guaranteed to exist
             }.first!
         
         // Save the calendar using the Event Store instance
