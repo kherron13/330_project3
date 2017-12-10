@@ -36,7 +36,7 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //print(rmCalendar)
         do{
             try eventStore.removeCalendar(rmCalendar, commit: true)
-            calendars.remove(at: indexPath.row)
+            calendars.remove(at: indexPath.row) //remove only after successful attempt
             TableView.deleteRows(at: [indexPath], with: .fade)
         }catch{
             let alert = UIAlertController(title: "Calendar could not be removed", message: (error as NSError).localizedDescription, preferredStyle: .alert)
