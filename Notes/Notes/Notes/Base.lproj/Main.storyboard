@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nsr-rH-4xW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nsr-rH-4xW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="qWx-gZ-pyN"/>
                     <connections>
                         <outlet property="table" destination="9KQ-bc-SMb" id="1me-az-bRp"/>
-                        <segue destination="Src-aN-Mgh" kind="show" identifier="detail" id="kxW-b0-DqD"/>
+                        <segue destination="Src-aN-Mgh" kind="show" identifier="detail" id="ONK-cw-Cq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -48,13 +48,13 @@
         <!--Note-->
         <scene sceneID="H4P-pP-wBF">
             <objects>
-                <viewController title="Note" id="Src-aN-Mgh" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController title="Note" id="Src-aN-Mgh" customClass="DetailViewController" customModule="Notes" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7do-gV-ViF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Xr-w9-FKv">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-iS-3y9">
+                                <rect key="frame" x="0.0" y="82" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,15 +63,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4Xr-w9-FKv" secondAttribute="trailing" id="FO8-kb-zeq"/>
-                            <constraint firstItem="4Xr-w9-FKv" firstAttribute="bottom" secondItem="26q-Hq-e9n" secondAttribute="bottom" id="OxU-TC-Ls0"/>
-                            <constraint firstItem="4Xr-w9-FKv" firstAttribute="leading" secondItem="7do-gV-ViF" secondAttribute="leading" id="jVW-KA-jkP"/>
-                            <constraint firstItem="4Xr-w9-FKv" firstAttribute="top" secondItem="26q-Hq-e9n" secondAttribute="top" constant="12" id="vsa-T3-fPZ"/>
+                            <constraint firstAttribute="trailing" secondItem="9aN-iS-3y9" secondAttribute="trailing" id="B2M-lC-gu5"/>
+                            <constraint firstItem="9aN-iS-3y9" firstAttribute="leading" secondItem="7do-gV-ViF" secondAttribute="leading" id="DwZ-Y6-zI0"/>
+                            <constraint firstItem="9aN-iS-3y9" firstAttribute="bottom" secondItem="26q-Hq-e9n" secondAttribute="bottom" id="Jbx-2P-MPc"/>
+                            <constraint firstItem="9aN-iS-3y9" firstAttribute="top" secondItem="26q-Hq-e9n" secondAttribute="top" constant="18" id="YhY-bX-3pT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="26q-Hq-e9n"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="4Xr-w9-FKv" id="Tfq-rU-tjD"/>
+                        <outlet property="textView" destination="9aN-iS-3y9" id="Da4-RT-hfR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7z-Wi-M9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
