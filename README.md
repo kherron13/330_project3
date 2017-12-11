@@ -24,3 +24,11 @@ The To-Do List tab displays an empty table view list with the "To-Do List" title
 The "+" button allows the user to create a new to-do list item. The user will be prompted to input a title for this item and be able to save it to the list. From the current list view the user is able to click on the to-do list item to place a blue check in the row, marking it as completed. The user is able to delete the item by swiping left and then tapping the red delete tab that will appear in the row. 
 
 The edit button allows the user to also delete to-do list items and be able to rearrange the list in which ever order they see fit.
+
+### Notes
+
+The Notes section works as expected for any note taking app. Initially, the user is shown an empty table view with a Notes header. As expected, the top section is accompanied by the Edit button and a + Button.
+
+Once the user selects the Add button (+), the user is able to create and save notes according to his needs. Since he will relly on this primarily to take notes for the classes he's enrolled, the User is able to save notes automatically once he's done typing. The keyboard display is automatically shown & hidden once the user is done with creating a new note and returns to the Note List.
+
+The edit button allows the user to delete the items that he will not occupy in the future.
