@@ -13,7 +13,7 @@
         <scene sceneID="l7P-Ex-l0z">
             <objects>
                 <viewControllerPlaceholder storyboardName="Calendar" referencedIdentifier="Calendar" id="RfO-eq-cAd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="first" landscapeImage="first" selectedImage="first" id="uqz-sa-oQR"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" id="uqz-sa-oQR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0L0-eP-nUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,7 +46,7 @@
         <scene sceneID="NRd-zA-wCe">
             <objects>
                 <viewControllerPlaceholder storyboardName="Flashcard" referencedIdentifier="Flashcard" id="bp3-i6-AUx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Flashcards" image="first" landscapeImage="first" selectedImage="first" id="5lm-Zc-xeJ"/>
+                    <tabBarItem key="tabBarItem" title="Flashcards" id="5lm-Zc-xeJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogu-Kd-gWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,8 +83,5 @@
             <point key="canvasLocation" x="228" y="1324.1379310344828"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-    </resources>
     <color key="tintColor" red="0.57090502980000002" green="0.13195776940000001" blue="0.27983561159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
