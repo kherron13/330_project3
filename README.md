@@ -2,7 +2,7 @@
 Boost is a general, multipurpose app for iOS devices intended to boost productivity. Its main features include convenient access to the device's calendar, flashcards, notes, a study timer, and a to-do list.
 
 ## Install and Run
-Clone or download the project and install Xcode 9.1 or later on a compatible Mac. Navigate into the top level Boost folder and open the Boost.xcodeproj file, which automatically loads the entire project into Xcode. To run on a simulator, choose any iOS device from the list of simulators at the top of the screen and press the run button.
+Clone or download the project and install Xcode 9.1 or later on a compatible Mac. Navigate into the top level Boost folder and open the Boost.xcodeproj file, which automatically loads the entire project into Xcode. To run on a simulator, choose any iOS device from the list of simulators at the top of the screen and press the run button. To run Boost on a physical device, follow the instructions provided by [Apple's developer site](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html). 
 
 ## Features
 
