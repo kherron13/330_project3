@@ -17,6 +17,7 @@ class AddEvnetsViewController: UIViewController {
     @IBOutlet weak var eventNameTF: UITextField!
     @IBOutlet weak var eventStartDatePicker: UIDatePicker!
     @IBOutlet weak var eventEndDatePicker: UIDatePicker!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var delegate: EventDelegate?
     
@@ -27,6 +28,7 @@ class AddEvnetsViewController: UIViewController {
         self.eventStartDatePicker.setDate(initialDatePickerValue(), animated: false)
         self.eventEndDatePicker.setDate(initialDatePickerValue(), animated: false)
         eventNameTF.inputAccessoryView = createToolbar()
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         // Do any additional setup after loading the view.
     }
     
