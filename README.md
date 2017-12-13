@@ -2,7 +2,7 @@
 Boost is a general, multipurpose app for iOS devices intended to boost productivity. Its main features include convenient access to the device's calendar, flashcards, notes, a study timer, and a to-do list.
 
 ## Install and Run
-Clone or download the project and install Xcode 9.1 or later on a compatible Mac. Navigate into the top level Boost folder and open the Boost.xcodeproj file, which automatically loads the entire project into Xcode. To run on a simulator, choose any iOS device from the list of simulators at the top of the screen and press the run button.
+Clone or download the project and install Xcode 9.1 or later on a compatible Mac. Navigate into the top level Boost folder and open the Boost.xcodeproj file, which automatically loads the entire project into Xcode. The project is immediately ready to run on a simulator. To do so, choose any iOS device from the list of simulators at the top of the screen and press the run button. To run Boost on a physical device, you will need to set a development team and provisioning profile for the project. These instructions can be found at [Apple's developer site](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html).
 
 ## Features
 
@@ -17,6 +17,45 @@ When a user adds a new card to a deck or taps on an existing card in the table v
 The Quiz feature begins by shuffling the flashcards in the deck and displaying the front of the first card. The shuffle method used is imported from Apple's GameKit, a resource available in the iOS SDK without additional overhead. The deck retains the same ordering of cards throughout the quiz and repeats from the beginning once every card has been displayed. The navigation bar has a Flip button that changes the side of the card that is displayed, just as if a physical flashcard was flipped. Alternatively, the user can tap the area where the text is displayed to get the same behavior. At the bottom is a toolbar with a Remove From Quiz and Next button. The Next button displays the front of the next flashcard in the shuffled deck. The Remove From Quiz button removes the current displayed card from the deck for the duration of the quiz so that it will not be repeated. This is equivalent to setting aside a physical flashcard once the information on it is already known.
 
 
+### Notes
+
+The Notes section works as expected for any note taking app. Initially, the user is shown an empty table view with a Notes header. As expected, the top section is accompanied by the Edit button and a + Button.
+
+Once the user selects the Add button (+), the user is able to create and save notes according to his needs. Since he will relly on this primarily to take notes for the classes he's enrolled, the User is able to save notes automatically once he's done typing. The keyboard display is automatically shown & hidden once the user is done with creating a new note and returns to the Note List.
+
+The edit button allows the user to delete the items that he will not occupy in the future.
+
+
+### Productivity Timer
+
+Productivity timer displays two datepicker and a button to start the studying timer.
+
+First datepicker is to set the study time and the other to set the break time.
+Once start study button is tapped, a request is sent to the notification center to display a notification after the specified study time.
+
+When this notification, let's call it get_break notification, is triggered it shows a study image, and 3 buttons 
+	1. Go for break
+	2. Extend study
+	3. End session
+
+When "Go for break" button is pressed then it sends a request to the notification center to trigger a notification after the specified break time.
+When the notification, let's call it start_study notification , is triggered it shows another break image, and 3 buttons
+	1. Go to study
+	2. Extend break
+	3. End session
+
+When "Extend study" button is pressed then it sends a request to the notification center to trigger a notification after the specified break time. #note : study is extended for the break time only.
+When this notification is triggered then it shows the same notification as that of get_break notification which send it's request.
+
+When "Extend break" button is pressed then it sends a request to the notification center to trigger a notification after the specified break time. #note : break is extend for the break time.
+When this notification is triggered then it shows the same notification as that of start_study notification which send it's request.
+
+When "End session" button is pressed then it triggers the app to show up on screen. So that the user can start another timer.
+
+If the app is in running state while the notification is triggered it will play a specific alarm.mp3 file.
+
+If the app is in background or in closed state when notification is triggered then the iOS default notification tone is played.
+
 ### To-Do List
 
 The To-Do List tab displays an empty table view list with the "To-Do List" title at the top, an edit button placed at the top left corner, and the "+" button at the top right corner. 
@@ -25,10 +64,4 @@ The "+" button allows the user to create a new to-do list item. The user will be
 
 The edit button allows the user to also delete to-do list items and be able to rearrange the list in which ever order they see fit.
 
-### Notes
 
-The Notes section works as expected for any note taking app. Initially, the user is shown an empty table view with a Notes header. As expected, the top section is accompanied by the Edit button and a + Button.
-
-Once the user selects the Add button (+), the user is able to create and save notes according to his needs. Since he will relly on this primarily to take notes for the classes he's enrolled, the User is able to save notes automatically once he's done typing. The keyboard display is automatically shown & hidden once the user is done with creating a new note and returns to the Note List.
-
-The edit button allows the user to delete the items that he will not occupy in the future.
