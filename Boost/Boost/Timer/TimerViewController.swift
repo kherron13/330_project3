@@ -5,6 +5,7 @@
 //  Created by Kelly Herron on 11/13/17.
 //  Copyright © 2017 Kelly Herron. All rights reserved.
 //
+
 import UIKit
 import UserNotifications
 import AVFoundation
@@ -32,6 +33,7 @@ class TimerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(self.extendStudy(notification:)),name:Notification.Name("EXTENDSTUDYSELECT"),object:nil)
     }
     
+    
     @objc func goForBreak(notification:Notification){
         scheduleNotification(title: "Productivity Timer", subtitle:"Study", body: "Your break time is over.",identifier: "GOTOSTUDY",image: "study",category:  "STUDYTIME_CATEGORY", inSeconds: self.breaktime, completion : {
             success in if success{
@@ -52,8 +54,7 @@ class TimerViewController: UIViewController {
             }
         })
     }
-    
-      @objc func goToStudy(notification:Notification){
+    @objc func goToStudy(notification:Notification){
         scheduleNotification(title: "Productivity Timer", subtitle:"Break", body: "Please take a break.",identifier: "GOFORBREAK",image: "break",category:  "BREAKTIME_CATEGORY", inSeconds: self.studytime, completion : {
             success in if success{
                 print("Notified")
@@ -118,7 +119,8 @@ class TimerViewController: UIViewController {
             }
         })
     }
-override func didReceiveMemoryWarning() {
+
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -155,4 +157,3 @@ override func didReceiveMemoryWarning() {
         
     }
 }
-

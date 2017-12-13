@@ -22,6 +22,9 @@
 		C127787A1FB1880E002FA07B /* BoostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778791FB1880E002FA07B /* BoostTests.swift */; };
 		C127BAF61FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */; };
 		C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */; };
+		C13AE31C1FE19A5D009C0125 /* study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C13AE3191FE19A5D009C0125 /* study.jpg */; };
+		C13AE31D1FE19A5D009C0125 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C13AE31A1FE19A5D009C0125 /* alarm.mp3 */; };
+		C13AE31E1FE19A5D009C0125 /* break.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C13AE31B1FE19A5D009C0125 /* break.jpg */; };
 		C14E65101FBFC2D9008391BE /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */; };
 		C168C2701FDF27A6008089AA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C26E1FDF27A6008089AA /* NoteViewController.swift */; };
 		C168C2711FDF27A6008089AA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168C26F1FDF27A6008089AA /* DetailViewController.swift */; };
@@ -70,6 +73,9 @@
 		C127787B1FB1880E002FA07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewCell.swift; sourceTree = "<group>"; };
 		C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewController.swift; sourceTree = "<group>"; };
+		C13AE3191FE19A5D009C0125 /* study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = study.jpg; sourceTree = SOURCE_ROOT; };
+		C13AE31A1FE19A5D009C0125 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = SOURCE_ROOT; };
+		C13AE31B1FE19A5D009C0125 /* break.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = break.jpg; sourceTree = SOURCE_ROOT; };
 		C14E650F1FBFC2D9008391BE /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		C168C26E1FDF27A6008089AA /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		C168C26F1FDF27A6008089AA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				C1EBB3961FBA415300C4A012 /* Timer.storyboard */,
+				C13AE31A1FE19A5D009C0125 /* alarm.mp3 */,
+				C13AE31B1FE19A5D009C0125 /* break.jpg */,
+				C13AE3191FE19A5D009C0125 /* study.jpg */,
 				C1EBB3981FBA416600C4A012 /* TimerViewController.swift */,
 			);
 			path = Timer;
@@ -295,11 +304,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1EBB38B1FBA39C200C4A012 /* Calendar.storyboard in Resources */,
+				C13AE31C1FE19A5D009C0125 /* study.jpg in Resources */,
 				C1EBB38F1FBA3D0300C4A012 /* Flashcard.storyboard in Resources */,
 				C1EBB3931FBA404900C4A012 /* Note.storyboard in Resources */,
+				C13AE31D1FE19A5D009C0125 /* alarm.mp3 in Resources */,
 				C127786F1FB1880E002FA07B /* LaunchScreen.storyboard in Resources */,
 				C1EBB39D1FBA424A00C4A012 /* ToDo.storyboard in Resources */,
 				C127786C1FB1880E002FA07B /* Assets.xcassets in Resources */,
+				C13AE31E1FE19A5D009C0125 /* break.jpg in Resources */,
 				C1EBB3971FBA415300C4A012 /* Timer.storyboard in Resources */,
 				C127786A1FB1880E002FA07B /* Main.storyboard in Resources */,
 			);
@@ -494,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Boost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Boost;
@@ -509,7 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Boost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Boost;
