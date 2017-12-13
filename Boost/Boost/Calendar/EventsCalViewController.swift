@@ -9,12 +9,13 @@
 import UIKit
 import EventKit
 
-class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPROTO {
+class EventsCalViewController: UIViewController, UITableViewDataSource, EventDelegate {
     
     @IBOutlet weak var CalTableView: UITableView!
     
     @IBOutlet weak var EventTableView: UITableView!
     
+ 
     let eventStore = EKEventStore()
     var calendar: EKCalendar!
     var events: [EKEvent] = [EKEvent]()
@@ -31,11 +32,7 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
         // Dispose of any resources that can be recreated.
     }
     
-    func eventsDidAdd() {
-        self.loadEvents()
-        self.EventTableView.reloadData()
-    }
-    
+
     //https://www.andrewcbancroft.com/2016/04/28/listing-calendar-events-with-event-kit-and-swift/
     func loadEvents() {
         let dateFormatter = DateFormatter()
@@ -44,8 +41,6 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
         let startDate = dateFormatter.date(from: "01/01/2017")
         let endDate = dateFormatter.date(from: "31/12/2017")
         
-       // if let startDate = startDate, let endDate = endDate {
-            
         let eventsPredicate = eventStore.predicateForEvents(withStart: startDate!, end: endDate!, calendars: [calendar])
             
         events = eventStore.events(matching: eventsPredicate).sorted {
@@ -53,7 +48,6 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
                 
                 return event1.startDate.compare(event2.startDate) == ComparisonResult.orderedAscending
             }
-        //}
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,5 +71,37 @@ class EventsCalViewController: UIViewController, UITableViewDataSource, EventsPR
         }
         
         return ""
+    }
+    
+    //Remove event from calendar
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let rmEvent = events[indexPath.row]
+        
+        do{
+            try eventStore.remove(rmEvent, span: .thisEvent)
+            events.remove(at: indexPath.row) //remove only after successful attempt
+            CalTableView.deleteRows(at: [indexPath], with: .fade)
+        }catch{
+            let alert = UIAlertController(title: "Event could not be removed", message: (error as NSError).localizedDescription, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(OKAction)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "eventSegue"{
+        let destinationVC = segue.destination as! UINavigationController
+        let guest = destinationVC.childViewControllers[0] as! AddEvnetsViewController
+        guest.calendar = calendar
+        guest.delegate = self
+        }
+    }
+    
+    func eventDidAdd() {
+        self.loadEvents()
+        self.EventTableView.reloadData()
     }
 }

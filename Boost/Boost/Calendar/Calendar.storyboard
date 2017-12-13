@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXR-Dm-OZB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXR-Dm-OZB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cal View Controller-->
+        <!--Boost-->
         <scene sceneID="hSU-Wm-Whj">
             <objects>
                 <viewController id="ghU-le-S3Y" customClass="CalViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C7O-H3-gj6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2UM-mp-F40">
+                    <navigationItem key="navigationItem" title="Boost" id="2UM-mp-F40">
                         <barButtonItem key="rightBarButtonItem" title="Add Calendar" id="FTd-GP-eK7">
                             <connections>
                                 <segue destination="SQr-62-nLU" kind="presentation" identifier="addSegue" id="Mbm-Sf-5y1"/>
@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="4064.8000000000002" y="940.47976011994012"/>
         </scene>
-        <!--Title-->
+        <!--Boost-->
         <scene sceneID="Yo5-QR-vYM">
             <objects>
                 <viewController id="rVG-lv-obv" customClass="EventsCalViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,8 +115,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wqK-d4-Het"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="f0y-Uf-fPS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="7vF-on-ppb"/>
+                    <navigationItem key="navigationItem" title="Boost" id="f0y-Uf-fPS">
+                        <barButtonItem key="rightBarButtonItem" title="Add Event" id="7vF-on-ppb">
+                            <connections>
+                                <segue destination="zuM-v6-zZc" kind="presentation" identifier="eventSegue" id="XqA-rQ-ivV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CalTableView" destination="ipU-ke-kkQ" id="dXZ-iO-Vou"/>
@@ -127,7 +131,123 @@
             </objects>
             <point key="canvasLocation" x="4064.8000000000002" y="1889.5052473763119"/>
         </scene>
-        <!--Add Cal View Controller-->
+        <!--Add Evnets View Controller-->
+        <scene sceneID="BrC-mR-NZj">
+            <objects>
+                <viewController id="lyq-4w-XOX" customClass="AddEvnetsViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fvs-Ph-WLh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sz-Yp-BSF">
+                                <rect key="frame" x="16" y="75" width="192" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="21w-c9-aPa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQW-l9-1r0">
+                                <rect key="frame" x="16" y="142" width="192" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Wed-h8-Olg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpr-Rg-Ev8">
+                                <rect key="frame" x="16" y="341" width="192" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0j4-gZ-fO0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wRR-FB-pK4">
+                                <rect key="frame" x="16" y="104" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2Rj-Xp-Pei"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-MW-DeE">
+                                <rect key="frame" x="0.0" y="171" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="H9X-Lo-AWO"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="534727140.20559698">
+                                    <!--2017-12-11 23:19:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xUn-gi-Oer">
+                                <rect key="frame" x="0.0" y="370" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="DHf-vv-QPD"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="534727140.20559698">
+                                    <!--2017-12-11 23:19:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-0S-38J">
+                                <rect key="frame" x="127" y="569" width="120" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="tTP-Fi-ThA"/>
+                                </constraints>
+                                <state key="normal" title="Add Event"/>
+                                <connections>
+                                    <action selector="addEventBTn:" destination="lyq-4w-XOX" eventType="touchUpInside" id="hRK-Ng-DKZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Sz-Yp-BSF" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" constant="16" id="0oA-i6-1LA"/>
+                            <constraint firstItem="0aE-vc-oXl" firstAttribute="trailing" secondItem="wRR-FB-pK4" secondAttribute="trailing" constant="16" id="400-lO-YgI"/>
+                            <constraint firstItem="Lpr-Rg-Ev8" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" constant="16" id="B9Y-RG-vL3"/>
+                            <constraint firstItem="LYC-0S-38J" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" constant="127" id="DWj-Ny-iaG"/>
+                            <constraint firstItem="JgN-MW-DeE" firstAttribute="trailing" secondItem="0aE-vc-oXl" secondAttribute="trailing" id="Fm1-DV-p5k"/>
+                            <constraint firstItem="rQW-l9-1r0" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" constant="16" id="Ja1-Eb-fQV"/>
+                            <constraint firstItem="xUn-gi-Oer" firstAttribute="top" secondItem="Lpr-Rg-Ev8" secondAttribute="bottom" constant="8" id="KJR-D6-f5v"/>
+                            <constraint firstItem="3Sz-Yp-BSF" firstAttribute="top" secondItem="0aE-vc-oXl" secondAttribute="top" constant="11" id="LED-Ve-wVQ"/>
+                            <constraint firstItem="0aE-vc-oXl" firstAttribute="trailing" secondItem="Lpr-Rg-Ev8" secondAttribute="trailing" constant="167" id="PWq-kY-Jxl"/>
+                            <constraint firstItem="JgN-MW-DeE" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" id="SEj-bl-9Zr"/>
+                            <constraint firstItem="rQW-l9-1r0" firstAttribute="top" secondItem="wRR-FB-pK4" secondAttribute="bottom" constant="8" id="T8B-IN-IK4"/>
+                            <constraint firstItem="xUn-gi-Oer" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" id="TcY-hU-UXq"/>
+                            <constraint firstItem="xUn-gi-Oer" firstAttribute="trailing" secondItem="0aE-vc-oXl" secondAttribute="trailing" id="W1A-ZR-Ihi"/>
+                            <constraint firstItem="0aE-vc-oXl" firstAttribute="trailing" secondItem="rQW-l9-1r0" secondAttribute="trailing" constant="167" id="Yl1-p5-uco"/>
+                            <constraint firstItem="wRR-FB-pK4" firstAttribute="top" secondItem="3Sz-Yp-BSF" secondAttribute="bottom" constant="8" id="Zcl-KQ-ODF"/>
+                            <constraint firstItem="wRR-FB-pK4" firstAttribute="leading" secondItem="0aE-vc-oXl" secondAttribute="leading" constant="16" id="Zh4-sL-7nR"/>
+                            <constraint firstItem="Lpr-Rg-Ev8" firstAttribute="top" secondItem="JgN-MW-DeE" secondAttribute="bottom" constant="8" id="ezp-A2-nxN"/>
+                            <constraint firstItem="JgN-MW-DeE" firstAttribute="top" secondItem="rQW-l9-1r0" secondAttribute="bottom" constant="8" id="gfr-Ps-w25"/>
+                            <constraint firstItem="LYC-0S-38J" firstAttribute="top" secondItem="xUn-gi-Oer" secondAttribute="bottom" constant="37" id="mZq-9d-zI0"/>
+                            <constraint firstItem="0aE-vc-oXl" firstAttribute="trailing" secondItem="3Sz-Yp-BSF" secondAttribute="trailing" constant="167" id="p3P-2Q-WTY"/>
+                            <constraint firstItem="0aE-vc-oXl" firstAttribute="trailing" secondItem="LYC-0S-38J" secondAttribute="trailing" constant="128" id="vDR-0K-xog"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0aE-vc-oXl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PAt-fk-CeW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qa6-9W-bVw">
+                            <connections>
+                                <action selector="canelBTN:" destination="lyq-4w-XOX" id="CWM-cR-gqC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eventEndDatePicker" destination="xUn-gi-Oer" id="0aH-yS-N9Y"/>
+                        <outlet property="eventNameTF" destination="wRR-FB-pK4" id="FtF-ci-STd"/>
+                        <outlet property="eventStartDatePicker" destination="JgN-MW-DeE" id="EON-24-u5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTf-8i-GhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5736.8000000000002" y="1889.5052473763119"/>
+        </scene>
+        <!--Boost-->
         <scene sceneID="B9J-ZN-Bwl">
             <objects>
                 <viewController id="YyZ-Fc-ZQE" customClass="AddCalViewController" customModule="Boost" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +298,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9lA-Mc-eb9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HyK-TM-N9g">
+                    <navigationItem key="navigationItem" title="Boost" id="HyK-TM-N9g">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Q4j-2f-TkM">
                             <connections>
                                 <action selector="CancelBTn:" destination="YyZ-Fc-ZQE" id="RLc-QA-TJH"/>
@@ -230,6 +350,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgS-X3-oIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4900" y="940"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qj9-a9-OSV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zuM-v6-zZc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PlE-CY-1nF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lyq-4w-XOX" kind="relationship" relationship="rootViewController" id="Ic2-0c-B9r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbp-k8-KG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4900" y="1890"/>
         </scene>
     </scenes>
     <resources>

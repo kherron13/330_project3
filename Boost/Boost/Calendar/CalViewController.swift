@@ -52,7 +52,6 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         TableView.dataSource = self
         TableView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func calenderLoad() {

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kellyherron/Desktop/classes/Fall 2017/COMP 330/330_project3/Boost/Boost/ToDo/MyToDo.swift">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

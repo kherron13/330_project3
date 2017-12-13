@@ -11,6 +11,8 @@ import EventKit
 class AddCalViewController: UIViewController {
     var delagate: CalPROTOViewController?
     
+    // Create an Event Store instance
+    let eventStore = EKEventStore();
     @IBOutlet weak var textFLd: UITextField!
     
     override func viewDidLoad() {
@@ -34,14 +36,11 @@ class AddCalViewController: UIViewController {
     
     //https://www.andrewcbancroft.com/2015/06/17/creating-calendars-with-event-kit-and-swift/
     @IBAction func addCalBTn(_ sender: Any) {
-        // Create an Event Store instance
-        let eventStore = EKEventStore();
+      
         
         // Use Event Store to create a new calendar instance
         let newCalendar = EKCalendar(for: .event, eventStore: eventStore)
-        
-        // Probably want to prevent someone from saving a calendar
-        // if they don't type in a name...
+
         newCalendar.title = textFLd.text ?? "Some Calendar Name"
         
         // Access list of available sources from the Event Store

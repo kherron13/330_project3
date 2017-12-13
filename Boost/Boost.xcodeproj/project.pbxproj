@@ -10,8 +10,9 @@
 		590A1B621FDA4CE10090D8C6 /* AddCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A1B611FDA4CE00090D8C6 /* AddCalViewController.swift */; };
 		590A1B661FDA56040090D8C6 /* CalPROTOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A1B651FDA56040090D8C6 /* CalPROTOViewController.swift */; };
 		590A1B681FDA597E0090D8C6 /* EventsCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A1B671FDA597E0090D8C6 /* EventsCalViewController.swift */; };
-		590A1B6A1FDA59920090D8C6 /* EventsPROTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A1B691FDA59910090D8C6 /* EventsPROTO.swift */; };
 		5983BB1B1FDA249B0078D5AB /* CalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983BB1A1FDA249B0078D5AB /* CalViewController.swift */; };
+		59F4954C1FDE6CD700A2507F /* EventDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4954B1FDE6CD700A2507F /* EventDelegate.swift */; };
+		59F4954E1FDEDE5000A2507F /* AddEvnetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4954D1FDEDE5000A2507F /* AddEvnetsViewController.swift */; };
 		C120B1F41FBBF46800D86288 /* FlashcardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120B1F31FBBF46800D86288 /* FlashcardTableViewController.swift */; };
 		C120B1F61FBBF48C00D86288 /* FlashcardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120B1F51FBBF48C00D86288 /* FlashcardTableViewCell.swift */; };
 		C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778621FB1880E002FA07B /* AppDelegate.swift */; };
@@ -52,8 +53,9 @@
 		590A1B611FDA4CE00090D8C6 /* AddCalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalViewController.swift; sourceTree = "<group>"; };
 		590A1B651FDA56040090D8C6 /* CalPROTOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalPROTOViewController.swift; sourceTree = "<group>"; };
 		590A1B671FDA597E0090D8C6 /* EventsCalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCalViewController.swift; sourceTree = "<group>"; };
-		590A1B691FDA59910090D8C6 /* EventsPROTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPROTO.swift; sourceTree = "<group>"; };
 		5983BB1A1FDA249B0078D5AB /* CalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalViewController.swift; sourceTree = "<group>"; };
+		59F4954B1FDE6CD700A2507F /* EventDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDelegate.swift; sourceTree = "<group>"; };
+		59F4954D1FDEDE5000A2507F /* AddEvnetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvnetsViewController.swift; sourceTree = "<group>"; };
 		C120B1F31FBBF46800D86288 /* FlashcardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewController.swift; sourceTree = "<group>"; };
 		C120B1F51FBBF48C00D86288 /* FlashcardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTableViewCell.swift; sourceTree = "<group>"; };
 		C127785F1FB1880E002FA07B /* Boost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +157,8 @@
 				590A1B611FDA4CE00090D8C6 /* AddCalViewController.swift */,
 				590A1B651FDA56040090D8C6 /* CalPROTOViewController.swift */,
 				590A1B671FDA597E0090D8C6 /* EventsCalViewController.swift */,
-				590A1B691FDA59910090D8C6 /* EventsPROTO.swift */,
+				59F4954D1FDEDE5000A2507F /* AddEvnetsViewController.swift */,
+				59F4954B1FDE6CD700A2507F /* EventDelegate.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -319,13 +322,14 @@
 				C1EBB3991FBA416600C4A012 /* TimerViewController.swift in Sources */,
 				C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */,
 				590A1B621FDA4CE10090D8C6 /* AddCalViewController.swift in Sources */,
+				59F4954C1FDE6CD700A2507F /* EventDelegate.swift in Sources */,
 				590A1B661FDA56040090D8C6 /* CalPROTOViewController.swift in Sources */,
 				C1EBB3951FBA405900C4A012 /* NoteViewController.swift in Sources */,
 				C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */,
 				C194B5301FDB3F67002A09EE /* MyToDo.swift in Sources */,
 				C18B94261FCBBEA3000C980F /* QuizViewController.swift in Sources */,
-				590A1B6A1FDA59920090D8C6 /* EventsPROTO.swift in Sources */,
 				C120B1F41FBBF46800D86288 /* FlashcardTableViewController.swift in Sources */,
+				59F4954E1FDEDE5000A2507F /* AddEvnetsViewController.swift in Sources */,
 				C18B94241FCBB0AE000C980F /* flashcardContainerSingleton.swift in Sources */,
 				C18F2D5A1FBAAB6100B8F978 /* FlashcardGroup.swift in Sources */,
 				C1EBB39B1FBA421400C4A012 /* ToDoViewController.swift in Sources */,
