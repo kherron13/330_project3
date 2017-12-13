@@ -23,6 +23,10 @@ class TimerViewController: UIViewController {
         print("Timer")
         // Do any additional setup after loading the view.
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        studyTimePicker.date = dateFormatter.date(from: "00:45")!
+        breaktimePicker.date = dateFormatter.date(from: "00:15")!
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted, error) in
             if granted{
                 print("Notification Permission Granted")
