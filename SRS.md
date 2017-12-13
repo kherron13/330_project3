@@ -290,9 +290,7 @@ Similar to physical flashcards, a user can create separate decks of flashcards f
 This functionality will be similar to that of Basecamp. The user will
 have the option to create a list of to-do’s, which in theory is just a
 check list. This list will be on its own respective page as well and
-send notifications to the user that the due date is approaching. Once
-the set due date has passed, the specific to-do will be labeled “late”
-and highlighted in red.
+send notifications to the user that the due date is approaching.
 
 ## Other Nonfunctional Requirements
 
