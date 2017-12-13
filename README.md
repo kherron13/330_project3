@@ -64,4 +64,13 @@ The "+" button allows the user to create a new to-do list item. The user will be
 
 The edit button allows the user to also delete to-do list items and be able to rearrange the list in which ever order they see fit.
 
+### Calendar
+
+Using Apple’s EventKit framework, users will be able to use the calendar feature to view and create calendars and events. 
+
+Accessing the user’s calendars from the calendar database, the calendar feature will start by displaying any existing calendars on a table view. Clicking on an individual cell will allow the user to view any events saved for that particular calendar. In the events table view users will be able to see the name of the event as well as the date in which that event will occur.  
+
+Creating a new calendar or events is also very simple and the user can do this by clicking on the top right corner button that reads “Add Calendar”. From there a text box will appear, this will let the user name the calendar and save it in the database. Once the calendar has been successfully created and saved, the user now has the opportunity to create and add a new event to the calendar.
+
+Adding an event is easy, all the user has to do is click on the calendar that they want to add the event to. If the calendar is new then it is likely that the user will be presented with an empty table view. To add an event the user will click on the top right corner button that reads “Add Event”. Clicking on that button will take the user to a new view which displays a text box and date pickers. With these tools, the user can name and pick a date for the event, they can click the “Add Button” at the bottom to save and create the event onto the calendar. 
 
