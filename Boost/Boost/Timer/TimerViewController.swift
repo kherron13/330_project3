@@ -15,12 +15,14 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var studyTimePicker: UIDatePicker!
     var breaktime:TimeInterval = 1
     var studytime:TimeInterval = 3
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var startStudyButton: UIButton!
     @IBOutlet weak var breaktimePicker: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Timer")
         // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted, error) in
             if granted{
                 print("Notification Permission Granted")
