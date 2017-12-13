@@ -26,6 +26,7 @@ class AddEvnetsViewController: UIViewController {
         super.viewDidLoad()
         self.eventStartDatePicker.setDate(initialDatePickerValue(), animated: false)
         self.eventEndDatePicker.setDate(initialDatePickerValue(), animated: false)
+        eventNameTF.inputAccessoryView = createToolbar()
         // Do any additional setup after loading the view.
     }
     
@@ -77,6 +78,19 @@ class AddEvnetsViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    private func createToolbar() -> UIToolbar {
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(toolBarDoneButtonPressed(button:)))
+        doneButton.tintColor = UIColor(red: 146/255, green: 34/255, blue: 71/255, alpha: 1)
+        toolBar.items = [flexibleSpace, doneButton]
+        return toolBar
+    }
+    
+    @objc func toolBarDoneButtonPressed(button: UIButton) {
+        self.view.endEditing(true)
     }
     
     /*

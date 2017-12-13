@@ -325,11 +325,8 @@
 				C1EBB3991FBA416600C4A012 /* TimerViewController.swift in Sources */,
 				C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */,
 				590A1B621FDA4CE10090D8C6 /* AddCalViewController.swift in Sources */,
-<<<<<<< HEAD
 				59F4954C1FDE6CD700A2507F /* EventDelegate.swift in Sources */,
-=======
 				C168C2711FDF27A6008089AA /* DetailViewController.swift in Sources */,
->>>>>>> b1d551d5f7eabda35e6b4bbd9514fe87872b7171
 				590A1B661FDA56040090D8C6 /* CalPROTOViewController.swift in Sources */,
 				C12778631FB1880E002FA07B /* AppDelegate.swift in Sources */,
 				C194B5301FDB3F67002A09EE /* MyToDo.swift in Sources */,
@@ -497,7 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+                DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Boost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Boost;
@@ -512,7 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+                DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Boost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Boost;
