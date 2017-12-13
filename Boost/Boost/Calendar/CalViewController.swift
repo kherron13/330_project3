@@ -93,7 +93,9 @@ class CalViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func loadData(){
         //Returns an array of calendars that support a given entity type, in this case a event.
         calendars = eventStore.calendars(for: .event)
-        TableView.reloadData()
+        DispatchQueue.main.async { //this needs to happen on main thread
+            self.TableView.reloadData()
+        }
     }
     
     func refreshTableView() {

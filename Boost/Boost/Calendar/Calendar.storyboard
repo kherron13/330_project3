@@ -139,9 +139,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-gQ-ocg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-gQ-ocg">
                                 <rect key="frame" x="-20" y="55" width="415" height="575"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sz-Yp-BSF">
                                         <rect key="frame" x="36" y="20" width="192" height="21"/>
@@ -219,6 +218,12 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GTz-gQ-ocg" secondAttribute="trailing" id="BaQ-8T-zc2"/>
+                            <constraint firstItem="GTz-gQ-ocg" firstAttribute="top" secondItem="fvs-Ph-WLh" secondAttribute="top" id="cKZ-oV-Vnj"/>
+                            <constraint firstItem="0aE-vc-oXl" firstAttribute="bottom" secondItem="GTz-gQ-ocg" secondAttribute="bottom" id="ezb-dO-33D"/>
+                            <constraint firstItem="GTz-gQ-ocg" firstAttribute="leading" secondItem="fvs-Ph-WLh" secondAttribute="leading" id="gIa-rm-fdk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0aE-vc-oXl"/>
                     </view>
                     <navigationItem key="navigationItem" id="PAt-fk-CeW">
