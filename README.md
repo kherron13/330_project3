@@ -16,6 +16,35 @@ When a user adds a new card to a deck or taps on an existing card in the table v
 
 The Quiz feature begins by shuffling the flashcards in the deck and displaying the front of the first card. The shuffle method used is imported from Apple's GameKit, a resource available in the iOS SDK without additional overhead. The deck retains the same ordering of cards throughout the quiz and repeats from the beginning once every card has been displayed. The navigation bar has a Flip button that changes the side of the card that is displayed, just as if a physical flashcard was flipped. Alternatively, the user can tap the area where the text is displayed to get the same behavior. At the bottom is a toolbar with a Remove From Quiz and Next button. The Next button displays the front of the next flashcard in the shuffled deck. The Remove From Quiz button removes the current displayed card from the deck for the duration of the quiz so that it will not be repeated. This is equivalent to setting aside a physical flashcard once the information on it is already known.
 
+### Productivity Timer
+
+Productivity timer displays two datepicker and a button to start the studying timer.
+
+First datepicker is to set the study time and the other to set the break time.
+Once start study button is tapped, a request is sent to the notification center to display a notification after the specified study time.
+
+When this notification, let's call it get_break notification, is triggered it shows a study image, and 3 buttons 
+	1. Go for break
+	2. Extend study
+	3. End session
+
+When "Go for break" button is pressed then it sends a request to the notification center to trigger a notification after the specified break time.
+When the notification, let's call it start_study notification , is triggered it shows another break image, and 3 buttons
+	1. Go to study
+	2. Extend break
+	3. End session
+
+When "Extend study" button is pressed then it sends a request to the notification center to trigger a notification after the specified break time. #note : study is extended for the break time only.
+When this notification is triggered then it shows the same notification as that of get_break notification which send it's request.
+
+When "Extend break" button is pressed then it sends a request to the notification center to trigger a notification after the specified break time. #note : break is extend for the break time.
+When this notification is triggered then it shows the same notification as that of start_study notification which send it's request.
+
+When "End session" button is pressed then it triggers the app to show up on screen. So that the user can start another timer.
+
+If the app is in running state while the notification is triggered it will play a specific alarm.mp3 file.
+
+If the app is in background or in closed state when notification is triggered then the iOS default notification tone is played.
 
 ### To-Do List
 
