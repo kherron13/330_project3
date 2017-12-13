@@ -16,6 +16,16 @@ When a user adds a new card to a deck or taps on an existing card in the table v
 
 The Quiz feature begins by shuffling the flashcards in the deck and displaying the front of the first card. The shuffle method used is imported from Apple's GameKit, a resource available in the iOS SDK without additional overhead. The deck retains the same ordering of cards throughout the quiz and repeats from the beginning once every card has been displayed. The navigation bar has a Flip button that changes the side of the card that is displayed, just as if a physical flashcard was flipped. Alternatively, the user can tap the area where the text is displayed to get the same behavior. At the bottom is a toolbar with a Remove From Quiz and Next button. The Next button displays the front of the next flashcard in the shuffled deck. The Remove From Quiz button removes the current displayed card from the deck for the duration of the quiz so that it will not be repeated. This is equivalent to setting aside a physical flashcard once the information on it is already known.
 
+
+### Notes
+
+The Notes section works as expected for any note taking app. Initially, the user is shown an empty table view with a Notes header. As expected, the top section is accompanied by the Edit button and a + Button.
+
+Once the user selects the Add button (+), the user is able to create and save notes according to his needs. Since he will relly on this primarily to take notes for the classes he's enrolled, the User is able to save notes automatically once he's done typing. The keyboard display is automatically shown & hidden once the user is done with creating a new note and returns to the Note List.
+
+The edit button allows the user to delete the items that he will not occupy in the future.
+
+
 ### Productivity Timer
 
 Productivity timer displays two datepicker and a button to start the studying timer.
@@ -54,10 +64,4 @@ The "+" button allows the user to create a new to-do list item. The user will be
 
 The edit button allows the user to also delete to-do list items and be able to rearrange the list in which ever order they see fit.
 
-### Notes
 
-The Notes section works as expected for any note taking app. Initially, the user is shown an empty table view with a Notes header. As expected, the top section is accompanied by the Edit button and a + Button.
-
-Once the user selects the Add button (+), the user is able to create and save notes according to his needs. Since he will relly on this primarily to take notes for the classes he's enrolled, the User is able to save notes automatically once he's done typing. The keyboard display is automatically shown & hidden once the user is done with creating a new note and returns to the Note List.
-
-The edit button allows the user to delete the items that he will not occupy in the future.
