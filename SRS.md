@@ -195,18 +195,10 @@ The app’s main navigation will be a tab bar based. The items on the tab
 bar will be the calendar, timer, flashcards, notes, and to-do lists.
 
 #### Calendar
-The calendar tab will display a calendar, defaulting to the current
-month, and allow the user to add an event or due date reminder. When
-editing or adding an item to the calendar, the user will be able to set
-notifications if desired.
+The calendar tab displays a table view with the names of the calendars stored in the user's built-in Calendar app. A user can add another calendar if they wish. They can tap on a desired calendar to view the events stored in it, which is displayed in a table view. The user can add an event from this page.
 
 #### Timer
-The timer tab will display three sliders for the user: duration,
-productive interval, and break interval. A start button will be
-displayed and once it is pressed, a sound alerting the start of
-productive time will play. Once the productive interval is up, a sound
-alerting the start of a break will play and the process will repeat
-until the selected duration is completed.
+The timer tab displays two date pickers with selectable hours and minutes. These pickers are associated with the study and break times. At the bottom is a Start Study button that will begin the notifications.
 
 #### Flashcards
 The flashcards tab initially displays a table view with saved decks of flashcards. This interface includes a navigation bar at the top with an Edit and an Add button. The Edit button enables deleting of flashcard decks. The Add button prompts the user to give the new deck a title. Once a title is entered it automatically segues into the next view, which is a table view of the cards in the deck, which is initially empty. This same interface can be accessed by tapping on an existing deck in the first view of this tab.
@@ -221,9 +213,7 @@ include a button for editing and adding additional notes. The notes will
 allow a user to record information.
 
 #### To-Do
-The to-do lists will allow a user to check off tasks. The user can add a
-list of related tasks and set automatic reminders for the next task a
-set amount of time after each item is completed.
+The to-do lists will allow a user to check off tasks. The user can add items to the list, reorder them, edit, and check them off.
 
 ### 3.2 Hardware Interfaces
 The app will be built as a native iOS application and will require an
@@ -236,15 +226,12 @@ notifications.
 
 ## 4. System Features (Functional Requirements)
 
-### 4.1 Google Calendar Integration
+### 4.1 Calendar Integration
 
 The user will be able to create events relative to the due dates of
 their assignments, tests dates, and other events. They will also be able
-to integrate their own events into this calendar. The calendar
-functionality will be within its own home screen, which is navigated to
-from the standard bottom bar. The calendar view will, by default, be
-displayed in monthly view, but can easily be set to display weekly and
-daily views as well.
+to integrate their own events into the built-in iOS calendar. The calendar
+functionality will be within its own tab. The calendar displays relevant information in table views.
 
 ### 4.2  Productivity Reminder/ Break Timer
 
@@ -252,17 +239,14 @@ After a set amount of time, the application will push a notification to
 the user that it is time to take a short break. The user is able to set
 the interval time for when the app will send the notification and set
 the duration of the break. This will be handled in its own respective
-screen with values ranging from minutes to hours. This high priority
+screen with a date picker with selectable hours and minutes. This high priority
 function is in-place to boost user productivity when working on tasks
 for school.
 
 ### 4.3 Notes
 
-The note taking functionality will allow users to create, edit, and
-organize notes. The user will be able to search for certain notes by
-keyword, topics, and mentions. The notes will be organized by class, for
-easy accessibility. The notes will be displayed on its own screen, which
-will be able to be accessed by the an icon on the bottom bar.
+The note taking functionality will allow users to create and edit notes. The notes will be displayed on its own screen, which
+will be able to be accessed by the the notebook icon on the bottom bar.
 
 ### 4.4 Flashcard Creator
 
@@ -272,8 +256,7 @@ Similar to physical flashcards, a user can create separate decks of flashcards f
 
 This functionality will be similar to that of Basecamp. The user will
 have the option to create a list of to-do’s, which in theory is just a
-check list. This list will be on its own respective page as well and
-send notifications to the user that the due date is approaching.
+check list. This list will be on its own respective page.
 
 ## Other Nonfunctional Requirements
 
@@ -282,10 +265,8 @@ send notifications to the user that the due date is approaching.
 Trusting the instincts, we decided to implement a very friendly
 interface that will allow to user to reach the feature he wants with 5
 or less taps. Focusing on simple yet
-effective, our application should have very minimal time delays for
-displaying and outputting data. After verifying user authentication, our
-application should automatically be synched with the calendar in order
-to display the relevant event, tasks and notifications from the account.
+effective interactions, our application should have very minimal time delays for
+displaying and outputting data.
 
 Since we are adhering to the native SDK, our power consumption and memory
 should be regulated by the phone's OS and should not give any abnormal errors.
@@ -294,17 +275,12 @@ use any other resources it does not actually need in its features.
 
 The interface of the app is fairly easy to navigate, so the user should
 not have any problem when viewing, deleting or creating notes. The user
-is then able to adjust the duration, productivity interval, and break
+is then able to adjust the productivity interval,and break
 interval in order to facilitate working on school tasks. Flashcards
 are able to display some information while simultaneously hiding the rest of the information so as persuade the
 user to fill the rest of the information from his knowledge in order to
-prepare for test time. We decided on using something similar to the
-Flashcard Generator on Quizlet.
-
-The to do list should have no problem creating a list of tasks that need
-to be checked off before their respective due date. The user should be
-able to group related tasks, and to adjust the notifications between
-each task. Since we decided on creating an iOS native app, we will then
+prepare for test time. The to do list should have no problem creating a list of tasks that need
+to be checked off. Since we decided on creating an iOS native app, we will then
 follow Apple’s guidelines and policies for allowing applications to be
 submitted and uploaded on their store. Link:
 [*https://developer.apple.com/app-store/review/*](https://developer.apple.com/app-store/review/)
