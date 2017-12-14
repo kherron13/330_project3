@@ -112,7 +112,7 @@ Boost is an app that will help users stay on track of their work. It will not al
 
 <!-- -->
 
-1.  Potential User \#2: Juana Y. Fonseca-
+2.  Potential User \#2: Juana Y. Fonseca-
     [*jfonsecal@luc.edu*](mailto:jfonsecal@luc.edu)
 
     1.  Student at Loyola University majoring in Biology Pre-Med.
@@ -125,7 +125,7 @@ Boost is an app that will help users stay on track of their work. It will not al
 
 <!-- -->
 
-1.  Potential User \#3: Emily Phillips-
+3.  Potential User \#3: Emily Phillips-
     [*ephillips5@luc.edu*](mailto:ephillips5@luc.edu)
 
     1.  Student at Loyola University majoring in computer science
