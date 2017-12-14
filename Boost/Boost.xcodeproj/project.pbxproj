@@ -19,7 +19,6 @@
 		C127786A1FB1880E002FA07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12778681FB1880E002FA07B /* Main.storyboard */; };
 		C127786C1FB1880E002FA07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C127786B1FB1880E002FA07B /* Assets.xcassets */; };
 		C127786F1FB1880E002FA07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C127786D1FB1880E002FA07B /* LaunchScreen.storyboard */; };
-		C127787A1FB1880E002FA07B /* BoostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12778791FB1880E002FA07B /* BoostTests.swift */; };
 		C127BAF61FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */; };
 		C127BAF81FBB553600C7B68C /* FlashcardGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */; };
 		C13AE31C1FE19A5D009C0125 /* study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C13AE3191FE19A5D009C0125 /* study.jpg */; };
@@ -69,7 +68,6 @@
 		C127786E1FB1880E002FA07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C12778701FB1880E002FA07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C12778751FB1880E002FA07B /* BoostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C12778791FB1880E002FA07B /* BoostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostTests.swift; sourceTree = "<group>"; };
 		C127787B1FB1880E002FA07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C127BAF51FBB4EF200C7B68C /* FlashcardGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewCell.swift; sourceTree = "<group>"; };
 		C127BAF71FBB553600C7B68C /* FlashcardGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardGroupTableViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		C12778781FB1880E002FA07B /* BoostTests */ = {
 			isa = PBXGroup;
 			children = (
-				C12778791FB1880E002FA07B /* BoostTests.swift */,
 				C18F2D5B1FBAB17F00B8F978 /* FlashcardTests.swift */,
 				C127787B1FB1880E002FA07B /* Info.plist */,
 			);
@@ -360,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18F2D5C1FBAB17F00B8F978 /* FlashcardTests.swift in Sources */,
-				C127787A1FB1880E002FA07B /* BoostTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
