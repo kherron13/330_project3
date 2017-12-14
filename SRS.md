@@ -174,19 +174,17 @@ The system will be compatible with iOS 11.x for now, in the future we hope to ex
 
 ### 2.5 Design and Implementation Constraints
 
-The application is constrained by internet connection. The user will be limited on syncing the events and due dates with the mobile calendar. Also, the user will not be able to share the app's flashcards, notes, and events with anyone else unless the device is connected with the internet. (We hope to find a way that will allow users to use all the features in the app while they are limited with internet access) However, the user will be able to write notes, study for exams and quizzes with the flashcards feature, and study productively with the smart productivity timer when they are not connected with the internet.
-The Boost system will be coded in the Swift programming language which is another constraint because it will only be available for iOS devices.
-
+The Boost system is written in the Swift programming language and is a native iOS app, so it is only available for iOS devices.
 
 ### 2.6 User Documentation
 
-The Boost system shall provide an integrated help system that describes the rules of the system and illustrates all system functions. The Boost system shall provide this information in the time of downloading the app. This documentation will include in-app tutorials and help documents referenceable through user interface.
+Detailed documentation of each feature is found in the README file. Most of the app's features are self-explanatory and follow interaction patterns that are already familiar to iOS users. The flashcards feature includes a sample deck that is already provided with the installation of Boost on a new device. This sample deck provides new users with an idea of how this feature works. Users may delete this sample at any time.
 
 ### 2.7 Assumptions and Dependencies
 
 o One dependency is that the product will be exclusively used on an iOS device since the product will be built as a native iOS application. 
 
-o One assumption is the internet connectivity. The user will not be able to sync all the notes and the calendar events because there is no internet connection.
+o One assumption is user permission for calendar access and notifications. If a user disables these, the calendar and productivity timer features will not work. A user can navigate to the device's Settings app at any time to enable these if they initially didn't permit access.
 
 
 ## 3. External Interface Requirements
@@ -237,21 +235,6 @@ The application will use the iOS SDK to enable system services such as
 notifications.
 
 ## 4. System Features (Functional Requirements)
-
-Once users download the application, they will be prompted with a login
-screen that allows the user to either choose to login with an existing
-account or sign-up with any registered email account. After they have
-signed in, the user will be taken to the home screen where the user will
-be able to navigate throughout the app.
-
-In this home screen, the user will be able to immediately start creating
-notes for their classes. Their class notes will be scrollable lists,
-where they can view each individual note. There will also be a standard
-navigation bar at the bottom of the screen that will have four icons,
-that will navigate to their each respective screen: the calendar screen,
-to-do screen, notes screen and timer screen. There will also be a button
-on the top right for application settings, where the user will be able
-to adjust productivity timers and account settings.
 
 ### 4.1 Google Calendar Integration
 
@@ -328,32 +311,22 @@ submitted and uploaded on their store. Link:
 
 ### 5.2 Security & Safety Requirements:
 
-The user information that is shared to us will be saved, stored and
-protected on the server. It is very important for us to protect the
-information that is shared, but it is utterly important the user’s
-personal information is safely stored.
-The user can select their verification or account retrieval options. As
-a default, all the information is considered private unless the user
-specifies to generate a sharable link (or something similar).
+Some data, such as flashcards and notes, are stored on the user's device. Because of the sandboxed nature of iOS apps, this data will never leave the Boost app on that device. Calendar data is shared directly with the native Calendar app and possibly with any accounts that the user is signed into. The user should expect the same protection of privacy for calendar data with the Boost app as they would with the built-in Calendar app.
 
 ### 5.3 Software Quality Attributes:
 
 #### Availability: 
-The application should be ready to operate at all
-times. Even if the internet connection is faulty, the user should still
-be able to access and view his data. The user is able to view his notes
-even when working online and the notifications should run fine.
+Calendar access and the productivity timer require user permission. If the user does not grant permission for these features, they will not work. The notes, flashcards, and to-do list should work at all times.
 
 #### Adaptability: 
-the majority of the features are intuitive, and it is
+The majority of the features are intuitive, and it is
 highly likely our users are familiar with other applications that share
 the same features so for the most part our users familiar with the
 features. The only thing the user would need to regulate personally would
 be the time between break/study sessions.
 
 #### Flexibility: 
-allows the user to adjust his study/ break intervals.
-Should work online and offline.
+The user is able to adjust his study/ break intervals.
 
 #### Testability: 
 we will use our fellow classmates as a small, but
@@ -361,7 +334,7 @@ testable group of subjects. Testing for the most basic errors such as:
 saving an empty note, saving when offline, etc.
 
 #### Usability: 
-our app should be intuitive and as such would take little
+Our app should be intuitive and as such would take little
 for the user to get accustomed to. The user should experience no problem
 displaying and saving information. A person without previous knowledge should
 be able to use/navigate the app and be able to familiarize themselves with the
